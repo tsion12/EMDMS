@@ -55,7 +55,7 @@ const Aside = () => {
           )}
         </div>
         <Link
-          to="/"
+          to="/admin"
           className={`${
             activePage === "Dashboard"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
@@ -69,7 +69,7 @@ const Aside = () => {
           )}
         </Link>
         <Link
-          to="/foreign-management"
+          to="/admin/foreign-management"
           className={`${
             activePage === "Foreign Management"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"

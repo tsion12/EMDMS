@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import StarterClip from "../assets/images/starter.png";
-import Button from "../components/Button";
-import ApplicationClip from "../assets/applicationClip.png";
+import StarterClip from "../../assets/images/starter.png";
+import Button from "../../components/Button";
+import ApplicationClip from "../../assets/applicationClip.png";
 import BsExclamationTriangleFill, {
   BsFillExclamationTriangleFill,
 } from "react-icons/bs";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 import { Document, Page } from "react-pdf";
-import Modal from "../components/Modal";
+import Modal from "../../components/Modal";
 import { MdOutlineCancel } from "react-icons/md";
-import RejectionModal from "../components/RejectionModal";
+import RejectionModal from "../../components/RejectionModal";
 
 const LocalApplicants = () => {
   const [activeTab, setActiveTab] = useState("");
@@ -36,7 +36,7 @@ const LocalApplicants = () => {
     setSideModalOpen(false);
   };
 
-  const pdfUrl = "../assets/sample.pdf";
+  const pdfUrl = "../../assets/sample.pdf";
   return (
     <>
       {/* main container */}
