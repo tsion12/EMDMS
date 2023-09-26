@@ -499,21 +499,21 @@ const LocalApplicants = () => {
                             <div className="mt-10 text-[#313A4E] text-sm">
                               Rejection Reason
                             </div>
-                            <div className="bg-[#F0F7F7] rounded-md shadow-md h-[400px] w-full px-8 py-4 text-xs text-[#313a4e97] ">
+                            <div className="bg-[#F0F7F7] rounded-md shadow-md h-[250px] w-full px-8 py-4 text-xs text-[#313a4e97] ">
                               type the rejection reason...
                             </div>
                           </div>
                           <div className="flex space-x-6 justify-center mt-10">
                             <button
                               onClick={closeSideModal}
-                              className="bg-[#F0F7F7] py-2 px-16 text-[#008080] rounded-lg">
+                              className="bg-[#F0F7F7] py-2 px-10 text-[#008080] rounded-lg">
                               Cancel
                             </button>
                             <button
                               onClick={() => {
                                 setActiveTab("approved");
                               }}
-                              className="bg-[#005656] py-2 px-20 text-white rounded-lg">
+                              className="bg-[#005656] py-2 px-16 text-white rounded-lg">
                               Submit
                             </button>
                           </div>
@@ -530,8 +530,8 @@ const LocalApplicants = () => {
         {activeTab === "approved" && (
           <>
             <div className=" flex flex-col mb-4 h-full pr-32">
-              <div className="mt-20 flex  w-full space-x-6  h-full ">
-                <div className="bg-white p-10 rounded-xl w-1/3 h-2/3">
+              <div className="mt-5 flex  w-full space-x-6  h-full ">
+                <div className="bg-white p-10 rounded-xl w-1/3 h-[80%]">
                   <div className="flex flex-col space-y-6">
                     <div className="text-2xl text-[#464255]">
                       License No: 1234567
@@ -552,7 +552,7 @@ const LocalApplicants = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white p-10 rounded-xl w-1/3 h-2/3">
+                <div className="bg-white p-10 rounded-xl w-1/3 h-[80%]">
                   <div className="flex flex-col space-y-6">
                     <div className="text-2xl text-[#464255]">
                       License No: 1234567
@@ -573,7 +573,7 @@ const LocalApplicants = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white p-10 rounded-xl w-1/3 h-2/3">
+                <div className="bg-white p-10 rounded-xl w-1/3 h-[80%]">
                   <div className="flex flex-col space-y-6">
                     <div className="text-2xl text-[#464255]">
                       License No: 1234567
@@ -624,8 +624,8 @@ const LocalApplicants = () => {
         {activeTab === "rejected" && (
           <>
             <div className=" flex flex-col mb-4 h-full pr-32">
-              <div className="mt-20 flex  w-full space-x-6  h-full ">
-                <div className="bg-white p-10 rounded-xl w-1/3 h-2/3">
+              <div className="mt-5 flex  w-full space-x-6  h-full ">
+                <div className="bg-white p-10 rounded-xl w-1/3 h-[90%]">
                   <div className="flex flex-col space-y-6">
                     <div className="text-2xl text-[#464255]">
                       License No: 1234567
@@ -678,7 +678,7 @@ const LocalApplicants = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white p-10 rounded-xl w-1/3 h-2/3">
+                <div className="bg-white p-10 rounded-xl w-1/3 h-[90%]">
                   <div className="flex flex-col space-y-6">
                     <div className="text-2xl text-[#464255]">
                       License No: 1234567
@@ -731,7 +731,7 @@ const LocalApplicants = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white p-10 rounded-xl w-1/3 h-2/3">
+                <div className="bg-white p-10 rounded-xl w-1/3 h-[90%]">
                   <div className="flex flex-col space-y-6">
                     <div className="text-2xl text-[#464255]">
                       License No: 1234567
