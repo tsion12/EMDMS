@@ -1,61 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { FaAngleLeft } from "react-icons/fa6";
+import { FaAngleLeft, FaFileSignature } from "react-icons/fa6";
 import { BiSolidDashboard } from "react-icons/bi";
 import { MdAssignment } from "react-icons/md";
-import MOLSLogo from "../../assets/svg/MOLSLogo.svg";
-import MOLSLogoText from "../../assets/svg/MOLSLogoText.svg";
+import MOLSLogo from "../../../assets/svg/MOLSLogo.svg";
+import MOLSLogoText from "../../../assets/svg/MOLSLogoText.svg";
 import { Link, useLocation } from "react-router-dom";
-import { BsPersonAdd } from "react-icons/bs";
-import { HiOutlineBars3, HiXMark } from "react-icons/hi2";
+import { BsPersonBadgeFill, BsFillBagCheckFill } from "react-icons/bs";
 
-const Aside = () => {
+const SideBar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activePage, setActivePage] = useState();
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/agency") {
       setActivePage("Dashboard");
-    } else if (location.pathname === "/foreign-management") {
-      setActivePage("Foreign Management");
-    } else if (location.pathname === "/job-order") {
-      setActivePage("Job Order");
-    } else if (location.pathname === "/staff-members") {
-      setActivePage("Staff Members");
+    } else if (location.pathname === "/dashboard/documents") {
+      setActivePage("Documents");
+    } else if (location.pathname === "/dashboard/profile") {
+      setActivePage("Profile");
+    } else if (location.pathname === "/dashboard/job-order") {
+      setActivePage("Job Order List");
+    } else if (location.pathname === "/dashboard/contracts") {
+      setActivePage("Contracts");
+    } else if (location.pathname === "/agency/stuff") {
+      setActivePage("Staff");
     }
   }, [location]);
   return (
     <>
       <div
         className={`${
-          sidebarOpen ? "w-[230px] px-[2%]" : "w-0 md:w-[120px]"
-        } h-full bg-[#F9F9F9] py-20 md:px-[2%] customHeight fixed flex flex-col gap-6 items-end transition-all duration-200 ease-in-out md:relative z-20`}>
+          sidebarOpen ? "w-[280px]" : "w-[120px]"
+        }  h-full bg-[#F9F9F9] py-14 px-[2%] z-10 customHeight hidden md:flex flex-col gap-6 items-end transition-all duration-200 ease-in-out relative`}>
         <div
           onClick={() => {
             setSidebarOpen((prev) => !prev);
           }}
-          className="h-12 w-10 bg-emdmsPrimary/5 md:flex justify-center items-center text-emdmsPrimary cursor-pointer rounded-md group transition-all duration-300 ease-in-out mb-8 hidden">
+          className="h-12 w-10 bg-emdmsPrimary/5 flex justify-center items-center text-emdmsPrimary cursor-pointer rounded-md group transition-all duration-300 ease-in-out mb-8">
           <FaAngleLeft
             className={`${sidebarOpen ? "rotate-0" : "rotate-180"} text-lg`}
           />
         </div>
-        <div
-          onClick={() => {
-            setSidebarOpen((prev) => !prev);
-          }}
-          className="bg-emdmsPrimary/5 fixed top-24 left-2 text-emdmsPrimary cursor-pointer rounded-md group transition-all duration-300 ease-in-out mb-8 md:hidden z-50 p-2 ">
-          {!sidebarOpen ? (
-            <HiOutlineBars3
-              className={`${sidebarOpen ? "rotate-0" : "rotate-180"} text-xl `}
-            />
-          ) : (
-            <HiXMark
-              className={`${sidebarOpen ? "rotate-0" : "rotate-180"} text-xl `}
-            />
-          )}
-        </div>
         <Link
-          to="/admin"
+          to="/agency/dashboard"
           className={`${
             activePage === "Dashboard"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
@@ -63,27 +51,41 @@ const Aside = () => {
           } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
           <BiSolidDashboard className="text-2xl" />
           {sidebarOpen && (
-            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
               Dashboard
             </p>
           )}
         </Link>
         <Link
-          to="/admin/foreign-management"
+          to="/dashboard/profile"
           className={`${
-            activePage === "Foreign Management"
+            activePage === "Profile"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
               : "hover:bg-N99/50 text-N60"
           } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
-          <BsPersonAdd className="text-2xl" />
+          <BsPersonBadgeFill className="text-2xl" />
           {sidebarOpen && (
-            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
-              Local Applicants
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              Profile
             </p>
           )}
         </Link>
-        {/* <Link
-          to="/documents"
+        <Link
+          to="/dashboard/job-order"
+          className={`${
+            activePage === "Job Order List"
+              ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+              : "hover:bg-N99/50 text-N60"
+          } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+          <BsFillBagCheckFill className="text-2xl" />
+          {sidebarOpen && (
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              Job Order List
+            </p>
+          )}
+        </Link>
+        <Link
+          to="/dashboard/documents"
           className={`${
             activePage === "Documents"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
@@ -91,12 +93,25 @@ const Aside = () => {
           } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
           <MdAssignment className="text-2xl" />
           {sidebarOpen && (
-            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
               Documents
             </p>
           )}
-        </Link> */}
-
+        </Link>
+        <Link
+          to="/agency/stuff"
+          className={`${
+            activePage === "staff"
+              ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+              : "hover:bg-N99/50 text-N60"
+          } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+          <FaFileSignature className="text-2xl" />
+          {sidebarOpen && (
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              Staff Members
+            </p>
+          )}
+        </Link>
         <div
           className={` ${
             sidebarOpen ? "bg-green40/10" : ""
@@ -127,4 +142,4 @@ const Aside = () => {
   );
 };
 
-export default Aside;
+export default SideBar;

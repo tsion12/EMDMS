@@ -25,7 +25,10 @@ body {
 .customHeight {
   height: calc(100vh - 5.9rem);
 }
-
+.modal-container {
+  max-height: 90vh; /* Set the maximum height for the modal content */
+  overflow-y: auto; /* Enable vertical scrolling when content exceeds the maximum height */
+}
 /* Scroll Bar */
 
 body::-webkit-scrollbar {

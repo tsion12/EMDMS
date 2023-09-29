@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import Logo from "../../assets/Logo.svg";
-import User from "../../assets/Ellipse 2.png";
-import Ethio from "../../assets/ethio.svg";
+import Logo from "../../../assets/Logo.svg";
+import User from "../../../assets/Ellipse 2.png";
+import Ethio from "../../../assets/ethio.svg";
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
