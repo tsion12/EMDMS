@@ -27,9 +27,12 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="flex relative w-full bg-white  z-50 justify-between items-center h-24 ">
+      <nav className="flex relative w-full  bg-white  z-50 justify-between items-center h-18 ">
         <div className="flex items-center relative pl-[6%] md:py-4 bg-emdmsPrimary w-2/3 lg:w-4/5">
-          <img src={Logo} alt="LMIS Logo" className="h-1/2 md:h-full" />
+          <img src={Logo} alt="LMIS Logo" className="h-1/2 md:h-full " />
+          <div className="text-white lg:text-2xl hidden md:block font-bold pl-10 ">
+            Ethio Migrant Database Management system (EMDMS)
+          </div>
           <img
             src={Flag}
             alt="Flag"
@@ -37,7 +40,7 @@ const NavBar = () => {
           />
         </div>
 
-        <div className="hidden md:flex gap-4 items-center justify-end pr-[6%] w-1/2 lg:w-2/5">
+        <div className="hidden md:flex gap-4 items-center justify-end pr-[3%] w-1/2 lg:w-2/5">
           <span className=" flex flex-col items-end">
             <p className="text-N40 font-bold text-sm">Abebe Kebede</p>
             <p className="text-N40 font-medium text-xs">Abebe Kebede</p>
