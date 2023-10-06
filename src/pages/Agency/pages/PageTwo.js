@@ -287,7 +287,7 @@ const PageTwo = () => {
                   </button>
                 </div>
               </>
-              {page === "" && <></>}
+
               {/* foriegn Tab */}
               {activeTab === "" && (
                 <>
@@ -1371,12 +1371,12 @@ const PageTwo = () => {
                 </div>
               </div>
             )}
-            {page === "submit" && (
-              <div className="w-full bg-greeen-500">
-                <SubmitPage />
-              </div>
-            )}
           </>
+        )}
+        {page === "submit" && (
+          <div className="w-full h-full">
+            <SubmitPage />
+          </div>
         )}
       </div>
     </div>

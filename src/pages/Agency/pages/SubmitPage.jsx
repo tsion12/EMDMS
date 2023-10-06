@@ -3,20 +3,34 @@ import Map from "../../../assets/map.png";
 import SmallMap from "../../../assets/smallMaop.png";
 import Flag from "../../../assets/Japan.png";
 import Qatar from "../../../assets/qatar.png";
+import SubmitFlag from "../../../assets/submitFlag.png";
+
 import Saudi from "../../../assets/saudi.png";
 import SearchIcon from "../../../assets/searchcontryIcon.png";
 
-import Portfolio from "../../../assets/Portfolio.png";
-
-import { BiSearch } from "react-icons/bi";
-import { ImEqualizer } from "react-icons/im";
+import { FaFileCircleCheck } from "react-icons/fa6";
+import { GoChecklist } from "react-icons/go";
 import Modal from "../../../components/Modal";
-import { BsChevronDown, BsFillExclamationTriangleFill } from "react-icons/bs";
+import {
+  BsCheck,
+  BsChevronDown,
+  BsClock,
+  BsFillExclamationTriangleFill,
+} from "react-icons/bs";
 import {
   AiFillExclamationCircle,
+  AiOutlineCloseCircle,
   AiOutlineExclamationCircle,
+  AiOutlineMail,
+  AiOutlinePhone,
+  AiOutlineUser,
 } from "react-icons/ai";
-import PageTwo from "../../Agency/pages/PageTwo";
+import { IoScanCircleSharp, IoScanOutline } from "react-icons/io5";
+import { TbDeviceDesktopCheck, TbDeviceIpadCheck } from "react-icons/tb";
+
+import { RiMoneyCnyCircleLine } from "react-icons/ri";
+
+import { BiLock, BiMessageRoundedCheck, BiSolidLock } from "react-icons/bi";
 
 const SubmitPage = () => {
   const [requestModal, setrequestModal] = useState(false);
@@ -59,7 +73,7 @@ const SubmitPage = () => {
   );
 
   return (
-    <div className=" w-full">
+    <div className=" w-full max-h-80vh overflow-y-auto">
       {/* Add License Modal */}
       {activeModal === "request" && (
         <>
@@ -249,41 +263,703 @@ const SubmitPage = () => {
         </div>
       )}
       {/* Background Image */}
-
-      <div className="m-10 relative ">
-        <div className=" w-full flex justify-end space-x-6">
-          {/* Search Input */}
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <BiSearch />
+      {activePage === "" && (
+        <>
+          {" "}
+          <div className=" relative">
+            <div className="flex justify-end mr-10 space-x-6">
+              {/* Request License Button */}
+              <button
+                onClick={() => {
+                  setrequestModal(true);
+                  setActiveModal("request");
+                }}
+                className="bg-emdmsPrimary text-white p-2 px-10 rounded-lg text-sm font-poppins">
+                Request License
+              </button>
             </div>
-            <input
-              type="text"
-              id="voice-search"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emdmsPrimary focus:border-emdmsPrimary block w-full pl-10 pr-20 p-2"
-              placeholder="Search"
-              required
-            />
-            <button
-              type="button"
-              className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <ImEqualizer />
-            </button>
+
+            {/* Content */}
+            <div className="w-full  mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                {/* card One */}
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
+                  <div className=" flex  ">
+                    <div className="w-[180px] h-[80px]">
+                      {" "}
+                      <img
+                        src={SubmitFlag}
+                        alt="Profile 1"
+                        className="w-20 h-20 rounded-full mx-auto mb-4"
+                      />
+                    </div>
+                    <div className=" flex flex-col">
+                      <div className="flex justify-between items-center">
+                        {" "}
+                        <div className="flex flex-col items-start  justify-center space-x-2 ">
+                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                            Licence No: 12345678
+                          </div>
+                          <div className="text-[#2A282F] text-xs tracking-wider">
+                            {" "}
+                            <span className="font-bold">Agency Name:</span>{" "}
+                            Abdulraman Agency
+                          </div>
+                          <div className="text-xs text-[#555555]">
+                            Submitted at: Sep 12, 2022
+                          </div>
+                        </div>
+                        <div className="border border-emdmsPrimary  text-emdmsPrimary rounded-md flex items-center justify-between px-12 py-2 text-xs ">
+                          View
+                        </div>
+                      </div>
+
+                      <div className="text-xs pl-2 pt-4 pb-5 text-[#3B3F5C]">
+                        This license number is accepted by License numbers are
+                        typically unique identifiers issued by specific
+                        authorities or organizations for specific purposes
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:flex md:flex  items-center   ">
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <IoScanOutline className="text-xl text-white text-center " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Screener</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-2">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black stroke-4"
+                        strokeWidth={4}
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <TbDeviceIpadCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Verifier</div>
+                    </div>
+                    <svg className="flex-grow mx-2 h-2">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black stroke-4"
+                        strokeWidth={4}
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <BiMessageRoundedCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px] ">Inspection</div>
+                    </div>
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                        strokeDasharray="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="border border-dashed border-black/50 rounded-full px-2 py-2">
+                          <GoChecklist className="text-xl text-black/50 " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 text-white rounded-full">
+                          <BiSolidLock className="text-sm text-black/50" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Approver</div>
+                    </div>
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="border border-black/50 rounded-full px-2 py-2">
+                          <RiMoneyCnyCircleLine className="text-xl text-black/50 " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 text-white rounded-full">
+                          <BiSolidLock className="text-sm text-black/50" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Finance</div>
+                    </div>
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="border border-black/50 rounded-full px-2 py-2">
+                          <TbDeviceDesktopCheck className="text-xl text-black/50 " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 text-white rounded-full">
+                          <BiSolidLock className="text-sm text-black/50" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">CEO</div>
+                    </div>
+                  </div>
+                </div>
+                {/* card Two */}
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
+                  <div className=" flex  ">
+                    <div className="w-[180px] h-[80px]">
+                      {" "}
+                      <img
+                        src={SubmitFlag}
+                        alt="Profile 1"
+                        className="w-20 h-20 rounded-full mx-auto mb-4"
+                      />
+                    </div>
+                    <div className=" flex flex-col">
+                      <div className="flex justify-between items-center">
+                        {" "}
+                        <div className="flex flex-col items-start  justify-center space-x-2 ">
+                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                            Licence No: 12345678
+                          </div>
+                          <div className="text-[#2A282F] text-xs tracking-wider">
+                            {" "}
+                            <span className="font-bold">Agency Name:</span>{" "}
+                            Abdulraman Agency
+                          </div>
+                          <div className="text-xs text-[#555555]">
+                            Submitted at: Sep 12, 2022
+                          </div>
+                        </div>
+                        <div className="border border-emdmsPrimary  text-emdmsPrimary rounded-md flex items-center justify-between px-12 py-2 text-xs ">
+                          View
+                        </div>
+                      </div>
+
+                      <div className="text-xs pl-2 pt-4 pb-5 text-[#3B3F5C]">
+                        This license number is accepted by License numbers are
+                        typically unique identifiers issued by specific
+                        authorities or organizations for specific purposes
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:flex md:flex  items-center   ">
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <IoScanOutline className="text-xl text-white text-center " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Screener</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-2">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black stroke-4"
+                        strokeWidth={4}
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <TbDeviceIpadCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Verifier</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-2">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black stroke-4"
+                        strokeWidth={4}
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <BiMessageRoundedCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-red-400 text-white rounded-full">
+                          <AiOutlineCloseCircle className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px] text-red-500">Inspection</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="border  border-black/50 rounded-full px-2 py-2">
+                          <GoChecklist className="text-xl text-black/50 " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 text-white rounded-full">
+                          <BiSolidLock className="text-sm text-black/50" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Approver</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="border border-black/50 rounded-full px-2 py-2">
+                          <RiMoneyCnyCircleLine className="text-xl text-black/50 " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 text-white rounded-full">
+                          <BiSolidLock className="text-sm text-black/50" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Finance</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="border border-black/50 rounded-full px-2 py-2">
+                          <TbDeviceDesktopCheck className="text-xl text-black/50 " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 text-white rounded-full">
+                          <BiSolidLock className="text-sm text-black/50" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">CEO</div>
+                    </div>
+                  </div>
+                </div>
+                {/* card Three */}
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
+                  <div className=" flex  ">
+                    <div className="w-[180px] h-[80px]">
+                      {" "}
+                      <img
+                        src={SubmitFlag}
+                        alt="Profile 1"
+                        className="w-20 h-20 rounded-full mx-auto mb-4"
+                      />
+                    </div>
+                    <div className=" flex flex-col">
+                      <div className="flex justify-between items-center">
+                        {" "}
+                        <div className="flex flex-col items-start  justify-center space-x-2 ">
+                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                            Licence No: 12345678
+                          </div>
+                          <div className="text-[#2A282F] text-xs tracking-wider">
+                            {" "}
+                            <span className="font-bold">Agency Name:</span>{" "}
+                            Abdulraman Agency
+                          </div>
+                          <div className="text-xs text-[#555555]">
+                            Submitted at: Sep 12, 2022
+                          </div>
+                        </div>
+                        <div className="border border-emdmsPrimary  text-emdmsPrimary rounded-md flex items-center justify-between px-12 py-2 text-xs ">
+                          View
+                        </div>
+                      </div>
+
+                      <div className="text-xs pl-2 pt-4 pb-5 text-[#3B3F5C]">
+                        This license number is accepted by License numbers are
+                        typically unique identifiers issued by specific
+                        authorities or organizations for specific purposes
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:flex md:flex  items-center   ">
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <IoScanOutline className="text-xl text-white text-center " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Screener</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-2">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black stroke-4"
+                        strokeWidth={4}
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <TbDeviceIpadCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Verifier</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                        strokeDasharray="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <BiMessageRoundedCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Inspection</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                        strokeDasharray="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <GoChecklist className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Approver</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                        strokeDasharray="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <RiMoneyCnyCircleLine className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Finance</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <TbDeviceDesktopCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">CEO</div>
+                    </div>
+                  </div>
+                </div>{" "}
+                {/* card Four */}
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
+                  <div className=" flex  ">
+                    <div className="w-[180px] h-[80px]">
+                      {" "}
+                      <img
+                        src={SubmitFlag}
+                        alt="Profile 1"
+                        className="w-20 h-20 rounded-full mx-auto mb-4"
+                      />
+                    </div>
+                    <div className=" flex flex-col">
+                      <div className="flex justify-between items-center">
+                        {" "}
+                        <div className="flex flex-col items-start  justify-center space-x-2 ">
+                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                            Licence No: 12345678
+                          </div>
+                          <div className="text-[#2A282F] text-xs tracking-wider">
+                            {" "}
+                            <span className="font-bold">Agency Name:</span>{" "}
+                            Abdulraman Agency
+                          </div>
+                          <div className="text-xs text-[#555555]">
+                            Submitted at: Sep 12, 2022
+                          </div>
+                        </div>
+                        <div className="border border-emdmsPrimary  text-emdmsPrimary rounded-md flex items-center justify-between px-12 py-2 text-xs ">
+                          View
+                        </div>
+                      </div>
+
+                      <div className="text-xs pl-2 pt-4 pb-5 text-[#3B3F5C]">
+                        This license number is accepted by License numbers are
+                        typically unique identifiers issued by specific
+                        authorities or organizations for specific purposes
+                      </div>
+                    </div>
+                  </div>
+                  <div className="lg:flex md:flex  items-center   ">
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <IoScanOutline className="text-xl text-white text-center " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Screener</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-2">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-black stroke-4"
+                        strokeWidth={4}
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      {" "}
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <TbDeviceIpadCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Verifier</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                        strokeDasharray="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <BiMessageRoundedCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Inspection</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                        strokeDasharray="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <GoChecklist className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">Approver</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                        strokeDasharray="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <RiMoneyCnyCircleLine className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-[9px]">CEO</div>
+                    </div>
+
+                    <svg className="flex-grow mx-2 h-1">
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="100%"
+                        y2="0"
+                        className="stroke-current text-gray-300"
+                      />
+                    </svg>
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="relative">
+                        <div className="bg-black rounded-full px-2 py-2">
+                          <TbDeviceDesktopCheck className="text-xl text-white " />
+                        </div>
+
+                        <div className="absolute top-0 right-0 -mt-1 -mr-1 flex items-center justify-center w-4 h-4 bg-emdmsPrimary text-white rounded-full">
+                          <BsCheck className="text-sm" />
+                        </div>
+                      </div>
+                      <div className="text-xs">hello</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* Request License Button */}
-          <button
-            onClick={() => {
-              setrequestModal(true);
-              setActiveModal("request");
-            }}
-            className="bg-emdmsPrimary text-white p-2 px-10 rounded-lg text-sm font-poppins">
-            Request License
-          </button>
-        </div>
-
-        {/* Content */}
-      </div>
+        </>
+      )}
     </div>
   );
 };

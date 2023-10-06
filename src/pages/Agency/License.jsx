@@ -48,7 +48,7 @@ const License = () => {
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
+ 
   const handleOptionClick = (option) => {
     setSelectedOption2(option);
     setIsOpen(false);
