@@ -28,8 +28,8 @@ const Aside = () => {
     <>
       <div
         className={`${
-          sidebarOpen ? "w-[230px] px-[2%]" : "w-0 md:w-[120px]"
-        } h-full bg-[#F9F9F9] py-20 md:px-[2%] customHeight fixed flex flex-col gap-6 items-end transition-all duration-200 ease-in-out md:relative z-20`}>
+          sidebarOpen ? "w-[230px] " : "w-0 md:w-[120px]"
+        } h-full bg-[#F9F9F9] py-20 md: customHeight fixed flex flex-col gap-6 items-end transition-all duration-200 ease-in-out md:relative z-20`}>
         <div
           onClick={() => {
             setSidebarOpen((prev) => !prev);

@@ -180,7 +180,7 @@ const PageTwo = () => {
                         <BsFillImageFill className="w-4 h-4 text-white" />
                       </div>
                       <div className="flex flex-col space-y-1 ">
-                        <div className="text-sm font-bold">Bank Statement</div>
+                        <div className="text-sm ">Bank Statement</div>
                         <div className="text-[#212121c4] text-sm">10 MB</div>
                       </div>
                     </div>
@@ -222,12 +222,12 @@ const PageTwo = () => {
           </div>
         </div>
       )}
-      <div className="flex  gap-5  w-full h-full">
+      <div className=" w-full  flex  max-h-screen overflow-auto gap-5 ">
         {/* left side */}
         {page === "" && (
           <>
             {" "}
-            <div className=" felx flex-col space-y-5 w-[70%]">
+            <div className=" flex flex-col space-y-5 lg:w-[70%] md:w-[70%] sm:w-full">
               {/* Tabs */}
 
               <>
@@ -290,7 +290,7 @@ const PageTwo = () => {
 
               {/* foriegn Tab */}
               {activeTab === "" && (
-                <>
+                <div className="h-full flex flex-col justify-between">
                   {" "}
                   <div className="flex justify-end">
                     <div className="flex space-x-2 bg-white px-8 py-2 justify-center items-center text-emdmsPrimary rounded-lg border border-emdmsPrimary shadow-sm">
@@ -298,7 +298,7 @@ const PageTwo = () => {
                       <button className="text-sm font-bold">Add</button>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 gap-x-4  gap-y-4 max-h-[400px] overflow-y-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-x-4  gap-y-4 w-full h-[55vh] 2xl:h-[65vh] overflow-auto noscrollBar sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
                     <div className="bg-white rounded-lg shadow-lg p-2">
                       <div className="p-2 md:p-4 mb-5 flex flex-col md:flex-row items-center justify-center">
                         <img
@@ -473,14 +473,14 @@ const PageTwo = () => {
                       Proceed
                     </button>
                   </div>
-                </>
+                </div>
               )}
 
               {/* finanical Tab */}
               {activeTab === "financial" && (
-                <>
-                  <div className="h-[450px] overflow-y-auto flex flex-col space-y-3">
-                    <div className="flex justify-between items-start bg-white rounded-md px-4 py-5 shadow-md">
+                <div className="h-full flex flex-col justify-between">
+                  <div className=" flex flex-col space-y-3 w-full h-[60vh] 2xl:h-[65vh] overflow-auto noscrollBar">
+                    <div className="flex justify-between items-center bg-white rounded-md px-4 py-5 ">
                       <div className="flex space-x-3 justify-center">
                         <div
                           onClick={toggleExpand}
@@ -490,11 +490,9 @@ const PageTwo = () => {
 
                         <div className="flex flex-col item-start">
                           <div className="flex items-center mb-2">
-                            <h4 className="text-[16px] font-bold">
-                              Bank Statement
-                            </h4>
+                            <h4 className="text-[16px] ">Bank Statement</h4>
                           </div>
-                          <p className="text-[#A3A3A3] mb-2 max-w-lg text-[12px]">
+                          <p className="text-[#A3A3A3] mb-2 lg:max-w-sm lg:text-[10px] hidden md:block">
                             A bank statement is typically a digital or physical
                             document that provides a summary of the
                             transactions, balances, and activity in a bank
@@ -519,8 +517,8 @@ const PageTwo = () => {
                         </div>
                       )}
                       {isUpload === true && (
-                        <div className="flex items-center justify-center mt-5 space-x-2 text-white font-bold  ">
-                          <div className="text-xs pr-10 text-black/50">
+                        <div className="flex items-center justify-center mt-5 space-x-10 text-white font-bold  ">
+                          <div className="text-xs  text-black/50">
                             Dec 13, 2022
                           </div>
                           <div className="pr-10">
@@ -538,14 +536,14 @@ const PageTwo = () => {
                       )}
                     </div>
                     {isExpand === true && (
-                      <>
+                      <div className="flex flex-col space-y-3 mr-6 ml-6 ">
                         <div className="bg-white p-2 flex items-center space-x-4 rounded-md">
                           <div className="">
                             <BiSolidFolderMinus className="text-emdmsPrimary" />
                           </div>
-                          <div className="text-xs pr-[30%]">Bank Statement</div>
+                          <div className="text-xs pr-[20%]">Bank Statement</div>
 
-                          <div className="text-xs pr-20">Dec 13, 2022</div>
+                          <div className="text-xs pr-[10%]">Dec 13, 2022</div>
                           <div className="pr-10">
                             {" "}
                             <div className="border border-[#EED116] bg-[#FCF9E1] rounded-lg py-1 px-5 flex items-start">
@@ -566,9 +564,9 @@ const PageTwo = () => {
                           <div className="">
                             <BiSolidFolderMinus className="text-emdmsPrimary" />
                           </div>
-                          <div className="text-xs pr-[30%]">Bank Statement</div>
+                          <div className="text-xs pr-[20%]">Bank Statement</div>
 
-                          <div className="text-xs pr-20">Dec 13, 2022</div>
+                          <div className="text-xs pr-[10%]">Dec 13, 2022</div>
                           <div className="pr-10">
                             {" "}
                             <div className="border border-[#32A583] bg-[#CBE8E0] rounded-lg py-1 px-6  flex items-center">
@@ -589,9 +587,9 @@ const PageTwo = () => {
                           <div className="">
                             <BiSolidFolderMinus className="text-emdmsPrimary" />
                           </div>
-                          <div className="text-xs pr-[30%]">Bank Statement</div>
+                          <div className="text-xs pr-[20%]">Bank Statement</div>
 
-                          <div className="text-xs pr-20">Dec 13, 2022</div>
+                          <div className="text-xs pr-[10%]">Dec 13, 2022</div>
                           <div className="pr-10">
                             {" "}
                             <div className="border border-[#CC362F] bg-[#F8E5E5] rounded-lg py-1 px-5  flex items-center">
@@ -611,17 +609,15 @@ const PageTwo = () => {
                             <MdOutlineStickyNote2 className="text-white font-extrabold" />
                           </div>
                         </div>
-                      </>
+                      </div>
                     )}
-                    <div className="flex justify-between items-start bg-white rounded-md px-4 py-5 shadow-md">
-                      <div className="flex space-x-3 justify-center">
-                        <div className="flex flex-col item-start">
-                          <div className="flex items-center mb-2">
-                            <h4 className="text-xl font-bold text-[16px]">
-                              Bank Guarantee
-                            </h4>
+                    <div className="flex justify-between items-center bg-white rounded-md px-4 py-5 shadow-md">
+                      <div className="flex space-x-6 justify-center">
+                        <div className="flex flex-col item-start ml-8">
+                          <div className="flex items-center  mb-2">
+                            <h4 className=" text-[16px]">Bank Guarantee</h4>
                           </div>
-                          <p className="text-[#A3A3A3] mb-2 max-w-lg text-[12px]">
+                          <p className="text-[#A3A3A3] mb-2 lg:max-w-lg lg:text-[12px] hidden md:block">
                             A bank guarantee is typically issued as a physical
                             or digital document that outlines the terms and
                             conditions of the guarantee, including the amount of
@@ -632,7 +628,7 @@ const PageTwo = () => {
                             <p className="text-gray-600 text-sm font-medium">
                               Maximum Document
                             </p>
-                            <div className="bg-green-400 px-3 py-2 rounded-lg text-xs text-white">
+                            <div className="bg-[#32A583] px-3 py-2 rounded-lg text-xs text-white">
                               3
                             </div>
                           </div>
@@ -641,18 +637,16 @@ const PageTwo = () => {
 
                       <div className="flex items-center justify-center space-x-2 bg-emdmsPrimary/70 text-white font-bold py-2 px-4 mr-10 rounded">
                         <AiOutlinePlus />
-                        <button className="text-sm">Add Document</button>
+                        <button className="text-sm">Upload</button>
                       </div>
                     </div>
-                    <div className="flex justify-between items-start bg-white rounded-md px-4 py-5  shadow-md">
+                    <div className="flex justify-between items-center  bg-white rounded-md px-4 py-5  shadow-md">
                       <div className="flex space-x-3 justify-center">
-                        <div className="flex flex-col item-start">
+                        <div className="flex flex-col item-start ml-8">
                           <div className="flex items-center mb-2">
-                            <h4 className="text-xl font-bold text-[16px]">
-                              Bank Statement
-                            </h4>
+                            <h4 className=" text-[16px]">Bank Statement</h4>
                           </div>
-                          <p className="text-[#A3A3A3] mb-2 max-w-lg text-[12px]">
+                          <p className="text-[#A3A3A3] mb-2 lg:max-w-lg lg:text-[12px] hidden md:block">
                             A bank statement is typically a digital or physical
                             document that provides a summary of the
                             transactions, balances, and activity in a bank
@@ -662,20 +656,20 @@ const PageTwo = () => {
                             <p className="text-gray-600 text-sm font-medium">
                               Maximum Document
                             </p>
-                            <div className="bg-green-400 px-3 py-2 rounded-lg text-xs text-white">
+                            <div className="bg-[#32A583] px-3 py-2 rounded-lg text-xs text-white">
                               2
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex items-center space-x-2 bg-emdmsPrimary/70 text-white font-bold py-2 px-4 mr-10 rounded">
+                      <div className="flex items-center  space-x-2 bg-emdmsPrimary/70 text-white font-bold py-2 px-4 mr-10 rounded">
                         <AiOutlinePlus />
-                        <button className="text-sm">Add Document</button>
+                        <button className="text-sm">Upload</button>
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-end space-x-3">
+                  <div className=" flex justify-end space-x-3">
                     <button
                       onClick={() => {
                         setActiveTab("");
@@ -691,12 +685,12 @@ const PageTwo = () => {
                       Next
                     </button>
                   </div>
-                </>
+                </div>
               )}
               {/* Business Tab */}
               {activeTab === "business" && (
-                <>
-                  <div className="h-[450px] overflow-y-auto flex flex-col space-y-3">
+                <div className="h-full flex flex-col justify-between">
+                  <div className="flex flex-col space-y-3 w-full h-[60vh] 2xl:h-[65vh] overflow-auto noscrollBar">
                     <div className="flex justify-between items-start bg-white rounded-md px-4 py-5 shadow-md">
                       <div className="flex space-x-3 justify-center">
                         <div className="flex flex-col item-start">
@@ -746,7 +740,7 @@ const PageTwo = () => {
                             <p className="text-gray-600 text-sm font-medium">
                               Maximum Document
                             </p>
-                            <div className="bg-green-400 px-3 py-2 rounded-lg text-xs text-white">
+                            <div className="bg-[#32A583] px-3 py-2 rounded-lg text-xs text-white">
                               2
                             </div>
                           </div>
@@ -808,7 +802,7 @@ const PageTwo = () => {
                             <p className="text-gray-600 text-sm font-medium">
                               Maximum Document
                             </p>
-                            <div className="bg-green-400 px-3 py-2 rounded-lg text-xs text-white">
+                            <div className="bg-[#32A583] px-3 py-2 rounded-lg text-xs text-white">
                               2
                             </div>
                           </div>
@@ -839,7 +833,7 @@ const PageTwo = () => {
                             <p className="text-gray-600 text-sm font-medium">
                               Maximum Document
                             </p>
-                            <div className="bg-green-400 px-3 py-2 rounded-lg text-xs text-white">
+                            <div className="bg-[#32A583] px-3 py-2 rounded-lg text-xs text-white">
                               2
                             </div>
                           </div>
@@ -868,12 +862,12 @@ const PageTwo = () => {
                       Next
                     </button>
                   </div>
-                </>
+                </div>
               )}
               {/* Rental Tab */}
               {activeTab === "rental" && (
-                <>
-                  <div className="h-[450px] overflow-y-auto flex flex-col space-y-3">
+                <div className="h-full flex flex-col justify-between">
+                  <div className="flex flex-col space-y-3 w-full h-[60vh] 2xl:h-[65vh] overflow-auto noscrollBar">
                     <div className="flex justify-between items-start bg-white rounded-md px-4 py-5 shadow-md">
                       <div className="flex space-x-3 justify-center">
                         <div className="flex flex-col item-start">
@@ -955,13 +949,13 @@ const PageTwo = () => {
                       </div>
                     </Modal>
                   </div>
-                </>
+                </div>
               )}
             </div>
             {/* right side */}
             {activeTab === "" && (
               <>
-                <div className="w-[25%] h-[30%] bg-[#005656] mt-14 p-10 rounded-lg text-white lg:flex md:flex-col space-y-2 hidden sm:block">
+                <div className="lg:w-[25%]  lg:h-[30%]  bg-[#005656] mt-14 p-10 rounded-lg text-white lg:flex md:flex-col space-y-2 hidden sm:block">
                   <div className="font-bold text-xl">Notice</div>
                   <ul className="list-disc text-xs text-white/50 pl-4 pb-5">
                     <li>
@@ -995,7 +989,7 @@ const PageTwo = () => {
             )}
             {/* Financial right side */}
             {activeTab === "financial" && (
-              <div className="flex flex-col w-[25%] space-y-6 ">
+              <div className="lg:flex lg:flex-col lg:w-[25%] lg:space-y-6 ">
                 <div className=" bg-[#005656]   rounded-lg p-6  text-white flex flex-col space-y-2">
                   <div className="font-bold tracking-wider leading-[40px] font-poppins text-3xl max-w-4xl">
                     Licence Application
@@ -1020,7 +1014,7 @@ const PageTwo = () => {
                   </div>
                 </div>
                 {/* License status */}
-                <div className=" bg-white rounded-lg p-6 text-white flex flex-col space-y-2 overflow-y-auto max-h-96">
+                <div className=" bg-white rounded-lg p-6 text-white flex flex-col space-y-2 h-[45vh] 2xl:h-[60vh] overflow-y-auto noscrollBar  ">
                   <div className="text-[#464255] font-medium font-poppins text-xl">
                     {" "}
                     License Status
@@ -1146,7 +1140,7 @@ const PageTwo = () => {
                   </div>
                 </div>
                 {/* License status */}
-                <div className=" bg-white rounded-lg p-6 text-white flex flex-col space-y-2 overflow-y-auto max-h-96">
+                <div className=" bg-white rounded-lg p-6 text-white flex flex-col space-y-2 h-[45vh] 2xl:h-[60vh] overflow-y-auto noscrollBar">
                   <div className="text-[#464255] font-medium font-poppins text-xl">
                     {" "}
                     License Status
@@ -1272,7 +1266,7 @@ const PageTwo = () => {
                   </div>
                 </div>
                 {/* License status */}
-                <div className=" bg-white rounded-lg p-6 text-white flex flex-col space-y-2 overflow-y-auto max-h-96">
+                <div className=" bg-white rounded-lg p-6 text-white flex flex-col space-y-2 h-[45vh] 2xl:h-[60vh] overflow-y-auto noscrollBar">
                   <div className="text-[#464255] font-medium font-poppins text-xl">
                     {" "}
                     License Status
@@ -1374,7 +1368,7 @@ const PageTwo = () => {
           </>
         )}
         {page === "submit" && (
-          <div className="w-full h-full">
+          <div className="w-full h-full overflow-y-auto">
             <SubmitPage />
           </div>
         )}

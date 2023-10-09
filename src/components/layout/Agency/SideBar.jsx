@@ -32,7 +32,7 @@ const SideBar = () => {
       <div
         className={`${
           sidebarOpen ? "w-[280px]" : "w-[120px]"
-        }  h-full bg-[#F9F9F9] py-14 px-[2%] z-10 customHeight hidden md:flex flex-col gap-6 items-end transition-all duration-200 ease-in-out relative`}>
+        }  h-full bg-[#F9F9F9] py-14 px-6 z-10 customHeight hidden md:flex flex-col gap-6 items-end transition-all duration-200 ease-in-out relative`}>
         <div
           onClick={() => {
             setSidebarOpen((prev) => !prev);

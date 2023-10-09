@@ -48,7 +48,7 @@ const License = () => {
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
- 
+
   const handleOptionClick = (option) => {
     setSelectedOption2(option);
     setIsOpen(false);
@@ -259,26 +259,6 @@ const License = () => {
           />
           <div className="m-10 relative">
             <div className="flex justify-end mr-20 space-x-6">
-              {/* Search Input */}
-              {/* <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <BiSearch />
-            </div>
-            <input
-              type="text"
-              id="voice-search"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emdmsPrimary focus:border-emdmsPrimary block w-full pl-10 pr-20 p-2"
-              placeholder="Search"
-              required
-            />
-            <button
-              type="button"
-              className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <ImEqualizer />
-            </button>
-          </div> */}
-
-              {/* Request License Button */}
               <button
                 onClick={() => {
                   setrequestModal(true);

@@ -73,7 +73,7 @@ const SubmitPage = () => {
   );
 
   return (
-    <div className=" w-full max-h-80vh overflow-y-auto">
+    <div className="">
       {/* Add License Modal */}
       {activeModal === "request" && (
         <>
@@ -266,7 +266,7 @@ const SubmitPage = () => {
       {activePage === "" && (
         <>
           {" "}
-          <div className=" relative">
+          <div className=" relative mr-20">
             <div className="flex justify-end mr-10 space-x-6">
               {/* Request License Button */}
               <button
@@ -280,8 +280,8 @@ const SubmitPage = () => {
             </div>
 
             {/* Content */}
-            <div className="w-full  mt-10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            <div className="mt-10 mr-10 w-full h-[65vh]  2xl:[70vh] overflow-auto noscrollBar  ">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 ">
                 {/* card One */}
                 <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
                   <div className=" flex  ">
@@ -321,10 +321,10 @@ const SubmitPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="lg:flex md:flex  items-center   ">
-                    <div className="flex flex-col items-center justify-center space-y-2">
+                  <div className=" flex  items-center   ">
+                    <div className="flex flex-col items-center justify-center space-y-2 md:w-1/2">
                       <div className="relative">
-                        <div className="bg-black rounded-full px-2 py-2">
+                        <div className="bg-[#257B62] rounded-full px-2 py-2">
                           <IoScanOutline className="text-xl text-white text-center " />
                         </div>
 
@@ -335,7 +335,7 @@ const SubmitPage = () => {
                       <div className="text-[9px]">Screener</div>
                     </div>
 
-                    <svg className="flex-grow mx-2 h-2">
+                    <svg className="flex-grow mx-2 h-2 ">
                       <line
                         x1="0"
                         y1="0"
@@ -348,7 +348,7 @@ const SubmitPage = () => {
                     <div className="flex flex-col items-center justify-center space-y-2">
                       {" "}
                       <div className="relative">
-                        <div className="bg-black rounded-full px-2 py-2">
+                        <div className="bg-[#257B62] rounded-full px-2 py-2">
                           <TbDeviceIpadCheck className="text-xl text-white " />
                         </div>
 
@@ -371,7 +371,7 @@ const SubmitPage = () => {
                     <div className="flex flex-col items-center justify-center space-y-2">
                       {" "}
                       <div className="relative">
-                        <div className="bg-black rounded-full px-2 py-2">
+                        <div className="bg-[#257B62] rounded-full px-2 py-2">
                           <BiMessageRoundedCheck className="text-xl text-white " />
                         </div>
 
@@ -486,7 +486,7 @@ const SubmitPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="lg:flex md:flex  items-center   ">
+                  <div className="flex items-center   ">
                     <div className="flex flex-col items-center justify-center space-y-2">
                       <div className="relative">
                         <div className="bg-black rounded-full px-2 py-2">
@@ -535,7 +535,7 @@ const SubmitPage = () => {
                     </svg>
                     <div className="flex flex-col items-center justify-center space-y-2">
                       <div className="relative">
-                        <div className="bg-black rounded-full px-2 py-2">
+                        <div className="bg-red-500 rounded-full px-2 py-2">
                           <BiMessageRoundedCheck className="text-xl text-white " />
                         </div>
 
@@ -614,7 +614,7 @@ const SubmitPage = () => {
                       <div className="text-[9px]">CEO</div>
                     </div>
                   </div>
-                </div>
+                </div>{" "}
                 {/* card Three */}
                 <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
                   <div className=" flex  ">
@@ -654,7 +654,7 @@ const SubmitPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="lg:flex md:flex  items-center   ">
+                  <div className="flex items-center   ">
                     <div className="flex flex-col items-center justify-center space-y-2">
                       <div className="relative">
                         <div className="bg-black rounded-full px-2 py-2">
@@ -825,7 +825,7 @@ const SubmitPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="lg:flex md:flex  items-center   ">
+                  <div className="flex items-center   ">
                     <div className="flex flex-col items-center justify-center space-y-2">
                       <div className="relative">
                         <div className="bg-black rounded-full px-2 py-2">
