@@ -15,6 +15,11 @@ import RejectionModal from "../../components/RejectionModal";
 const LocalApplicants = () => {
   const [activeTab, setActiveTab] = useState("");
   const [activeDoc, setActiveDoc] = useState("");
+  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+
+  const handleOpenClick = (index) => {
+    setSelectedCardIndex(index);
+  };
 
   const [rejectClick, setRejectClick] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +40,11 @@ const LocalApplicants = () => {
   const closeSideModal = () => {
     setSideModalOpen(false);
   };
+  const [isApproved, setIsApproved] = useState(false);
 
+  const handleApproveClick = () => {
+    setIsApproved(true);
+  };
   const pdfUrl = "../../assets/sample.pdf";
   return (
     <>
@@ -195,21 +204,205 @@ const LocalApplicants = () => {
                     </Document> */}
                     <div className="text-center"> PDF to be viewed</div>
                   </div>
-                  <div className="flex flex-col bg-white py-4 px-4 rounded-lg shadow-sm w-[35%] h-full  ">
-                    <div className="flex justify-between items-center">
+                  <div className="flex flex-col  bg-white py-4 px-4  rounded-lg shadow-sm w-[35%] h-full ">
+                    <div className="flex flex-col space-y-3 mb-5 max-h-[55vh] overflow-auto noscrollBar">
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 0
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 0
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(0)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 1
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 1
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-lg text-xs"
+                            onClick={() => handleOpenClick(1)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 2
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 2
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(2)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 3
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 3
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(3)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* <div className="flex justify-between items-center">
                       <div className="text-xl">Financial Documents</div>
                       <div className="text-N70 text-sm"> 250kb</div>
                     </div>
-                    <div className="text-lg"> finance.jpg</div>
-                    <div className="mt-20 space-y-6">
+                    <div className="text-lg"> finance.jpg</div> */}
+                    <div className="flex items-center justify-center space-x-2">
+                      {" "}
+                      <button
+                        onClick={() => {
+                          setSideModalOpen(true);
+                        }}
+                        className="bg-white px-8 py-2 rounded-md  border border-error40 shadow-lg text-error40 font-medium">
+                        Reject
+                      </button>
+                      {sideModalOpen && (
+                        <div className="fixed inset-0 flex items-center justify-end z-50  backdrop-filter backdrop-blur-sm">
+                          <div className="fixed inset-y-0 right-0 w-1/4 bg-white rounded-md shadow-lg px-8 py-8">
+                            <button
+                              className="absolute top-0 right-0 m-4"
+                              onClick={closeSideModal}>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                            </button>
+                            <div className="flex flex-col space-y-6 items-start">
+                              <div className=" flex space-x-2 items-center mt-5">
+                                <MdOutlineCancel className="text-3xl text-red-500" />
+                                <div className="text-[#464255] text-lg font-semibold">
+                                  Rejected Bank Gurantee
+                                </div>
+                              </div>
+                              <div className="flex items-center max-w-sm">
+                                <p className="text-lg text-[#BC4C2E]">
+                                  <span className="text-[#661B17] font-semibold">
+                                    Attention
+                                  </span>
+                                  : Out of the total of 4 documents submitted, 3
+                                  have been deemed unacceptable. Now you have
+                                  rejected this document. Please specify your
+                                  rejection reasons under the given format
+                                </p>
+                              </div>
+                              <div className="mt-10 text-[#313A4E] text-sm font-semibold">
+                                Rejection Reason
+                              </div>
+                              <div className="bg-[#F0F7F7] rounded-md shadow-md h-[250px] w-full px-8 py-4 text-xs text-[#313a4e97] ">
+                                type the rejection reason...
+                              </div>
+                            </div>
+                            <div className="flex space-x-6 justify-center mt-10">
+                              <button
+                                onClick={closeSideModal}
+                                className="bg-[#F0F7F7] py-2 px-10 text-[#008080] rounded-sm">
+                                Cancel
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setActiveTab("financial");
+                                }}
+                                className=" border border-red-500 py-2 px-16 text-red-500 rounded-sm">
+                                Reject
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       <button
                         onClick={() => {
                           setActiveDoc("business");
                         }}
-                        className="bg-[#008080] p-2 w-full rounded-md shadow-sm text-white font-medium">
+                        className="bg-[#008080] px-6 py-2 rounded-md shadow-sm text-white font-medium">
                         Approve
                       </button>
-                      {rejectClick === true && (
+                      {/* {rejectClick === true && (
                         <div className=" flex flex-col space-y-3">
                           {" "}
                           <div className="bg-[#94949419] border border-gray-300 p-3 h-[200px] rounded-lg shadow-sm text-[#949494] text-xs ">
@@ -267,16 +460,7 @@ const LocalApplicants = () => {
                             </button>
                           </div>
                         </div>
-                      )}
-                      {rejectClick === false && (
-                        <button
-                          onClick={() => {
-                            setRejectClick(true);
-                          }}
-                          className="bg-white p-2 w-full rounded-md shadow-lg text-error40 font-medium">
-                          Reject
-                        </button>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -290,21 +474,205 @@ const LocalApplicants = () => {
                     </Document> */}
                     <div className="text-center"> PDF to be viewed</div>
                   </div>
-                  <div className="flex flex-col bg-white py-4 px-4 rounded-lg shadow-sm w-[35%] h-full  ">
-                    <div className="flex justify-between items-center">
-                      <div className="text-xl">Business Documents</div>
+                  <div className="flex flex-col  bg-white py-4 px-4  rounded-lg shadow-sm w-[35%] h-full ">
+                    <div className="flex flex-col space-y-3 mb-5 max-h-[55vh] overflow-auto noscrollBar">
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 0
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 0
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(0)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 1
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 1
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-lg text-xs"
+                            onClick={() => handleOpenClick(1)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 2
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 2
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(2)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 3
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 3
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(3)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* <div className="flex justify-between items-center">
+                      <div className="text-xl">Financial Documents</div>
                       <div className="text-N70 text-sm"> 250kb</div>
                     </div>
-                    <div className="text-lg"> business.jpg</div>
-                    <div className="mt-20 space-y-6">
+                    <div className="text-lg"> finance.jpg</div> */}
+                    <div className="flex items-center justify-center space-x-2">
+                      {" "}
+                      <button
+                        onClick={() => {
+                          setSideModalOpen(true);
+                        }}
+                        className="bg-white px-8 py-2 rounded-md  border border-error40 shadow-lg text-error40 font-medium">
+                        Reject
+                      </button>
+                      {sideModalOpen && (
+                        <div className="fixed inset-0 flex items-center justify-end z-50  backdrop-filter backdrop-blur-sm">
+                          <div className="fixed inset-y-0 right-0 w-1/4 bg-white rounded-md shadow-lg px-8 py-8">
+                            <button
+                              className="absolute top-0 right-0 m-4"
+                              onClick={closeSideModal}>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                            </button>
+                            <div className="flex flex-col space-y-6 items-start">
+                              <div className=" flex space-x-2 items-center mt-5">
+                                <MdOutlineCancel className="text-3xl text-red-500" />
+                                <div className="text-[#464255] text-lg font-semibold">
+                                  Rejected Bank Gurantee
+                                </div>
+                              </div>
+                              <div className="flex items-center max-w-sm">
+                                <p className="text-lg text-[#BC4C2E]">
+                                  <span className="text-[#661B17] font-semibold">
+                                    Attention
+                                  </span>
+                                  : Out of the total of 4 documents submitted, 3
+                                  have been deemed unacceptable. Now you have
+                                  rejected this document. Please specify your
+                                  rejection reasons under the given format
+                                </p>
+                              </div>
+                              <div className="mt-10 text-[#313A4E] text-sm font-semibold">
+                                Rejection Reason
+                              </div>
+                              <div className="bg-[#F0F7F7] rounded-md shadow-md h-[250px] w-full px-8 py-4 text-xs text-[#313a4e97] ">
+                                type the rejection reason...
+                              </div>
+                            </div>
+                            <div className="flex space-x-6 justify-center mt-10">
+                              <button
+                                onClick={closeSideModal}
+                                className="bg-[#F0F7F7] py-2 px-10 text-[#008080] rounded-sm">
+                                Cancel
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setActiveTab("financial");
+                                }}
+                                className=" border border-red-500 py-2 px-16 text-red-500 rounded-sm">
+                                Reject
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       <button
                         onClick={() => {
                           setActiveDoc("rent");
                         }}
-                        className="bg-[#008080] p-2 w-full rounded-md shadow-sm text-white font-medium">
+                        className="bg-[#008080] px-6 py-2 rounded-md shadow-sm text-white font-medium">
                         Approve
                       </button>
-                      {rejectClick === true && (
+                      {/* {rejectClick === true && (
                         <div className=" flex flex-col space-y-3">
                           {" "}
                           <div className="bg-[#94949419] border border-gray-300 p-3 h-[200px] rounded-lg shadow-sm text-[#949494] text-xs ">
@@ -312,9 +680,47 @@ const LocalApplicants = () => {
                             please enter reason
                           </div>{" "}
                           <div className=" flex space-x-4 ">
-                            <button className=" px-2 py-2 border border-red-500 rounded-md w-[50%] text-red-500">
+                            <button
+                              onClick={openModal}
+                              className=" px-2 py-2 border border-red-500 rounded-md w-[50%] text-red-500">
                               Reject
                             </button>
+                            <Modal isOpen={isOpen} onClose={closeModal}>
+                              <div className="text-3xl  text-center text-N40 ">
+                                Confirmation
+                              </div>
+                              <div className="text-N40 text-center">
+                                Are you sure you want to Reject{" "}
+                                <span className="font-bold">
+                                  Financial Document
+                                </span>
+                                ?
+                              </div>
+                              <div className="flex flex-col space-y-3 bg-[#FFE9D9] p-5 border-l-4 border-l-[#992823] rounded-md">
+                                <div className="flex space-x-2 items-center text-[#771505] font-bold text-xl">
+                                  <BsFillExclamationTriangleFill />
+                                  <div>Attention</div>
+                                </div>
+                                <div className="text-[#BC4C2E] tracking-wider max-w-lg">
+                                  If you decline this document, it will require
+                                  the user to upload it once more.
+                                </div>
+                              </div>
+                              <div className="flex space-x-6 items-center justify-end">
+                                <button
+                                  onClick={closeModal}
+                                  className="bg-[#F0F7F7] py-2 px-8 text-N40 rounded-sm">
+                                  Cancel
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    setActiveDoc("business");
+                                  }}
+                                  className="bg-[#CC362F] py-2 px-8 text-white rounded-sm">
+                                  Reject
+                                </button>
+                              </div>
+                            </Modal>
                             <button
                               onClick={() => {
                                 setRejectClick(false);
@@ -324,16 +730,7 @@ const LocalApplicants = () => {
                             </button>
                           </div>
                         </div>
-                      )}
-                      {rejectClick === false && (
-                        <button
-                          onClick={() => {
-                            setRejectClick(true);
-                          }}
-                          className="bg-white p-2 w-full rounded-md shadow-lg text-error40 font-medium">
-                          Reject
-                        </button>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -348,50 +745,204 @@ const LocalApplicants = () => {
                     </Document> */}
                     <div className="text-center"> PDF to be viewed</div>
                   </div>
-                  <div className="flex flex-col bg-white py-4 px-4 rounded-lg shadow-sm w-[35%] h-full  ">
-                    <div className="flex justify-between items-center">
-                      <div className="text-xl">Rent</div>
+                  <div className="flex flex-col  bg-white py-4 px-4  rounded-lg shadow-sm w-[35%] h-full ">
+                    <div className="flex flex-col space-y-3 mb-5 max-h-[55vh] overflow-auto noscrollBar">
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 0
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 0
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(0)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 1
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 1
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-lg text-xs"
+                            onClick={() => handleOpenClick(1)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 2
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 2
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(2)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 3
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 3
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(3)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* <div className="flex justify-between items-center">
+                      <div className="text-xl">Financial Documents</div>
                       <div className="text-N70 text-sm"> 250kb</div>
                     </div>
-                    <div className="text-lg"> rent.jpg</div>
-                    <div className="mt-20 space-y-6">
+                    <div className="text-lg"> finance.jpg</div> */}
+                    <div className="flex items-center justify-center space-x-2">
+                      {" "}
+                      <button
+                        onClick={() => {
+                          setSideModalOpen(true);
+                        }}
+                        className="bg-white px-8 py-2 rounded-md  border border-error40 shadow-lg text-error40 font-medium">
+                        Reject
+                      </button>
+                      {sideModalOpen && (
+                        <div className="fixed inset-0 flex items-center justify-end z-50  backdrop-filter backdrop-blur-sm">
+                          <div className="fixed inset-y-0 right-0 w-1/4 bg-white rounded-md shadow-lg px-8 py-8">
+                            <button
+                              className="absolute top-0 right-0 m-4"
+                              onClick={closeSideModal}>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                            </button>
+                            <div className="flex flex-col space-y-6 items-start">
+                              <div className=" flex space-x-2 items-center mt-5">
+                                <MdOutlineCancel className="text-3xl text-red-500" />
+                                <div className="text-[#464255] text-lg font-semibold">
+                                  Rejected Bank Gurantee
+                                </div>
+                              </div>
+                              <div className="flex items-center max-w-sm">
+                                <p className="text-lg text-[#BC4C2E]">
+                                  <span className="text-[#661B17] font-semibold">
+                                    Attention
+                                  </span>
+                                  : Out of the total of 4 documents submitted, 3
+                                  have been deemed unacceptable. Now you have
+                                  rejected this document. Please specify your
+                                  rejection reasons under the given format
+                                </p>
+                              </div>
+                              <div className="mt-10 text-[#313A4E] text-sm font-semibold">
+                                Rejection Reason
+                              </div>
+                              <div className="bg-[#F0F7F7] rounded-md shadow-md h-[250px] w-full px-8 py-4 text-xs text-[#313a4e97] ">
+                                type the rejection reason...
+                              </div>
+                            </div>
+                            <div className="flex space-x-6 justify-center mt-10">
+                              <button
+                                onClick={closeSideModal}
+                                className="bg-[#F0F7F7] py-2 px-10 text-[#008080] rounded-sm">
+                                Cancel
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setActiveTab("financial");
+                                }}
+                                className=" border border-red-500 py-2 px-16 text-red-500 rounded-sm">
+                                Reject
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       <button
                         onClick={() => {
                           setActiveDoc("slip");
                         }}
-                        className="bg-[#008080] p-2 w-full rounded-md shadow-sm text-white font-medium">
+                        className="bg-[#008080] px-6 py-2 rounded-md shadow-sm text-white font-medium">
                         Approve
                       </button>
-                      {rejectClick === true && (
-                        <div className=" flex flex-col space-y-3">
-                          {" "}
-                          <div className="bg-[#94949419] border border-gray-300 p-3 h-[200px] rounded-lg shadow-sm text-[#949494] text-xs ">
-                            {" "}
-                            please enter reason
-                          </div>{" "}
-                          <div className=" flex space-x-4 ">
-                            <button className=" px-2 py-2 border border-red-500 rounded-md w-[50%] text-red-500">
-                              Reject
-                            </button>
-                            <button
-                              onClick={() => {
-                                setRejectClick(false);
-                              }}
-                              className=" px-2 py-2 border border-green-500 rounded-md w-[50%] text-gray-500">
-                              Cancel
-                            </button>
-                          </div>
-                        </div>
-                      )}
-                      {rejectClick === false && (
-                        <button
-                          onClick={() => {
-                            setRejectClick(true);
-                          }}
-                          className="bg-white p-2 w-full rounded-md shadow-lg text-error40 font-medium">
-                          Reject
-                        </button>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -406,56 +957,145 @@ const LocalApplicants = () => {
                     </Document> */}
                     <div className="text-center"> PDF to be viewed</div>
                   </div>
-                  <div className="flex flex-col bg-white py-4 px-4 rounded-lg shadow-sm w-[35%] h-full  ">
-                    <div className="flex justify-between items-center">
-                      <div className="text-xl">Slip Document</div>
-                      <div className="text-N70 text-sm"> 250kb</div>
+                  <div className="flex flex-col  bg-white py-4 px-4  rounded-lg shadow-sm w-[35%] h-full ">
+                    <div className="flex flex-col space-y-3 mb-5 max-h-[55vh] overflow-auto noscrollBar">
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 0
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 0
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(0)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 1
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 1
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-lg text-xs"
+                            onClick={() => handleOpenClick(1)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 2
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 2
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(2)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
+
+                      <div
+                        className={`flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3 ${
+                          selectedCardIndex === 3
+                            ? "border-2 border-emdmsPrimary"
+                            : "border border-gray-300"
+                        }`}
+                        style={{
+                          opacity:
+                            selectedCardIndex === null ||
+                            selectedCardIndex === 3
+                              ? 1
+                              : 0.5,
+                        }}>
+                        <div className="text-N40 font-bold">Document Label</div>
+                        <div className="text-N40 text-xs">
+                          The document you uploaded and the name you entered are
+                          incompatible, so please cross-check again and change
+                          the name.
+                        </div>
+                        <div className="flex justify-end">
+                          <button
+                            className="border border-emdmsPrimary px-10 py-1 rounded-md text-xs"
+                            onClick={() => handleOpenClick(3)}>
+                            Open
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-lg"> slip.jpg</div>
-                    <div className="mt-20 mb-20 space-y-6">
-                      <button
-                        onClick={() => {
-                          setActiveDoc("slip");
-                        }}
-                        className="bg-[#008080] p-2 w-full rounded-md shadow-sm text-white font-medium">
-                        Approve
-                      </button>
-                      {rejectClick === true && (
-                        <div className=" flex flex-col space-y-3">
-                          {" "}
-                          <div className="bg-[#94949419] border border-gray-300 p-3 h-[200px] rounded-lg shadow-sm text-[#949494] text-xs ">
-                            {" "}
-                            please enter reason
-                          </div>{" "}
-                          <div className=" flex space-x-4 ">
-                            <button className=" px-2 py-2 border border-red-500 rounded-md w-[50%] text-red-500">
-                              Reject
-                            </button>
-                            <button
-                              onClick={() => {
-                                setRejectClick(false);
-                              }}
-                              className=" px-2 py-2 border border-green-500 rounded-md w-[50%] text-gray-500">
-                              Cancel
-                            </button>
-                          </div>
+                    <div className="flex justify-center">
+                      {isApproved ? (
+                        <button
+                          onClick={openSideModal}
+                          className="border border-[#008080] px-10 py-1 flex items-center justify-center text-[#008080] rounded-md">
+                          Finish
+                        </button>
+                      ) : (
+                        <div className="flex items-center justify-center space-x-2">
+                          <button
+                            onClick={() => {
+                              // handleRejectClick();
+                            }}
+                            className="bg-white px-8 py-2 rounded-md border border-error40 shadow-lg text-error40 font-medium">
+                            Reject
+                          </button>
+
+                          <button
+                            onClick={handleApproveClick}
+                            className="bg-[#008080] px-6 py-2 rounded-md shadow-sm text-white font-medium">
+                            Approve
+                          </button>
                         </div>
                       )}
-                      {rejectClick === false && (
-                        <button
-                          onClick={() => {
-                            setRejectClick(true);
-                          }}
-                          className="bg-white p-2 w-full rounded-md shadow-lg text-error40 font-medium">
-                          Reject
-                        </button>
-                      )}
                     </div>
-                    <button
-                      onClick={openSideModal}
-                      className="border border-[#008080] px-4 py-2 flex items-center justify-center text-[#008080] rounded-md ">
-                      Finish
-                    </button>
                     {sideModalOpen && (
                       <div className="fixed inset-0 flex items-center justify-end z-50  backdrop-filter backdrop-blur-sm">
                         <div className="fixed inset-y-0 right-0 w-1/4 bg-white rounded-md shadow-lg px-8 py-8">

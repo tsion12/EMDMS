@@ -6,6 +6,8 @@ import Informations from "../pages/Info";
 import AgencyDashboard from "../pages/Agency/AgencyDashboard";
 import StuffList from "../pages/Agency/StuffList";
 import License from "../pages/Agency/License";
+import Partnership from "../pages/Foriegn/partnership";
+import ForeignDashboard from "../pages/Foriegn/Dashboard";
 // import Documents from "../pages/Documents";
 
 const routes = [
@@ -17,6 +19,9 @@ const routes = [
   <Route path="/agency" element={<AgencyDashboard />} />,
   <Route path="/agency/stuff" element={<StuffList />} />,
   <Route path="/agency/license" element={<License />} />,
+
+  <Route path="/foreign/dashboard" element={<ForeignDashboard />} />,
+  <Route path="/foreign/partnership" element={<Partnership />} />,
 ];
 
 export default routes;

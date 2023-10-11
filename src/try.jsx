@@ -332,3 +332,159 @@
               </div> */
 }
  
+ <button
+   onClick={openSideModal}
+   className="border border-[#008080] px-4 py-2 flex items-center justify-center text-[#008080] rounded-md ">
+   Finish
+ </button>;
+ {
+   sideModalOpen && (
+     <div className="fixed inset-0 flex items-center justify-end z-50  backdrop-filter backdrop-blur-sm">
+       <div className="fixed inset-y-0 right-0 w-1/4 bg-white rounded-md shadow-lg px-8 py-8">
+         <button
+           className="absolute top-0 right-0 m-4"
+           onClick={closeSideModal}>
+           <svg
+             xmlns="http://www.w3.org/2000/svg"
+             className="h-6 w-6"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor">
+             <path
+               strokeLinecap="round"
+               strokeLinejoin="round"
+               strokeWidth={2}
+               d="M6 18L18 6M6 6l12 12"
+             />
+           </svg>
+         </button>
+         <div className="flex flex-col space-y-6 items-start">
+           <div className=" flex space-x-6 items-center mt-5">
+             <MdOutlineCancel className="text-4xl text-red-500" />
+             <div className="text-[#464255] text-2xl font-semibold">
+               License No: 12345678
+             </div>
+           </div>
+           <div className="flex items-center max-w-sm">
+             <p className="text-lg text-[#BC4C2E]">
+               <span className="text-[#661B17] font-semibold">Attention</span>:
+               Out of the total of 7 documents submitted, 3 have been deemed
+               unacceptable. Therefore, the system is obligated to decline this
+               particular license. Kindly provide the reason for rejection in
+               order to proceed with the evaluation of the next applicant.
+             </p>
+           </div>
+           <div className="mt-10 text-[#313A4E] text-sm">Rejection Reason</div>
+           <div className="bg-[#F0F7F7] rounded-md shadow-md h-[250px] w-full px-8 py-4 text-xs text-[#313a4e97] ">
+             type the rejection reason...
+           </div>
+         </div>
+         <div className="flex space-x-6 justify-center mt-10">
+           <button
+             onClick={closeSideModal}
+             className="bg-[#F0F7F7] py-2 px-10 text-[#008080] rounded-lg">
+             Cancel
+           </button>
+           <button
+             onClick={() => {
+               setActiveTab("approved");
+             }}
+             className="bg-[#005656] py-2 px-16 text-white rounded-lg">
+             Submit
+           </button>
+         </div>
+       </div>
+     </div>
+   );
+}
+ 
+<div className="flex flex-col p-6 bg-[#F0F7F7] rounded-lg space-y-3">
+  <div className="text-N40 font-bold">Document Label</div>
+  <div className="text-N40 text-xs">
+    The document you uploaded and the name you entered are incompatible, so
+    please cross-check again and change the name.
+  </div>
+  <div className="flex justify-end">
+    {isApproved ? (
+      <button className="bg-[#008080] px-6 py-2 rounded-md shadow-sm text-white font-medium">
+        Approved
+      </button>
+    ) : (
+      <div className="flex items-center justify-center space-x-2">
+        <button
+          onClick={() => {
+            // handleRejectClick();
+          }}
+          className="bg-white px-8 py-2 rounded-md border border-error40 shadow-lg text-error40 font-medium">
+          Reject
+        </button>
+
+        <button
+          onClick={handleApproveClick}
+          className="bg-[#008080] px-6 py-2 rounded-md shadow-sm text-white font-medium">
+          Approve
+        </button>
+      </div>
+    )}
+  </div>
+</div>;
+
+{
+  sideModalOpen && (
+    <div className="fixed inset-0 flex items-center justify-end z-50  backdrop-filter backdrop-blur-sm">
+      <div className="fixed inset-y-0 right-0 w-1/4 bg-white rounded-md shadow-lg px-8 py-8">
+        <button className="absolute top-0 right-0 m-4" onClick={closeSideModal}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div className="flex flex-col space-y-6 items-start">
+          <div className=" flex space-x-2 items-center mt-5">
+            <MdOutlineCancel className="text-3xl text-red-500" />
+            <div className="text-[#464255] text-lg font-semibold">
+              Rejected Bank Gurantee
+            </div>
+          </div>
+          <div className="flex items-center max-w-sm">
+            <p className="text-lg text-[#BC4C2E]">
+              <span className="text-[#661B17] font-semibold">Attention</span>:
+              Out of the total of 4 documents submitted, 3 have been deemed
+              unacceptable. Now you have rejected this document. Please specify
+              your rejection reasons under the given format
+            </p>
+          </div>
+          <div className="mt-10 text-[#313A4E] text-sm font-semibold">
+            Rejection Reason
+          </div>
+          <div className="bg-[#F0F7F7] rounded-md shadow-md h-[250px] w-full px-8 py-4 text-xs text-[#313a4e97] ">
+            type the rejection reason...
+          </div>
+        </div>
+        <div className="flex space-x-6 justify-center mt-10">
+          <button
+            onClick={closeSideModal}
+            className="bg-[#F0F7F7] py-2 px-10 text-[#008080] rounded-sm">
+            Cancel
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab("financial");
+            }}
+            className=" border border-red-500 py-2 px-16 text-red-500 rounded-sm">
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

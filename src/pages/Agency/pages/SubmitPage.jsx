@@ -281,23 +281,20 @@ const SubmitPage = () => {
 
             {/* Content */}
             <div className="mt-10 mr-10 w-full h-[65vh]  2xl:[70vh] overflow-auto noscrollBar  ">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 ">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-16 ">
                 {/* card One */}
-                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
-                  <div className=" flex  ">
-                    <div className="w-[180px] h-[80px]">
-                      {" "}
-                      <img
-                        src={SubmitFlag}
-                        alt="Profile 1"
-                        className="w-20 h-20 rounded-full mx-auto mb-4"
-                      />
-                    </div>
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 gap-8">
+                  <div className="flex sm:flex-row flex-col items-start gap-4">
+                    <img
+                      src={SubmitFlag}
+                      alt="Profile 1"
+                      className="w-20 h-20 rounded-full mb-4"
+                    />
                     <div className=" flex flex-col">
-                      <div className="flex justify-between items-center">
+                      <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-3">
                         {" "}
-                        <div className="flex flex-col items-start  justify-center space-x-2 ">
-                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                        <div className="flex flex-col items-start  justify-center ">
+                          <div className="text-sm text-[#3B3F5C] font-bold ">
                             Licence No: 12345678
                           </div>
                           <div className="text-[#2A282F] text-xs tracking-wider">
@@ -309,20 +306,20 @@ const SubmitPage = () => {
                             Submitted at: Sep 12, 2022
                           </div>
                         </div>
-                        <div className="border border-emdmsPrimary  text-emdmsPrimary rounded-md flex items-center justify-between px-12 py-2 text-xs ">
+                        <div className="border border-emdmsPrimary  text-emdmsPrimary rounded-md flex items-center justify-center px-12 py-2 text-xs ">
                           View
                         </div>
                       </div>
 
-                      <div className="text-xs pl-2 pt-4 pb-5 text-[#3B3F5C]">
+                      <div className="text-xs pt-4 pb-5 text-[#3B3F5C]">
                         This license number is accepted by License numbers are
                         typically unique identifiers issued by specific
                         authorities or organizations for specific purposes
                       </div>
                     </div>
                   </div>
-                  <div className=" flex  items-center   ">
-                    <div className="flex flex-col items-center justify-center space-y-2 md:w-1/2">
+                  <div className="flex items-center">
+                    <div className="flex flex-col items-center space-y-2">
                       <div className="relative">
                         <div className="bg-[#257B62] rounded-full px-2 py-2">
                           <IoScanOutline className="text-xl text-white text-center " />
@@ -335,7 +332,7 @@ const SubmitPage = () => {
                       <div className="text-[9px]">Screener</div>
                     </div>
 
-                    <svg className="flex-grow mx-2 h-2 ">
+                    <svg className="flex-grow h-2  mb-4">
                       <line
                         x1="0"
                         y1="0"
@@ -358,7 +355,7 @@ const SubmitPage = () => {
                       </div>
                       <div className="text-[9px]">Verifier</div>
                     </div>
-                    <svg className="flex-grow mx-2 h-2">
+                    <svg className="flex-grow h-2  mb-4">
                       <line
                         x1="0"
                         y1="0"
@@ -381,7 +378,7 @@ const SubmitPage = () => {
                       </div>
                       <div className="text-[9px] ">Inspection</div>
                     </div>
-                    <svg className="flex-grow mx-2 h-1">
+                    <svg className="flex-grow  h-1 mb-4">
                       <line
                         x1="0"
                         y1="0"
@@ -403,7 +400,7 @@ const SubmitPage = () => {
                       </div>
                       <div className="text-[9px]">Approver</div>
                     </div>
-                    <svg className="flex-grow mx-2 h-1">
+                    <svg className="flex-grow mb-4 h-1">
                       <line
                         x1="0"
                         y1="0"
@@ -424,7 +421,7 @@ const SubmitPage = () => {
                       </div>
                       <div className="text-[9px]">Finance</div>
                     </div>
-                    <svg className="flex-grow mx-2 h-1">
+                    <svg className="flex-grow  h-1 mb-4">
                       <line
                         x1="0"
                         y1="0"
@@ -500,7 +497,7 @@ const SubmitPage = () => {
                       <div className="text-[9px]">Screener</div>
                     </div>
 
-                    <svg className="flex-grow mx-2 h-2">
+                    <svg className="flex-grow h-2  mb-4">
                       <line
                         x1="0"
                         y1="0"
@@ -523,7 +520,7 @@ const SubmitPage = () => {
                       <div className="text-[9px]">Verifier</div>
                     </div>
 
-                    <svg className="flex-grow mx-2 h-2">
+                    <svg className="flex-grow h-2  mb-4">
                       <line
                         x1="0"
                         y1="0"
@@ -668,7 +665,7 @@ const SubmitPage = () => {
                       <div className="text-[9px]">Screener</div>
                     </div>
 
-                    <svg className="flex-grow mx-2 h-2">
+                    <svg className="flex-grow h-2  mb-4">
                       <line
                         x1="0"
                         y1="0"
@@ -839,7 +836,7 @@ const SubmitPage = () => {
                       <div className="text-[9px]">Screener</div>
                     </div>
 
-                    <svg className="flex-grow mx-2 h-2">
+                    <svg className="flex-grow h-2  mb-4">
                       <line
                         x1="0"
                         y1="0"
