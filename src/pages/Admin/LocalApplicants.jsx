@@ -130,10 +130,10 @@ const LocalApplicants = () => {
             see if they are legit or not
           </div>
         </div>
-        <div className="flex items-center justify-between ">
+        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row  md:items-center md:justify-between ">
           {" "}
           {/* left side navigation container */}
-          <div className="flex  py-3  bg-white rounded-lg shadow-sm justify-between items-center text-[#7D7D7D] text-sm font-poppins w-[30%]">
+          <div className="bg-white  flex space-x-10 md:space-x-6 md:flex-row justify-between items-center py-3  rounded-lg shadow-sm  text-[#7D7D7D] text-sm font-poppins  md:w-[30%] w-[100%]  overflow-x-auto ">
             <Button
               handelClick={() => {
                 setActiveTab("application");
@@ -169,7 +169,7 @@ const LocalApplicants = () => {
           {/* right side navigation container */}
           {activeTab === "application" && (
             <>
-              <div className="flex space-x-6  bg-white  rounded-lg shadow-sm justify-between items-center text-[#7D7D7D] text-sm font-poppins w-[65%]">
+              <div className="flex bg-white  space-x-2 rounded-lg shadow-sm md:justify-between items-center text-[#7D7D7D] text-sm font-poppins md:max-w-[65%] w-full overflow-x-auto">
                 <button
                   onClick={() => {
                     setActiveDoc("financial");
@@ -212,9 +212,10 @@ const LocalApplicants = () => {
                     activeDoc === "slip"
                       ? "text-emdmsPrimary  border-b-emdmsPrimary border-b-4  py-3"
                       : "text-N80 py-3"
-                  } px-6    whitespace-nowrap`}>
+                  } px-12    whitespace-nowrap`}>
                   Slip License
                 </button>
+                
               </div>
             </>
           )}
@@ -230,9 +231,9 @@ const LocalApplicants = () => {
         {/* Application tab */}
         {activeTab === "application" && (
           <>
-            <div className="flex justify-between h-full">
-              <div className="flex flex-col space-y-4 py-10 px-10 bg-white rounded-lg shadow-sm justify-between   font-poppins w-[30%] h-[250px]">
-                <div className="text-[#464255] font-semibold text-xl">
+            <div className="flex flex-col space-y-3  md:space-y-0 md:flex-row md:justify-between md:h-full max-h-[65vh] overflow-y-auto noscrollBar">
+              <div className="flex flex-col  py-10 px-10 bg-white rounded-lg shadow-lg space-y-6 font-poppins md:w-[30%] md:h-[300px] lg:h-[250px]">
+                <div className="text-[#464255] font-semibold text-xl md:text-xs lg:text-lg">
                   License No: 12345678
                 </div>
                 <div className="text-xs max-w-lg tracking-wide text-[#A3A3A3] font-poppins">
@@ -243,7 +244,7 @@ const LocalApplicants = () => {
                   <div className="text-[#464255] text-sm font-medium font-poppins">
                     Documents
                   </div>
-                  <div className="bg-emdmsPrimary px-3 py-1 text-white text-sm rounded-lg">
+                  <div className="bg-emdmsPrimary px-3 py-1 text-white text-sm md:text-xs rounded-lg">
                     6
                   </div>
                 </div>
@@ -253,22 +254,26 @@ const LocalApplicants = () => {
                       onClick={() => {
                         setActiveDoc("financial");
                       }}
-                      className="bg-[#005656B2] px-4 py-2 rounded-lg text-white text-sm font-poppins">
+                      className="bg-[#005656B2] px-4 py-2 rounded-lg text-white text-sm md:text-xs lg:text-sm font-poppins">
                       View Document
                     </button>
                   </div>
                 )}
               </div>
-
               {activeDoc === "" && (
-                <div className="flex  py-6 px-10  mx-auto text-[#7D7D7D] text-sm font-poppins w-[350px] h-[400px]">
-                  <img src={ApplicationClip} alt="" className="" />
+                <div className="md:ml-[100px] flex items-center justify-center  h-full w-full">
+                  <img
+                    src={ApplicationClip}
+                    alt=""
+                    className="w-60 md:w-[350px] md:h-[400px]"
+                  />
                 </div>
               )}
+
               {/* Financial Tab */}
               {activeDoc === "financial" && (
-                <div className="flex space-x-4 mb-10 justify-between items-center font-poppins w-[65%] ">
-                  <div className=" bg-white py-4 px-10 rounded-lg shadow-sm w-[65%] h-full ">
+                <div className=" flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:space-x-4  lg:justify-between  font-poppins md:max-w-[65%] md:overflow-x-auto md:h-[70vh] h-[40vh] overflow-y-auto noscrollBar ">
+                  <div className=" bg-white py-4 px-10 rounded-lg shadow-sm w-full lg:w-[65%] h-full ">
                     {/* <Document file={pdfUrl}>
                       <Page pageNumber={1} />
                     </Document> */}
