@@ -1,10 +1,12 @@
 import { TbScanEye } from "react-icons/tb";
 import Profile from "../../../assets/svg/placeholder.svg";
+import Ellipse from "../../../assets/Ellipse 829.png";
+
 import { HiFolderMinus } from "react-icons/hi2";
 import { useState } from "react";
 
-import { AiFillCloseCircle } from "react-icons/ai";
-import { BsCheckLg } from "react-icons/bs";
+import { AiFillCloseCircle, AiOutlineInfoCircle } from "react-icons/ai";
+import { BsCheckLg, BsPersonCircle } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 
 const files = [
@@ -55,21 +57,21 @@ export default function PartnershipTable() {
                 <tr>
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-xs font-medium text-black tracking-wider"></th>
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider"></th>
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-xs font-medium text-black tracking-wider">
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider">
                     Agency Name
                   </th>
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-xs font-medium text-black tracking-wider">
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider">
                     Requested Date
                   </th>
 
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-xs font-medium text-black tracking-wider">
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider">
                     Action
                   </th>
                 </tr>
@@ -92,14 +94,10 @@ export default function PartnershipTable() {
                     </td>
 
                     <td className="px-6 py-4 whitespace-nowrap flex  space-x-2 ">
-                      <button
-                        className="bg-[#65BBA2] px-2 py-2 flex gap-2 items-center rounded-sm"
-                        onClick={openModal}>
+                      <button className="bg-[#65BBA2] px-2 py-2 flex gap-2 items-center rounded-sm">
                         <BsCheckLg className="text-white" />
                       </button>
-                      <button
-                        className="bg-[#D86863] px-2 py-2 flex gap-2 items-center rounded-sm"
-                        onClick={openModal}>
+                      <button className="bg-[#D86863] px-2 py-2 flex gap-2 items-center rounded-sm">
                         <IoMdClose className="text-white" />
                       </button>
                       <button
@@ -125,19 +123,198 @@ export default function PartnershipTable() {
         </div>
       </div>
       {modal && (
-        <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white rounded-lg p-8 w-11/12 h-full md:w-9/12 lg:w-8/12 xl:w-6/12   transition-transform duration-500 transform translate-x-0 right-0 md:translate-x-1/2 ">
+        <div className="fixed inset-0 flex items-center justify-end z-50 backdrop-filter backdrop-blur-sm">
+          <div className="fixed inset-y-0 right-0 w-[35%] bg-white duration-500 rounded-md shadow-lg px-8 py-8 transform transition-transform translate-x-0 ">
             {/* Modal Content */}
-            <div className=" flex flex-col gap-4  h-full w-full">
-              <button
-                className="px-4 py-2 text-white rounded"
-                onClick={closeModal}>
-                <AiFillCloseCircle className="text-[#005656] text-5xl" />
-                <div className="flex gap-4 p-10">
-                  <div className="bg-red-100 w-[30%] rounded-lg overflow-y-auto "></div>
-                  <div className="bg-red-100 w-[70%] rounded-lg "></div>
+            <div className="flex flex-col items-start  gap-4 h-full w-full">
+              <div className="flex items-center space-x-2">
+                {" "}
+                <button
+                  className="px-4 py-2 text-white rounded"
+                  onClick={closeModal}>
+                  <AiFillCloseCircle className="text-[#005656] text-4xl" />
+                </button>
+                <div className="text-emdmsPrimary text-lg font-bold">
+                  Local Agency Information
                 </div>
-              </button>
+              </div>
+              <div className="flex items-center space-x-10 ">
+                <div className=" bg-red-500 rounded-full ">
+                  <img src={Ellipse} className="" alt="" />
+                </div>
+                <div className="flex flex-col space-y-3 items-start justify-center ">
+                  <div className="text-lg text-[#008080] font-medium">
+                    Agency Basic Info
+                  </div>
+                  <div className="bg-[#F0F7F7] p-4 flex flex-col rounded-lg space-y-3 w-full">
+                    <div className="grid grid-cols-2 items-center gap-32">
+                      <div className="flex items-start space-x-2">
+                        {/* <AiOutlineInfoCircle /> */}
+                        <BsPersonCircle className="text-[#98D2C1] mt-1" />
+                        <div className="flex flex-col items-start">
+                          <div className="text-xs">Agency Name</div>
+                          <div className="text-[10px] text-N70">labor name</div>
+                        </div>
+                      </div>
+                      <div className="text-xs">Mohamod Abdala Mustafa</div>
+                    </div>
+                    <div className="grid grid-cols-2 items-center gap-32">
+                      <div className="flex items-start space-x-2">
+                        {/* <AiOutlineInfoCircle /> */}
+                        <BsPersonCircle className="text-[#98D2C1] mt-1" />
+                        <div className="flex flex-col items-start">
+                          <div className="text-xs">Agency Amharic Name</div>
+                          <div className="text-N70 text-[10px]">labor name</div>
+                        </div>
+                      </div>
+                      <div className="text-xs">መሀመድ አብደላ ሙስጠፋ</div>
+                    </div>
+                    <div className="grid grid-cols-2 items-center gap-32">
+                      <div className="flex items-start space-x-2">
+                        {/* <AiOutlineInfoCircle /> */}
+                        <BsPersonCircle className="text-[#98D2C1] mt-1" />
+                        <div className="flex flex-col items-start">
+                          <div className="text-xs">Agency Type</div>
+                          <div className="text-[10px] text-N70">labor name</div>
+                        </div>
+                      </div>
+                      <div className="text-xs">PLC</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-[#008080] text-lg  mt-5">
+                Contact Information
+              </div>
+              <div className="bg-[#F0F7F7] p-6 flex flex-col rounded-lg space-y-3 w-full">
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        Location of the Residence
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">Urban</div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        Region
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">Addis Ababa</div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        Subcity
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">Arada</div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        Kebele
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">07</div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        House Number
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">567</div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        Email Address
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">mohamodabdela@gmail.com</div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        FAx
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">32123</div>
+                </div>
+                <div className="grid grid-cols-2 items-center gap-32">
+                  <div className="flex items-start space-x-2">
+                    {/* <AiOutlineInfoCircle /> */}
+                    <AiOutlineInfoCircle className="text-[#98D2C1] mt-1" />
+                    <div className="flex flex-col items-start">
+                      <div
+                        className="text-xs
+                      ">
+                        P.O.BOX
+                      </div>
+                      <div className="text-[10px] text-N70">labor name</div>
+                    </div>
+                  </div>
+                  <div className="text-xs">32123</div>
+                </div>
+              </div>
+              <div className="flex justify-end items-start  w-full">
+                <button
+                  onClick={closeModal}
+                  className="bg-[#F0F7F7] px-10 py-2 rounded-md">
+                  Cancel
+                </button>
+              </div>
             </div>
           </div>
         </div>

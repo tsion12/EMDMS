@@ -31,7 +31,7 @@ const Partnership = () => {
             <br /> see of they are legit or not
           </p>
         </div>
-        <div className="flex  py-3  bg-white rounded-lg shadow-sm justify-between items-center text-[#7D7D7D] text-sm font-poppins w-[40%]">
+        <div className="flex  py-4  bg-white rounded-lg shadow-sm justify-between items-center text-[#7D7D7D]  font-poppins w-[40%] ">
           <Button
             handelClick={() => {
               setActiveTab("new");
