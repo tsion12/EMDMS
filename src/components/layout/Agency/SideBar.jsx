@@ -43,7 +43,7 @@ const SideBar = () => {
           />
         </div>
         <Link
-          to="/agency/dashboard"
+          to="/agency"
           className={`${
             activePage === "Dashboard"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"

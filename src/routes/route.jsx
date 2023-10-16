@@ -8,6 +8,7 @@ import StuffList from "../pages/Agency/StuffList";
 import License from "../pages/Agency/License";
 import Partnership from "../pages/Foriegn/partnership";
 import ForeignDashboard from "../pages/Foriegn/Dashboard";
+import LicenceInspection from "../pages/Admin/LicenceInspection";
 // import Documents from "../pages/Documents";
 
 const routes = [
@@ -15,6 +16,7 @@ const routes = [
 
   <Route path="/admin" element={<Dashboard />} />,
   <Route path="/admin/foreign-management" element={<ForeignManagement />} />,
+  <Route path="/admin/inspection" element={<LicenceInspection />} />,
 
   <Route path="/agency" element={<AgencyDashboard />} />,
   <Route path="/agency/stuff" element={<StuffList />} />,
