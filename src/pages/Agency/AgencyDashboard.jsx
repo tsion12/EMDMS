@@ -14,9 +14,9 @@ const AgencyDashboard = () => {
     // Main Container
     <div className="p-10 flex flex-col space-y-10 lg:space-y-0 lg:flex-row items-start lg:space-x-10 space-x-0 h-screen overflow-auto w-full ">
       {/* left side cards */}
-      <div className="flex flex-col space-y-6 w-full lg:w-[60%] mb-10 ">
+      <div className="flex flex-col space-y-6 w-full lg:w-[60%] mb-10  h-full  pb-20 ">
         {/* left side 1st card */}
-        <div className="flex items-center bg-gradient-to-b from-[#00A8A8] to-[#004343] w-full justify-around overflow-auto noscrollBar rounded-lg py-5 px-5 pr-20 ">
+        <div className="flex items-center bg-gradient-to-b from-[#00A8A8] to-[#004343] w-full justify-around overflow-auto noscrollBar h-[25%] rounded-lg py-5 px-5 pr-20 ">
           <div className="flex justify-start items-center space-x-2 ">
             <div className="bg-white  flex rounded-full mx-auto p-3">
               {" "}
@@ -65,7 +65,7 @@ const AgencyDashboard = () => {
         </div>
 
         {/* left side 2nd card */}
-        <div className="flex  bg-white w-full justify-between overflow-auto noscrollBar rounded-lg py-2 px-5  ">
+        <div className="flex  bg-white w-full justify-between overflow-auto noscrollBar rounded-lg py-2 px-5 h-[40%]  ">
           <div className="flex flex-col justify-between items-stretch p-5">
             <div className="text-sm font-poppins tracking-wide font-">
               {" "}
@@ -95,7 +95,7 @@ const AgencyDashboard = () => {
           </div>
         </div>
         {/* left side 3rd card */}
-        <div className="bg-white w-full justify-between overflow-auto noscrollBar rounded-lg py-1 px-5 mb-10">
+        <div className="bg-white w-full justify-between overflow-auto noscrollBar rounded-lg py-1 px-5 mb-10 h-full">
           <div className="flex space-x-2 items-center p-4">
             <div className="text-lg font-bold">Recent Activity</div>
             <div>
@@ -106,7 +106,7 @@ const AgencyDashboard = () => {
         </div>
       </div>
       {/* Right side */}
-      <div className="flex flex-col space-y-5 w-full lg:w-[40%] h-full ">
+      <div className="flex flex-col space-y-6 w-full lg:w-[40%] h-full pb-20 ">
         <div className="w-full h-[45%] bg-white rounded-lg flex flex-col p-2">
           <div className="flex space-x-2 items-center  p-4">
             <div className="text-lg font-bold">Job Order Locations</div>
