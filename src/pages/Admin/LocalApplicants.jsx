@@ -57,7 +57,7 @@ const LocalApplicants = () => {
   return (
     <>
       {sideModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-end z-50  backdrop-filter backdrop-blur-sm">
+        <div className="fixed inset-0 flex items-center justify-end z-50 transition-all duration-200 ease-in-out  backdrop-filter backdrop-blur-sm">
           <div className="fixed inset-y-0 right-0 w-1/4 bg-white rounded-md shadow-lg px-8 py-8">
             <button
               className="absolute top-0 right-0 m-4"
@@ -215,7 +215,6 @@ const LocalApplicants = () => {
                   } px-12    whitespace-nowrap`}>
                   Slip License
                 </button>
-                
               </div>
             </>
           )}

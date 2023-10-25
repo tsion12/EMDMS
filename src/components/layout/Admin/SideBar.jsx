@@ -16,7 +16,7 @@ const Aside = () => {
   useEffect(() => {
     if (location.pathname === "/") {
       setActivePage("Dashboard");
-    } else if (location.pathname === "/foreign-management") {
+    } else if (location.pathname === "/local-applicants") {
       setActivePage("Foreign Management");
     } else if (location.pathname === "/job-order") {
       setActivePage("Job Order");
@@ -69,7 +69,7 @@ const Aside = () => {
           )}
         </Link>
         <Link
-          to="/admin/foreign-management"
+          to="/admin/local-applicants"
           className={`${
             activePage === "Foreign Management"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"

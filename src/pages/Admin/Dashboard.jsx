@@ -19,13 +19,13 @@ const AdminDashboard = () => {
       {/* left side cards */}
       <div className="flex flex-col space-y-6 w-full h-full  lg:w-[60%]  pb-10 ">
         {/* left side 1st card */}
-        <div className="flex items-center bg-gradient-to-b h-[30%] from-[#00A8A8] to-[#004343] w-full justify-around overflow-auto noscrollBar rounded-lg py-5 px-5 pr-20 ">
-          <div className="flex justify-start items-center space-x-2 ">
-            <div className="bg-white  flex rounded-full mx-auto p-3">
+        <div className="flex items-center bg-gradient-to-b  h-[30%] from-[#00A8A8] to-[#004343] w-full justify-around overflow-x-auto noscrollBar rounded-lg py-5 px-5 pr-20 ">
+          <div className="flex justify-start items-center space-x-2   ">
+            <div className="bg-white  flex  rounded-full mx-auto p-3">
               {" "}
               <CgNotes className="text-2xl text-[#5A8998]" />
             </div>
-            <div className="flex flex-col  space-y-1">
+            <div className="flex flex-col  space-y-1 ">
               <div className="flex flex-col space-y-1 items-start justify-center">
                 <div className="text-sm text-white">Total License Created</div>
                 <div className="text-xl font-bold text-white">1000</div>
@@ -36,13 +36,13 @@ const AdminDashboard = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-start items-center space-x-2 ">
+          <div className="flex justify-start items-center space-x-2  ">
             <div className="bg-white  flex rounded-full mx-auto p-3">
               {" "}
               <CgNotes className="text-2xl text-[#5A8998]" />
             </div>
-            <div className="flex flex-col space-y-1">
-              <div className="flex flex-col space-y-1 items-start justify-center">
+            <div className="flex flex-col space-y-1   ">
+              <div className="flex flex-col space-y-1 items-start justify-center ">
                 <div className="text-sm text-white">
                   Total Approved Documents
                 </div>
@@ -141,7 +141,7 @@ const AdminDashboard = () => {
             <AdminPieChart />
           </div>
 
-          <div className="flex justify-between px-5 py-2 bg-white shadow-2xl rounded-xl mx-4">
+          <div className="flex justify-between px-5 py-2 mt-5 bg-white shadow-2xl rounded-xl mx-4">
             <div className="flex items-start space-x-1">
               <div className="h-2 w-2 rounded-full bg-[#98D2C1] mt-1"></div>
               <div className="flex flex-col items-start text-xs text-[#787486]">

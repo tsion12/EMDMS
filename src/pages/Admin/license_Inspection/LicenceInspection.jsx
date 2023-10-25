@@ -33,7 +33,7 @@ const LicenceInspection = () => {
                     setPage("pageOne");
                   }}
                   className="bg-emdmsPrimary text-white px-10 py-2 rounded-lg text-sm mt-2">
-                  Proceed
+                  Inspect
                 </button>
               </div>
             </div>
@@ -50,7 +50,7 @@ const LicenceInspection = () => {
                 </div>
                 <div>
                   <button className="bg-emdmsPrimary text-white px-10 py-2 rounded-lg text-sm mt-2">
-                    Proceed
+                    Inspect
                   </button>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const LicenceInspection = () => {
                 </div>
                 <div>
                   <button className="bg-emdmsPrimary text-white px-10 py-2 rounded-lg text-sm mt-2">
-                    Proceed
+                    Inspect
                   </button>
                 </div>
               </div>
@@ -90,7 +90,7 @@ const LicenceInspection = () => {
                   </div>
                   <div>
                     <button className="bg-emdmsPrimary text-white px-10 py-2 rounded-lg text-sm mt-2">
-                      Proceed
+                      Inspect
                     </button>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const LicenceInspection = () => {
                         setPage("pageOne");
                       }}
                       className="bg-emdmsPrimary text-white px-10 py-2 rounded-lg text-sm mt-2">
-                      Proceed
+                      Inspect
                     </button>
                   </div>
                 </div>
