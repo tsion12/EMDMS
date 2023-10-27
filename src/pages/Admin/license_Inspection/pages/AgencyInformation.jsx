@@ -123,7 +123,7 @@ const AgencyInformation = () => {
     },
   ];
   return (
-    <div className="flex w-full h-[70vh] space-x-20">
+    <div className="flex w-full bg-red-500  h-[70vh] space-x-20">
       {/* left side */}
       <div className="flex flex-col px-10 justify-around py-10 space-y-6 w-[25%] h-[60%] bg-white rounded-xl">
         {menuItems.map((menuItem, index) => (
