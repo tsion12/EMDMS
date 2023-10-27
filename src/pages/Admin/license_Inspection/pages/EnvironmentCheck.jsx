@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsExclamationTriangleFill } from "react-icons/bs";
 import Image from "../../../../assets/image.png";
 import ModalImage from "react-modal-image";
 import MyImageGallery from "../../../../components/layout/Admin/MyImageGallery";
+import ImageCropModal from "../../../../components/layout/Admin/ImageCropModal";
 const EnvironmentCheck = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="flex flex-col p-8 space-y-6 w-full lg:w-[75%] h-[67vh] overflow-y-auto bg-white rounded-xl text-xs noscrollBar">
       <div className="text-lg font-bold">Inspection Check List</div>
@@ -48,11 +58,14 @@ const EnvironmentCheck = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center ">
-            {" "}
-            <button className="bg-white w-[40%] py-1 text-emdmsPrimary">
+          <div className="flex items-center justify-center">
+            <button
+              onClick={handleButtonClick}
+              className="bg-white w-[40%] py-1 text-emdmsPrimary">
               View
             </button>
+
+            {isModalOpen && <ImageCropModal onClose={handleCloseModal} />}
           </div>
         </div>
         <div>Councelling Room</div>
@@ -77,7 +90,7 @@ const EnvironmentCheck = () => {
             {" "}
             <button
               onClick={() => {
-                <MyImageGallery />;
+                <ImageCropModal />;
               }}
               className="bg-white  w-[40%] py-1 text-emdmsPrimary">
               View
