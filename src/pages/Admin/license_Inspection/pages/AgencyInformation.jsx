@@ -123,9 +123,9 @@ const AgencyInformation = () => {
     },
   ];
   return (
-    <div className="flex w-full bg-red-500  h-[70vh] space-x-20">
+    <div className="flex flex-col space-y-8 lg:space-y-0 lg:flex-row w-full   h-[70vh] lg:space-x-20">
       {/* left side */}
-      <div className="flex flex-col px-10 justify-around py-10 space-y-6 w-[25%] h-[60%] bg-white rounded-xl">
+      <div className="flex flex-row space-x-6 p-2 lg:space-x-0 lg:flex-col lg:px-10 justify-around lg:py-10 lg:space-y-6  w-[90vw] overflow-y-auto lg:w-[25%]  lg:h-[60%] bg-white rounded-xl">
         {menuItems.map((menuItem, index) => (
           <button
             onClick={() => {
@@ -145,7 +145,7 @@ const AgencyInformation = () => {
       </div>
       {/* right side  */}
       {currentMenu === "Agency Information" && (
-        <div className="flex flex-col p-8 space-y-6 w-[75%] h-[67vh] overflow-y-auto bg-white rounded-xl text-xs noscrollBar">
+        <div className="flex flex-col p-8 space-y-6 w-full lg:w-[75%] h-[67vh] overflow-y-auto bg-white rounded-xl text-xs noscrollBar">
           {/* Company information */}
           <div className="flex items-center space-x-4">
             <div className="bg-[#F0F7F7] w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold text-emdmsPrimary">

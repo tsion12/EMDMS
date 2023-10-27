@@ -4,7 +4,7 @@ import Image from "../../../../assets/image.png";
 
 const EquipmentCheck = () => {
   return (
-    <div className="flex flex-col p-8 space-y-6 w-[75%] h-[67vh] overflow-y-auto bg-white rounded-xl text-xs noscrollBar">
+    <div className="flex flex-col p-8 space-y-6 w-full lg:w-[75%] h-[67vh] overflow-y-auto bg-white rounded-xl text-xs noscrollBar">
       <div className="text-lg font-bold">Inspection Check List</div>
       <div className="w-full h-[45vh] overflow-y-auto noscrollBar grid grid-cols-3 gap-5 text-N40 font-semibold grid-rows-8 ">
         <div className="text-emdmsPrimary font-bold text-sm">

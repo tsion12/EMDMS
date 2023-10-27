@@ -13,7 +13,7 @@ const Conclusion = () => {
     setIsOpen(false);
   };
   return (
-    <div className="flex flex-col p-8 space-y-6 w-[75%] h-[67vh] overflow-y-auto bg-white rounded-xl text-xs noscrollBar">
+    <div className="flex flex-col p-8 space-y-6 w-full lg:w-[75%] h-[67vh] overflow-y-auto bg-white rounded-xl text-xs noscrollBar">
       <div className="text-lg font-bold">Inspection Check List</div>
       <div className="w-full h-[45vh] overflow-y-auto noscrollBar flex flex-col space-y-6">
         <div className="flex flex-col">
