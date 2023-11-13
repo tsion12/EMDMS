@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaAngleLeft } from "react-icons/fa6";
 import { BiSolidDashboard } from "react-icons/bi";
-import { MdAssignment } from "react-icons/md";
+import { MdAssignment, MdOutlineNoteAlt } from "react-icons/md";
 import MOLSLogo from "../../../assets/svg/MOLSLogo.svg";
 import MOLSLogoText from "../../../assets/svg/MOLSLogoText.svg";
 import { Link, useLocation } from "react-router-dom";
@@ -16,7 +16,7 @@ const Aside = () => {
   useEffect(() => {
     if (location.pathname === "/") {
       setActivePage("Dashboard");
-    } else if (location.pathname === "/foreign-management") {
+    } else if (location.pathname === "/local-applicants") {
       setActivePage("Foreign Management");
     } else if (location.pathname === "/job-order") {
       setActivePage("Job Order");
@@ -69,7 +69,7 @@ const Aside = () => {
           )}
         </Link>
         <Link
-          to="/admin/foreign-management"
+          to="/admin/local-applicants"
           className={`${
             activePage === "Foreign Management"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
@@ -82,20 +82,20 @@ const Aside = () => {
             </p>
           )}
         </Link>
-        {/* <Link
-          to="/documents"
+        <Link
+          to="/admin/inspection"
           className={`${
             activePage === "Documents"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
               : "hover:bg-N99/50 text-N60"
           } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
-          <MdAssignment className="text-2xl" />
+          <MdOutlineNoteAlt className="text-2xl" />
           {sidebarOpen && (
             <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
-              Documents
+              Inspection
             </p>
           )}
-        </Link> */}
+        </Link>
 
         <div
           className={` ${

@@ -7,7 +7,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { LiaRedoAltSolid } from "react-icons/lia";
 
 import { MdOutlineCancel } from "react-icons/md";
-import RejectionModal from "../RejectionModal";
+import RejectionModal from "../utilities/RejectionModal";
 
 const TableComponent = () => {
   const [isOpen, setIsOpen] = useState(null);

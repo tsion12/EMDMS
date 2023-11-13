@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PartnershipTable from "../../components/layout/Foriegn/PartnershipTable";
 
 import Search from "../../assets/svg/Vector.svg";
-import Button from "../../components/Button";
+import Button from "../../components/utilities/Button";
 const Partnership = () => {
   const [activeTab, setActiveTab] = useState("");
   const [isActive, setIsActive] = useState(1);

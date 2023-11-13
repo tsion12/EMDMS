@@ -29,8 +29,11 @@ const DocBody = ({
   };
 
   return (
-    <div className="flex flex-col  bg-white py-4 px-4  rounded-lg shadow-sm w-[35%] h-full ">
+    <div className="flex flex-col  py-4 px-4  rounded-lg shadow-sm lg:w-[35%] overflow-x-auto  bg-white lg-h-[65vh] ">
       <div className="flex flex-col space-y-3 mb-5 max-h-[55vh] overflow-auto noscrollBar">
+        <div className="text-emdmsPrimary text-lg font-medium ">
+          Financial Documents
+        </div>
         {documentData.map((doc) => (
           <div
             onClick={() => setSelectedCardIndex(doc.id)}

@@ -31,7 +31,7 @@ import {
 } from "react-icons/md";
 import { BiCalendar, BiSolidFolderMinus } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
-import Modal from "../../../components/Modal";
+import Modal from "../../../components/utilities/Modal";
 import SubmitPage from "./SubmitPage";
 const PageTwo = () => {
   const [sideModalOpen, setSideModalOpen] = useState(false);

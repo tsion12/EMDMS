@@ -20,7 +20,7 @@ const SideBar = () => {
     } else if (location.pathname === "/dashboard/profile") {
       setActivePage("Profile");
     } else if (location.pathname === "/dashboard/job-order") {
-      setActivePage("Job Order List");
+      setActivePage("Job Order");
     } else if (location.pathname === "/dashboard/contracts") {
       setActivePage("Contracts");
     } else if (location.pathname === "/agency/stuff") {
@@ -43,7 +43,7 @@ const SideBar = () => {
           />
         </div>
         <Link
-          to="/agency/dashboard"
+          to="/agency"
           className={`${
             activePage === "Dashboard"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
