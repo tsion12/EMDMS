@@ -10,7 +10,7 @@ import Portfolio from "../../assets/Portfolio.png";
 
 import { BiSearch } from "react-icons/bi";
 import { ImEqualizer } from "react-icons/im";
-import Modal from "../../components/Modal";
+import Modal from "../../components/utilities/Modal";
 import { BsChevronDown, BsFillExclamationTriangleFill } from "react-icons/bs";
 import {
   AiFillExclamationCircle,

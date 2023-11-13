@@ -4,7 +4,7 @@ import SmallMap from "../../../assets/smallMaop.png";
 import Flag from "../../../assets/Japan.png";
 import Qatar from "../../../assets/qatar.png";
 import SubmitFlag from "../../../assets/submitFlag.png";
-import RejectionModal from "../../../components/RejectionModal";
+import RejectionModal from "../../../components/utilities/RejectionModal";
 
 const RejectedPage = () => {
   const [requestModal, setrequestModal] = useState(false);

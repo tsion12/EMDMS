@@ -188,7 +188,7 @@ const AgencyDashboard = () => {
             <div className="flex items-start space-x-1">
               <div className="h-2 w-2 rounded-full bg-[#195241] mt-1"></div>
               <div className="flex flex-col items-start text-xs text-[#787486]">
-                <div className=" tracking-wider ">others</div>
+                <div className=" tracking-wider ">Others</div>
                 <div className="font-extrabold text-sm">10%</div>
               </div>
             </div>{" "}

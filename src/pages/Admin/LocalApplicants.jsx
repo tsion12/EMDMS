@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import StarterClip from "../../assets/images/starter.png";
-import Button from "../../components/Button";
+import Button from "../../components/utilities/Button";
 import ApplicationClip from "../../assets/applicationClip.png";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-import Modal from "../../components/Modal";
+import Modal from "../../components/utilities/Modal";
 import { MdOutlineCancel } from "react-icons/md";
-import RejectionModal from "../../components/RejectionModal";
+import RejectionModal from "../../components/utilities/RejectionModal";
 import DocBody from "../../components/adminComponents/DocBody";
 import { docs } from "./data";
 import ApprovedPage from "./pages/ApprovedPage";

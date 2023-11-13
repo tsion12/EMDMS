@@ -20,7 +20,7 @@ const SideBar = () => {
     } else if (location.pathname === "/dashboard/profile") {
       setActivePage("Profile");
     } else if (location.pathname === "/dashboard/job-order") {
-      setActivePage("Job Order List");
+      setActivePage("Job Order");
     } else if (location.pathname === "/dashboard/contracts") {
       setActivePage("Contracts");
     } else if (location.pathname === "/agency/stuff") {

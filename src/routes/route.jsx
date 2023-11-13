@@ -9,6 +9,7 @@ import License from "../pages/Agency/License";
 import Partnership from "../pages/Foriegn/partnership";
 import ForeignDashboard from "../pages/Foriegn/Dashboard";
 import LicenceInspection from "../pages/Admin/license_Inspection/LicenceInspection";
+import JobOrder from "../pages/Foriegn/JobOrder";
 // import Documents from "../pages/Documents";
 
 const routes = [
@@ -24,6 +25,7 @@ const routes = [
 
   <Route path="/foreign/dashboard" element={<ForeignDashboard />} />,
   <Route path="/foreign/partnership" element={<Partnership />} />,
+  <Route path="/foreign/job-order" element={<JobOrder />} />,
 ];
 
 export default routes;
