@@ -6,10 +6,14 @@ import { BiSolidFilePdf } from "react-icons/bi";
 import { createColumnHelper } from "@tanstack/react-table";
 import Requestjoborder from "../../components/foreignComponents/RequestJobOrder";
 import Body from "../../components/layout/Foriegn/Body";
+import ApprovedTab from "../Admin/license_Inspection/pages/ApprovedTab";
+import StatusTab from "../../components/foreignComponents/StatusTab";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const JobOrder = () => {
   const [page, setPage] = useState("table");
   const [activeTab, setActiveTab] = useState("New Application");
+  const [currentTab, setcurrentTab] = useState("");
 
   // Create a Job Order Function
   function setToCreate() {
@@ -78,52 +82,54 @@ const JobOrder = () => {
             </div>
             <div className="w-full flex flex-col md:flex-row gap-4 justify-between md:items-center">
               {/* Selection Tab Container */}
-              <div className="w-full md:w-max  flex gap-4 lg:gap-10 items-center overflow-auto noscrollBar p-2 bg-white rounded-lg">
-                <Button
-                  handelClick={() => {
-                    setActiveTab("New Application");
-                  }}
-                  custom={`${
-                    activeTab === "New Application"
-                      ? "text-emdmsPrimary"
-                      : "text-N80 bg-white"
-                  } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
-                  New Application
-                </Button>
-                <Button
-                  handelClick={() => {
-                    setActiveTab("Re-applied Applications");
-                  }}
-                  custom={`${
-                    activeTab === "Re-applied Applications"
-                      ? "text-emdmsPrimary"
-                      : "text-N80 bg-white"
-                  } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
-                  Re-applied Applications
-                </Button>
-                <Button
-                  handelClick={() => {
-                    setActiveTab("Approved");
-                  }}
-                  custom={`${
-                    activeTab === "Approved"
-                      ? "text-emdmsPrimary"
-                      : "text-N80 bg-white"
-                  } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
-                  Approved
-                </Button>
-                <Button
-                  handelClick={() => {
-                    setActiveTab("Rejected");
-                  }}
-                  custom={`${
-                    activeTab === "Rejected"
-                      ? "text-emdmsPrimary"
-                      : "text-N80 bg-white"
-                  } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
-                  Rejected
-                </Button>
-              </div>
+              {currentTab === "" && (
+                <div className="w-full md:w-max  flex gap-4 lg:gap-10 items-center overflow-auto noscrollBar p-2 bg-white rounded-lg">
+                  <Button
+                    handelClick={() => {
+                      setActiveTab("New Application");
+                    }}
+                    custom={`${
+                      activeTab === "New Application"
+                        ? "text-emdmsPrimary"
+                        : "text-N80 bg-white"
+                    } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
+                    New Application
+                  </Button>
+                  <Button
+                    handelClick={() => {
+                      setActiveTab("Re-applied Applications");
+                    }}
+                    custom={`${
+                      activeTab === "Re-applied Applications"
+                        ? "text-emdmsPrimary"
+                        : "text-N80 bg-white"
+                    } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
+                    Re-applied Applications
+                  </Button>
+                  <Button
+                    handelClick={() => {
+                      setActiveTab("Approved");
+                    }}
+                    custom={`${
+                      activeTab === "Approved"
+                        ? "text-emdmsPrimary"
+                        : "text-N80 bg-white"
+                    } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
+                    Approved
+                  </Button>
+                  <Button
+                    handelClick={() => {
+                      setActiveTab("Rejected");
+                    }}
+                    custom={`${
+                      activeTab === "Rejected"
+                        ? "text-emdmsPrimary"
+                        : "text-N80 bg-white"
+                    } px-8 py-2 w-full w-max font-semibold whitespace-nowrap`}>
+                    Rejected
+                  </Button>
+                </div>
+              )}
 
               <div className="w-full bg-lime-300 md:w-max">
                 <Button
@@ -133,10 +139,42 @@ const JobOrder = () => {
                 </Button>
               </div>
             </div>
-            <div className="mt-10">
-              <ReactTable
+
+            <div className="mt-10   w-full h-[50vh] overflow-y-auto">
+              {/* <ReactTable
                 columns={columns}
-                defaultData={defaultData}></ReactTable>
+                defaultData={defaultData}></ReactTable> */}
+              <StatusTab openModal={openModal} setOpenModal={setOpenModal} />
+            </div>
+            <div className="flex justify-center items-end md:justify-end mt-2 mr-5 space-x-3">
+              <button className="border border-[#005656] px-6 py-2 lg:py-1">
+                {" "}
+                <div
+                  onClick={() => setPage((prev) => prev - 1)}
+                  className=" space-x-2 items-center  flex text-[#005656]">
+                  {" "}
+                  <AiOutlineLeft />
+                  <div className="hidden  md:block">Previous</div>
+                </div>
+              </button>
+              <div className="border border-[#005656] bg-white pr-2 flex space-x-6 ">
+                {" "}
+                <button className="bg-emdmsPrimary text-white px-3 py-1">
+                  1
+                </button>
+                <button className="text-emdmsPrimary">2</button>
+                <button className="text-emdmsPrimary">3</button>
+                <button className="text-emdmsPrimary">4</button>
+              </div>
+              <button className="border border-[#005656] px-6 py-2 lg:py-1">
+                {" "}
+                <div
+                  onClick={() => setPage((prev) => prev + 1)}
+                  className=" space-x-2 items-center  flex text-[#005656]">
+                  <div className="hidden  md:block">Next</div>
+                  <AiOutlineRight />
+                </div>
+              </button>
             </div>
           </div>
         </>

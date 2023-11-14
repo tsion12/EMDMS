@@ -28,7 +28,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="flex relative w-full  bg-white  z-50 justify-between items-center h-18 ">
+      <nav className="flex relative w-full  bg-white  z-30 justify-between items-center h-18 ">
         <div className="flex items-center relative pl-[6%] md:py-4 bg-emdmsPrimary w-2/3 lg:w-4/5">
           <img src={Logo} alt="LMIS Logo" className="h-1/2 md:h-full " />
           <div className="text-white lg:text-2xl hidden md:block font-bold pl-10 ">
