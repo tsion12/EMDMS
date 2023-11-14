@@ -21,7 +21,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
+.dark-shadow {
+  box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 0.01),
+    1px 2px 4px 4px rgba(0, 0, 0, 0.04);
+}
 .customHeight {
   height: calc(100vh - 5.9rem);
 }
@@ -62,4 +65,67 @@ body::-webkit-scrollbar-thumb {
 }
 .recharts-surface g .recharts-default-legend {
   @apply space-y-2;
+}
+
+.folder {
+  clip-path: polygon(
+    0% 15%,
+    48% 15%,
+    65% 0,
+    85% 0%,
+    100% 0,
+    100% 15%,
+    100% 85%,
+    100% 100%,
+    85% 100%,
+    15% 100%,
+    0 100%,
+    0% 85%
+  );
+  background-color: #005656;
+}
+
+.my-dropzone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.my-dropzone .dropzone {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.my-dropzone input {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.my-dropzone .dropzone p {
+  margin-top: 10px;
+}
+
+.my-table tr:nth-child(odd) {
+  background-color: #f0f7f7;
+}
+
+/* Smooth Scroll */
+.scroll-container {
+  justify-content: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.title {
+  @apply text-2xl font-semibold text-emdmsPrimary;
+}
+.title-description {
+  @apply text-xs text-N70 w-72;
+}
+.red-pill {
+  @apply rounded-full py-1 px-2 bg-error80 text-white ml-2 text-xs;
 }

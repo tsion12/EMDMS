@@ -20,7 +20,7 @@ const Aside = () => {
     } else if (location.pathname === "/dashboard/profile") {
       setActivePage("Profile");
     } else if (location.pathname === "/dashboard/job-order") {
-      setActivePage("Job Order List");
+      setActivePage("Job Order");
     } else if (location.pathname === "/dashboard/contracts") {
       setActivePage("Contracts");
     } else if (location.pathname === "/staff-members") {
@@ -85,16 +85,16 @@ const Aside = () => {
           )}
         </Link>
         <Link
-          to="/dashboard/job-order"
+          to="/foreign/job-order"
           className={`${
-            activePage === "Job Order List"
+            activePage === "Job Order"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
               : "hover:bg-N99/50 text-N60"
           } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
           <BsFillBagCheckFill className="text-2xl" />
           {sidebarOpen && (
             <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
-              Job Order List
+              Job Order
             </p>
           )}
         </Link>

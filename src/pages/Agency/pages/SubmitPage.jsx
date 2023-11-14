@@ -10,7 +10,7 @@ import SearchIcon from "../../../assets/searchcontryIcon.png";
 
 import { FaFileCircleCheck } from "react-icons/fa6";
 import { GoChecklist } from "react-icons/go";
-import Modal from "../../../components/Modal";
+import Modal from "../../../components/utilities/Modal";
 import {
   BsCheck,
   BsChevronDown,

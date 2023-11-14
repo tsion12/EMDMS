@@ -19,8 +19,8 @@ const SideBar = () => {
       setActivePage("Documents");
     } else if (location.pathname === "/dashboard/profile") {
       setActivePage("Profile");
-    } else if (location.pathname === "/dashboard/job-order") {
-      setActivePage("Job Order List");
+    } else if (location.pathname === "/agency/job-order") {
+      setActivePage("Job Order");
     } else if (location.pathname === "/dashboard/contracts") {
       setActivePage("Contracts");
     } else if (location.pathname === "/agency/stuff") {
@@ -43,7 +43,7 @@ const SideBar = () => {
           />
         </div>
         <Link
-          to="/agency/dashboard"
+          to="/agency"
           className={`${
             activePage === "Dashboard"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
@@ -71,7 +71,7 @@ const SideBar = () => {
           )}
         </Link>
         <Link
-          to="/dashboard/job-order"
+          to="/agency/job-order"
           className={`${
             activePage === "Job Order List"
               ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
@@ -80,7 +80,7 @@ const SideBar = () => {
           <BsFillBagCheckFill className="text-2xl" />
           {sidebarOpen && (
             <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
-              Job Order List
+              Job Order
             </p>
           )}
         </Link>

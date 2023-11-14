@@ -8,7 +8,8 @@ import { IoClose } from "react-icons/io5";
 import { BiSolidDashboard } from "react-icons/bi";
 import { MdAssignment } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
-import { BsPersonBadgeFill } from "react-icons/bs";
+import { BsFillBagCheckFill, BsPersonBadgeFill } from "react-icons/bs";
+import { FaFileSignature } from "react-icons/fa6";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="flex relative w-full  bg-white  z-50 justify-between items-center h-18 ">
+      <nav className="flex relative w-full  bg-white  z-30 justify-between items-center h-18 ">
         <div className="flex items-center relative pl-[6%] md:py-4 bg-emdmsPrimary w-2/3 lg:w-4/5">
           <img src={Logo} alt="LMIS Logo" className="h-1/2 md:h-full " />
           <div className="text-white lg:text-2xl hidden md:block font-bold pl-10 ">
@@ -123,19 +124,81 @@ const NavBar = () => {
             </p>
           </Link>
           <Link
-            onClick={() => {
-              setMenuOpen(false);
-            }}
+            to="/agency"
+            className={`${
+              activePage === "Dashboard"
+                ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+                : "hover:bg-N99/50 text-N60"
+            } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+            <BiSolidDashboard className="text-2xl" />
+
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              Dashboard
+            </p>
+          </Link>
+          <Link
+            to="/dashboard/profile"
+            className={`${
+              activePage === "Profile"
+                ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+                : "hover:bg-N99/50 text-N60"
+            } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+            <BsPersonBadgeFill className="text-2xl" />
+
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              Profile
+            </p>
+          </Link>
+          <Link
+            to="/dashboard/job-order"
+            className={`${
+              activePage === "Job Order List"
+                ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+                : "hover:bg-N99/50 text-N60"
+            } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+            <BsFillBagCheckFill className="text-2xl" />
+
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              Job Order List
+            </p>
+          </Link>
+          <Link
             to="/dashboard/documents"
             className={`${
               activePage === "Documents"
                 ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
                 : "hover:bg-N99/50 text-N60"
             } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
-            <MdAssignment className="" />
+            <MdAssignment className="text-2xl" />
 
-            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
               Documents
+            </p>
+          </Link>
+          <Link
+            to="/agency/license"
+            className={`${
+              activePage === "license"
+                ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+                : "hover:bg-N99/50 text-N60"
+            } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+            <MdAssignment className="text-2xl" />
+
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              License
+            </p>
+          </Link>
+          <Link
+            to="/agency/stuff"
+            className={`${
+              activePage === "staff"
+                ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+                : "hover:bg-N99/50 text-N60"
+            } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+            <FaFileSignature className="text-2xl" />
+
+            <p className="font-medium text-lg whitespace-nowrap overflow-hidden w-4/5">
+              Staff Members
             </p>
           </Link>
         </div>

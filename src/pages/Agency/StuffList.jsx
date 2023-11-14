@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import StuffClip from "../../assets/StuffClip.png";
 import Body from "../../components/layout/Agency/Body";
-import Modal from "../../components/Modal";
+import Modal from "../../components/utilities/Modal";
 import { BsFillExclamationTriangleFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { LiaRedoAltSolid } from "react-icons/lia";
