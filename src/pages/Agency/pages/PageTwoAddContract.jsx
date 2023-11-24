@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../../../components/utilities/Button";
 import { CiFolderOn } from "react-icons/ci";
 import { BsThreeDotsVertical } from "react-icons/bs";
-
+import Avatar from "../../../assets/images/Avatar.png";
 import "react-datepicker/dist/react-datepicker.css";
 
 const options = [
@@ -179,47 +179,70 @@ const PageTwoAddContract = ({
       </div>
 
       {/* right side card */}
-      <div className="lg:w-[30%] p-6 flex flex-col gap-6 items-start bg-emdmsPrimary h-max border-4 border-white rounded-xl">
-        {/* <div className="flex flex-col gap-2">
-           <p className="font-medium text-white">
-             Register your personal Information
-           </p>
-           <p className="font-light text-xs text-N99/60 leading-relaxed">
-             Here in this section is general information. you will need to
-             complete all inputs in order to be verified and continue the
-             process.
-           </p>
-         </div> */}
-        <div className="lg:flex flex-col gap-2">
-          <p className="font-medium text-white">Reminder</p>
-          <ul className="px-6 list-disc font-light text-xs text-N99/60 leading-relaxed">
-            <li>Make sure you have submitted all necessary information.</li>
-            <li>Make sure you have provided legit/legal residence locations</li>
-            <li>
-              If you find any difficulties while you submit the information's
-              Contact us with our email address
-            </li>
-          </ul>
+      <div className="lg:w-[30%] space-y-4 flex flex-col h-[68vh] overflow-y-auto  ">
+        <div className=" p-6 flex flex-col gap-4 items-start bg-white  border-4  border-white  rounded-xl">
+          {" "}
+          <div className="bg-[#008080] p-1 rounded-l-md flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
+              <div className="w-32 h-32 bg-white ">
+                <img src={Avatar} alt="Avatar" className="w-32 h-32" />
+              </div>
+            </div>
+          </div>
+          <div className="font-bold text-lg">Labor Information </div>
+          <div className="border border-[#D9D9D9] w-full"></div>
+          <div className=" px-6 flex flex-col gap-3">
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Full Name</div>
+              <div className="text-[14px]">Belaynesh Demeke Demse</div>
+            </div>
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Gender</div>
+              <div className="text-[14px]">Female</div>
+            </div>
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Martial Status</div>
+              <div className="text-[14px]">Single</div>
+            </div>{" "}
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Region</div>
+              <div className="text-[14px]">Amhara</div>
+            </div>
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Phone Number</div>
+              <div className="text-[14px]">+251 789 928 879</div>
+            </div>
+          </div>
         </div>
-
-        <div className="flex gap-3 items-center">
-          <input
-            type="checkbox"
-            className="w-5 h-5 checked:bg-teal-600 checked:border-transparent"
-            // {...register("agreeTerms")}
-          />
-          <p className="text-white font-light text-sm">
-            I agree to the{" "}
-            <span className="font-medium underline cursor-pointer">
-              terms and conditions
-            </span>
-          </p>
+        <div className=" p-6 flex flex-col gap-4 items-start bg-white  border-4  border-white  rounded-xl">
+          {" "}
+          <div className="font-bold text-lg">
+            Emergency Contact Information{" "}
+          </div>
+          <div className="border border-[#D9D9D9] w-full"></div>
+          <div className=" px-6 flex flex-col gap-3">
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Full Name</div>
+              <div className="text-[14px]">Belaynesh Demeke Demse</div>
+            </div>
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Gender</div>
+              <div className="text-[14px]">Female</div>
+            </div>
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Martial Status</div>
+              <div className="text-[14px]">Single</div>
+            </div>{" "}
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Region</div>
+              <div className="text-[14px]">Amhara</div>
+            </div>
+            <div className="flex flex-col ">
+              <div className="text-emdmsPrimary text-lg">Phone Number</div>
+              <div className="text-[14px]">+251 789 928 879</div>
+            </div>
+          </div>
         </div>
-        {/* {errors.agreeTerms && (
-           <p className="text-yellow-500 text-xs">
-             {errors.agreeTerms.message}
-           </p>
-         )} */}
       </div>
       {/* end of right side card */}
     </div>

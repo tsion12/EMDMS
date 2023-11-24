@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "../../../components/utilities/Button";
-import { AiFillFileAdd, AiOutlineInfoCircle } from "react-icons/ai";
+import Avatar from "../../../assets/images/Avatar.png";
 import { FaAngleLeft } from "react-icons/fa6";
 import Select from "react-select";
 import { MdAddCircleOutline, MdFormatListBulleted } from "react-icons/md";
@@ -606,70 +606,77 @@ const AddContractPage = ({
 
               {/* right side card */}
               <div className="lg:w-[30%] space-y-4 flex flex-col h-[68vh] overflow-y-auto  ">
-                {[1, 2, 3, 4].map(() => (
-                  <div className=" p-6 flex flex-col gap-4 items-start bg-white  border-4  border-white  rounded-xl">
-                    <div className="font-bold text-lg">Job Order Info #1</div>
-                    <div className="border border-[#D9D9D9] w-full"></div>
-                    <div className=" px-6 flex flex-col gap-3">
-                      <div className="flex flex-col ">
-                        <div className="text-emdmsPrimary text-lg">
-                          Job Category
-                        </div>
-                        <div className="text-[14px]">
-                          Senior Marketing Manager
-                        </div>
-                      </div>
-                      <div className="flex flex-col ">
-                        <div className="text-emdmsPrimary text-lg">
-                          Job Position
-                        </div>
-                        <div className="text-[14px]">
-                          Senior Marketing Manager
-                        </div>
-                      </div>
-                      <div className="flex flex-col ">
-                        <div className="text-emdmsPrimary text-lg">
-                          Job Category
-                        </div>
-                        <div className="text-[14px]">
-                          Senior Marketing Manager
-                        </div>
-                      </div>{" "}
-                      <div className="flex flex-col ">
-                        <div className="text-emdmsPrimary text-lg">
-                          Job Category
-                        </div>
-                        <div className="text-[14px]">
-                          Senior Marketing Manager
-                        </div>
-                      </div>
-                      <div className="flex flex-col ">
-                        <div className="text-emdmsPrimary text-lg">
-                          Job Category
-                        </div>
-                        <div className="text-[14px]">
-                          Senior Marketing Manager
-                        </div>
-                      </div>
-                      <div className="flex flex-col ">
-                        <div className="text-emdmsPrimary text-lg">
-                          Job Category
-                        </div>
-                        <div className="text-[14px]">
-                          Senior Marketing Manager
-                        </div>
-                      </div>
-                      <div className="flex flex-col ">
-                        <div className="text-emdmsPrimary text-lg">
-                          Job Category
-                        </div>
-                        <div className="text-[14px]">
-                          Senior Marketing Manager
-                        </div>
+                <div className=" p-6 flex flex-col gap-4 items-start bg-white  border-4  border-white  rounded-xl">
+                  {" "}
+                  <div className="bg-[#008080] p-1 rounded-l-md flex items-center justify-center">
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="w-32 h-32 bg-white ">
+                        <img src={Avatar} alt="Avatar" className="w-32 h-32" />
                       </div>
                     </div>
                   </div>
-                ))}{" "}
+                  <div className="font-bold text-lg">Labor Information </div>
+                  <div className="border border-[#D9D9D9] w-full"></div>
+                  <div className=" px-6 flex flex-col gap-3">
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">Full Name</div>
+                      <div className="text-[14px]">Belaynesh Demeke Demse</div>
+                    </div>
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">Gender</div>
+                      <div className="text-[14px]">Female</div>
+                    </div>
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">
+                        Martial Status
+                      </div>
+                      <div className="text-[14px]">Single</div>
+                    </div>{" "}
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">Region</div>
+                      <div className="text-[14px]">Amhara</div>
+                    </div>
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">
+                        Phone Number
+                      </div>
+                      <div className="text-[14px]">+251 789 928 879</div>
+                    </div>
+                  </div>
+                </div>
+                <div className=" p-6 flex flex-col gap-4 items-start bg-white  border-4  border-white  rounded-xl">
+                  {" "}
+                  <div className="font-bold text-lg">
+                    Emergency Contact Information{" "}
+                  </div>
+                  <div className="border border-[#D9D9D9] w-full"></div>
+                  <div className=" px-6 flex flex-col gap-3">
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">Full Name</div>
+                      <div className="text-[14px]">Belaynesh Demeke Demse</div>
+                    </div>
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">Gender</div>
+                      <div className="text-[14px]">Female</div>
+                    </div>
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">
+                        Martial Status
+                      </div>
+                      <div className="text-[14px]">Single</div>
+                    </div>{" "}
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">Region</div>
+                      <div className="text-[14px]">Amhara</div>
+                    </div>
+                    <div className="flex flex-col ">
+                      <div className="text-emdmsPrimary text-lg">
+                        Phone Number
+                      </div>
+                      <div className="text-[14px]">+251 789 928 879</div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* end of right side card */}
