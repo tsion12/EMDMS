@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import NavBar from "./components/layout/Admin/NavBar";
-import Aside from "./components/layout/Admin/SideBar";
 import { useLocation } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import routes from "./routes/route";
