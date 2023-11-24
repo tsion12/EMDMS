@@ -18,7 +18,7 @@ const Aside = () => {
       setActivePage("Dashboard");
     } else if (location.pathname === "/local-applicants") {
       setActivePage("Foreign Management");
-    } else if (location.pathname === "/job-order") {
+    } else if (location.pathname === "admin/job-order") {
       setActivePage("Job Order");
     } else if (location.pathname === "/staff-members") {
       setActivePage("Staff Members");
@@ -29,7 +29,7 @@ const Aside = () => {
       <div
         className={`${
           sidebarOpen ? "w-[230px] " : "w-0 md:w-[120px]"
-        } h-full bg-[#F9F9F9] py-20 md: customHeight fixed flex flex-col gap-6 items-end transition-all duration-200 ease-in-out md:relative z-20`}>
+        } h-full bg-[#F9F9F9] py-20 px-8 customHeight fixed flex flex-col gap-6 items-end transition-all duration-200 ease-in-out md:relative z-20`}>
         <div
           onClick={() => {
             setSidebarOpen((prev) => !prev);
@@ -93,6 +93,20 @@ const Aside = () => {
           {sidebarOpen && (
             <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
               Inspection
+            </p>
+          )}
+        </Link>
+        <Link
+          to="/admin/job-order"
+          className={`${
+            activePage === "job-order"
+              ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+              : "hover:bg-N99/50 text-N60"
+          } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+          <MdOutlineNoteAlt className="text-2xl" />
+          {sidebarOpen && (
+            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+              Job Order
             </p>
           )}
         </Link>

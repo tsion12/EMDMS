@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import Button from "../../components/utilities/Button";
-import ReactTable from "../../components/adminComponents/ReactTable";
 import { TbScanEye } from "react-icons/tb";
 import { BiSolidFilePdf } from "react-icons/bi";
 import { createColumnHelper } from "@tanstack/react-table";
-import Requestjoborder from "../../components/foreignComponents/RequestJobOrder";
-import Body from "../../components/layout/Foriegn/Body";
-import ApprovedTab from "../Admin/license_Inspection/pages/ApprovedTab";
-import StatusTab from "../../components/foreignComponents/StatusTab";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import Button from "../../../components/utilities/Button";
+import ReactTable from "../../../components/adminComponents/ReactTable";
+import Requestjoborder from "../../../components/adminComponents/RequestJobOrder";
+import Body from "../../../components/layout/Agency/Body";
 
-const JobOrder = () => {
+const AdminJobOrder = () => {
   const [page, setPage] = useState("table");
   const [activeTab, setActiveTab] = useState("New Application");
   const [currentTab, setcurrentTab] = useState("");
@@ -141,10 +139,9 @@ const JobOrder = () => {
             </div>
 
             <div className="mt-10   w-full h-[50vh] overflow-y-auto">
-              {/* <ReactTable
+              <ReactTable
                 columns={columns}
-                defaultData={defaultData}></ReactTable> */}
-              <StatusTab openModal={openModal} setOpenModal={setOpenModal} />
+                defaultData={defaultData}></ReactTable>
             </div>
             <div className="flex justify-center items-end md:justify-end mt-2 mr-5 space-x-3">
               <button className="border border-[#005656] px-6 py-2 lg:py-1">
@@ -171,7 +168,7 @@ const JobOrder = () => {
                 <div
                   onClick={() => setPage((prev) => prev + 1)}
                   className=" space-x-2 items-center  flex text-[#005656]">
-                  <div className="hidden  md:block">Next</div>
+                  <div className="hidden mn:block">Next</div>
                   <AiOutlineRight />
                 </div>
               </button>
@@ -325,4 +322,4 @@ const JobOrder = () => {
   );
 };
 
-export default JobOrder;
+export default AdminJobOrder;

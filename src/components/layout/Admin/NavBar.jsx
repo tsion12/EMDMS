@@ -26,7 +26,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header className="bg-white w-full flex z-20 justify-between items-center relative h-24">
+    <header className="bg-white w-full flex z-20 justify-between items-center relative h-24 ">
       <div className="flex gap-8 items-center w-1/2 lg:bg-transparent bg-emdmsPrimary">
         <div className="bg-[#005656] lg:w-[230px] items-center h-full">
           <img src={Logo} alt="Company Logo" className="h-24 px-8 py-4" />

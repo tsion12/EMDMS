@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "../../components/utilities/Button";
-import ReactTable from "../../components/foreignComponents/ReactTable";
 import { TbScanEye } from "react-icons/tb";
 import { BiMaleFemale, BiSolidFilePdf } from "react-icons/bi";
 import { createColumnHelper } from "@tanstack/react-table";
@@ -15,6 +14,7 @@ import {
 } from "react-icons/ai";
 import AgencyStatusTab from "../../components/agency components/AgencyStatusTab";
 import { BsCalendarWeek, BsPersonCircle } from "react-icons/bs";
+import PaginationComponent from "../../components/utilities/PaginationComponent";
 
 const AgencyJobOrder = () => {
   const [page, setPage] = useState("table");
@@ -146,7 +146,7 @@ const AgencyJobOrder = () => {
               </div>
             </div>
 
-            <div className="mt-10   w-full h-[50vh] overflow-y-auto">
+            <div className="mt-10   w-full h-[40vh] overflow-y-auto">
               {/* <ReactTable
                 columns={columns}
                 defaultData={defaultData}></ReactTable> */}
@@ -155,35 +155,34 @@ const AgencyJobOrder = () => {
                 setOpenModal={setOpenModal}
               />
             </div>
-            <div className="flex justify-center items-end md:justify-end mt-2 mr-5 space-x-3">
-              <button className="border border-[#005656] px-6 py-2 lg:py-1">
-                {" "}
-                <div
-                  onClick={() => setPage((prev) => prev - 1)}
-                  className=" space-x-2 items-center  flex text-[#005656]">
-                  {" "}
-                  <AiOutlineLeft />
-                  <div className="hidden  md:block">Previous</div>
-                </div>
-              </button>
-              <div className="border border-[#005656] bg-white pr-2 flex space-x-6 ">
-                {" "}
-                <button className="bg-emdmsPrimary text-white px-3 py-1">
-                  1
-                </button>
-                <button className="text-emdmsPrimary">2</button>
-                <button className="text-emdmsPrimary">3</button>
-                <button className="text-emdmsPrimary">4</button>
-              </div>
-              <button className="border border-[#005656] px-6 py-2 lg:py-1">
-                {" "}
-                <div
-                  onClick={() => setPage((prev) => prev + 1)}
-                  className=" space-x-2 items-center  flex text-[#005656]">
-                  <div className="hidden  md:block">Next</div>
-                  <AiOutlineRight />
-                </div>
-              </button>
+            <div>
+              {/* <button className="border border-[#005656] px-6 py-2 lg:py-1">
+            {" "}
+            <div
+              onClick={() => setPage((prev) => prev - 1)}
+              className=" space-x-2 items-center  flex text-[#005656]">
+              {" "}
+              <AiOutlineLeft />
+              <div className="hidden  md:block">Previous</div>
+            </div>
+          </button>
+          <div className="border border-[#005656] bg-white pr-2 flex space-x-6 ">
+            {" "}
+            <button className="bg-emdmsPrimary text-white px-3 py-1">1</button>
+            <button className="text-emdmsPrimary">2</button>
+            <button className="text-emdmsPrimary">3</button>
+            <button className="text-emdmsPrimary">4</button>
+          </div>
+          <button className="border border-[#005656] px-6 py-2 lg:py-1">
+            {" "}
+            <div
+              onClick={() => setPage((prev) => prev + 1)}
+              className=" space-x-2 items-center  flex text-[#005656]">
+              <div className="hidden md:block">Next</div>
+              <AiOutlineRight />
+            </div>
+          </button> */}
+              <PaginationComponent />
             </div>
           </div>
         </>

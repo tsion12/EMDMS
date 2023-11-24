@@ -101,7 +101,7 @@ const Requestjoborder = ({ goback }) => {
                     {/* end of text-field one */}
 
                     {/* end of text-field two */}
-                    <div className="lg:flex justify-between  mt-8">
+                    <div className="lg:flex justify-between mt-8">
                       <div className="lg:flex flex-col">
                         <div className="flex items-center gap-2">
                           <AiOutlineInfoCircle className="text-[#00808099]" />
@@ -110,7 +110,7 @@ const Requestjoborder = ({ goback }) => {
                               <p className="text-gray-500">Quantity *</p>
                             </div>
                             <div>
-                              <p className="text-[#949494] text-xs ">
+                              <p className="text-[#949494] text-xs font-poppins">
                                 Eg. 150, 250, 500, ...
                               </p>
                             </div>
@@ -138,7 +138,7 @@ const Requestjoborder = ({ goback }) => {
                               <p className="text-gray-500">Partners List *</p>
                             </div>
                             <div>
-                              <p className="text-[#949494] text-xs ">
+                              <p className="text-[#949494] text-xs font-poppins">
                                 Eg. Choose a partner from Ethiopia
                               </p>
                             </div>
@@ -184,7 +184,7 @@ const Requestjoborder = ({ goback }) => {
                             type="text"
                             id="name"
                             name="name"
-                            class="w-full h-[150px] px-2 py-2 border border-gray-300 rounded-d-md  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="w-full h-[150px] px-2 py-2 border border-gray-300 rounded-b-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Description"
                           />
                         </div>

@@ -11,6 +11,8 @@ import ForeignDashboard from "../pages/Foriegn/Dashboard";
 import LicenceInspection from "../pages/Admin/license_Inspection/LicenceInspection";
 import JobOrder from "../pages/Foriegn/JobOrder";
 import AgencyJobOrder from "../pages/Agency/AgencyJobOrder";
+import AdminJobOrder from "../pages/Admin/pages/JObOrder";
+import Contracts from "../pages/Agency/Contracts";
 // import Documents from "../pages/Documents";
 
 const routes = [
@@ -19,11 +21,13 @@ const routes = [
   <Route path="/admin" element={<Dashboard />} />,
   <Route path="/admin/local-applicants" element={<LocalApplicants />} />,
   <Route path="/admin/inspection" element={<LicenceInspection />} />,
+  <Route path="/admin/job-order" element={<AdminJobOrder />} />,
 
   <Route path="/agency" element={<AgencyDashboard />} />,
   <Route path="/agency/stuff" element={<StuffList />} />,
   <Route path="/agency/job-order" element={<AgencyJobOrder />} />,
   <Route path="/agency/license" element={<License />} />,
+  <Route path="/agency/contracts" element={<Contracts />} />,
 
   <Route path="/foreign/dashboard" element={<ForeignDashboard />} />,
   <Route path="/foreign/partnership" element={<Partnership />} />,
