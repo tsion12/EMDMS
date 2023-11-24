@@ -7,8 +7,6 @@ import { MdCancel, MdOutlineCancel } from "react-icons/md";
 import Avatar from "../../assets/images/Avatar.png";
 import { TbDeviceImacSearch } from "react-icons/tb";
 import AddContractPage from "./pages/AddContractPage";
-import ContractSubmitPage from "./pages/ContractSubmitPage";
-import TableComponent from "../../components/agency components/TableComponent";
 import ContractTable from "../../components/agency components/ContractTable";
 
 const Contracts = () => {
@@ -332,6 +330,8 @@ const Contracts = () => {
             setMainPage={setMainPage}
             setStarterPage={setStarterPage}
             setCurrentTab={setCurrentTab}
+            cardArea={cardArea}
+            setCardArea={setCardArea}
           />
         </>
       )}

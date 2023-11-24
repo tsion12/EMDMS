@@ -4,6 +4,8 @@ import { CiFolderOn } from "react-icons/ci";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Avatar from "../../../assets/images/Avatar.png";
 import "react-datepicker/dist/react-datepicker.css";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { IoReloadOutline } from "react-icons/io5";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -17,6 +19,7 @@ const PageTwoAddContract = ({
 
   setStarterPage,
 }) => {
+  const [uploadState, setUploadState] = useState("upload");
   return (
     <div className="  flex gap-4 ">
       <div className="flex flex-col  w-[70%] gap-4">
@@ -47,9 +50,41 @@ const PageTwoAddContract = ({
                   </div>
                 </div>
                 <div className="flex space-x-2 text-xs items-center justify-center">
-                  <div className="border border-gray rounded-md px-8 py-1.5">
-                    Upload
-                  </div>
+                  {uploadState === "upload" && (
+                    <div
+                      onClick={() => {
+                        setUploadState("loading");
+                      }}
+                      className="border border-gray rounded-md px-8 py-1.5">
+                      Upload
+                    </div>
+                  )}
+                  {uploadState === "loading" && (
+                    <div
+                      onClick={() => {
+                        setUploadState("error");
+                      }}
+                      className="border flex items-center space-x-1 border-gray rounded-md px-8 py-1.5">
+                      <div>
+                        <AiOutlineLoading3Quarters />
+                      </div>{" "}
+                      <div>loading</div>
+                    </div>
+                  )}
+                  {uploadState === "error" && (
+                    <div className="flex space-x-1 items-center justify-center">
+                      <div>
+                        <IoReloadOutline className="text-red-400 text-lg" />
+                      </div>
+                      <div
+                        onClick={() => {
+                          setUploadState("upload");
+                        }}
+                        className="border border-red-500 rounded-md px-8 py-1.5">
+                        Error
+                      </div>
+                    </div>
+                  )}
                   <div>
                     <BsThreeDotsVertical className="font-bold" />
                   </div>

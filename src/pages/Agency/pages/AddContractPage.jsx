@@ -3,7 +3,11 @@ import Button from "../../../components/utilities/Button";
 import Avatar from "../../../assets/images/Avatar.png";
 import { FaAngleLeft } from "react-icons/fa6";
 import Select from "react-select";
-import { MdAddCircleOutline, MdFormatListBulleted } from "react-icons/md";
+import {
+  MdAddCircleOutline,
+  MdFormatListBulleted,
+  MdOutlineCancel,
+} from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { SlCalender } from "react-icons/sl";
@@ -21,6 +25,8 @@ const AddContractPage = ({
   setMainPage,
   setStarterPage,
   setCurrentTab,
+  cardArea,
+  setCardArea,
 }) => {
   const [isChecked, setIsChecked] = useState(true);
   const [startDate, setStartDate] = useState(new Date());
@@ -166,7 +172,11 @@ const AddContractPage = ({
                                   </div>
                                 </div>
 
-                                <div class="relative w-full  ">
+                                <div
+                                  onClick={() => {
+                                    setCardArea(true);
+                                  }}
+                                  class="relative w-full  ">
                                   <div class="absolute inset-y-0 right-2 flex text-[#212121] items-center pl-3 pointer-events-none">
                                     <CiSearch />
                                   </div>
@@ -181,6 +191,67 @@ const AddContractPage = ({
                                 </div>
                               </div>
                             </div>
+                            <div></div>
+                            {cardArea === true && (
+                              <div className="bg-[#F0F7F7] col-span-2 flex justify-between rounded-md shadow-md h-[230px] w-[60%]  text-xs text-[#313a4e97] ">
+                                <div className="bg-[#008080] w-[50%] rounded-l-md flex items-center justify-center">
+                                  <div className="flex flex-col items-center justify-center">
+                                    <div className="w-32 h-32 bg-white ">
+                                      <img
+                                        src={Avatar}
+                                        alt="Avatar"
+                                        className="w-32 h-32"
+                                      />
+                                    </div>
+
+                                    <div className="text-white text-lg">
+                                      Petros Temsgen Alemu
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="flex flex-col space-y-2 pl-5  w-[50%] ">
+                                  <div
+                                    onClick={() => {
+                                      setCardArea(false);
+                                    }}
+                                    className="flex justify-end pr-5 pt-2 ">
+                                    <MdOutlineCancel className="text-xl text-red-400" />
+                                  </div>
+                                  <div>Labor ID</div>
+                                  <div className="text-[#008080] text-lg">
+                                    S23-344-12232-ED12
+                                  </div>
+                                  <div className="text-black">
+                                    Age:{" "}
+                                    <span className="text-[#3A3541AD]">26</span>{" "}
+                                  </div>
+                                  <div className="text-black">
+                                    Gender:{" "}
+                                    <span className="text-[#3A3541AD]">
+                                      Female
+                                    </span>{" "}
+                                  </div>
+                                  <div className="text-black">
+                                    Martial Status:{" "}
+                                    <span className="text-[#3A3541AD]">
+                                      Single
+                                    </span>{" "}
+                                  </div>
+                                  <div className="text-black">
+                                    Region:{" "}
+                                    <span className="text-[#3A3541AD]">
+                                      Amhara
+                                    </span>{" "}
+                                  </div>
+                                  <div className="text-black">
+                                    Phone Number:{" "}
+                                    <span className="text-[#3A3541AD]">
+                                      +251 90 80 70
+                                    </span>{" "}
+                                  </div>
+                                </div>
+                              </div>
+                            )}
                           </>
                         )}
                         {!isChecked && (

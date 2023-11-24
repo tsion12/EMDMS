@@ -118,7 +118,7 @@ const ContractTable = () => {
                         : item.status === "Rejected"
                         ? "bg-red-200 text-[#FF0B00]"
                         : "bg-[#71E17C1A] text-[#71E17C]"
-                    } px-4 py-2 rounded-md w-[55%] flex items-center justify-center`}>
+                    } px-4 py-2 rounded-md w-[65%] flex items-center justify-center`}>
                     {item.status}
                   </div>
                 </td>
