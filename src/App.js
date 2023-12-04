@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     console.log(getPathFromString(pathname));
-  }, []);
+  }, [pathname]);
   return (
     <>
       <div className="h-screen overflow-hidden relative font-poppins">
