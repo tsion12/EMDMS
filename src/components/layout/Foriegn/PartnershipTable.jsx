@@ -57,21 +57,25 @@ export default function PartnershipTable() {
                 <tr>
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider"></th>
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider"
+                  ></th>
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider">
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider"
+                  >
                     Agency Name
                   </th>
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider">
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider"
+                  >
                     Requested Date
                   </th>
 
                   <th
                     scope="col"
-                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider">
+                    className="px-6 p-5  text-left text-sm font-medium text-black tracking-wider"
+                  >
                     Action
                   </th>
                 </tr>
@@ -80,7 +84,8 @@ export default function PartnershipTable() {
                 {files.map((file, index) => (
                   <tr
                     key={file.name}
-                    className={index % 2 === 0 ? "bg-red-500" : ""}>
+                    className={index % 2 === 0 ? "bg-red-500" : ""}
+                  >
                     <td className="px-6 py-4 ">
                       <div className="text-xl text-emdmsPrimary bg-white rounded-full w-10 h-10 shadow-md">
                         <img src={Profile} alt="" />
@@ -102,7 +107,8 @@ export default function PartnershipTable() {
                       </button>
                       <button
                         className="bg-emdmsPrimary px-1 py-1 flex gap-2 items-center rounded-sm"
-                        onClick={openModal}>
+                        onClick={openModal}
+                      >
                         <TbScanEye className=" text-white font-bold text-xl" />
                       </button>
                     </td>
@@ -131,7 +137,8 @@ export default function PartnershipTable() {
                 {" "}
                 <button
                   className="px-4 py-2 text-white rounded"
-                  onClick={closeModal}>
+                  onClick={closeModal}
+                >
                   <AiFillCloseCircle className="text-[#005656] text-4xl" />
                 </button>
                 <div className="text-emdmsPrimary text-lg font-bold">
@@ -194,7 +201,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         Location of the Residence
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -209,7 +217,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         Region
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -224,7 +233,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         Subcity
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -239,7 +249,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         Kebele
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -254,7 +265,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         House Number
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -269,7 +281,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         Email Address
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -284,7 +297,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         FAx
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -299,7 +313,8 @@ export default function PartnershipTable() {
                     <div className="flex flex-col items-start">
                       <div
                         className="text-xs
-                      ">
+                      "
+                      >
                         P.O.BOX
                       </div>
                       <div className="text-[10px] text-N70">labor name</div>
@@ -311,7 +326,8 @@ export default function PartnershipTable() {
               <div className="flex justify-end items-start  w-full">
                 <button
                   onClick={closeModal}
-                  className="bg-[#F0F7F7] px-10 py-2 rounded-md">
+                  className="bg-[#F0F7F7] px-10 py-2 rounded-md"
+                >
                   Cancel
                 </button>
               </div>
