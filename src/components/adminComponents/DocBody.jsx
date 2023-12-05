@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { docs } from "../../pages/Admin/data";
 import { LuBadgeX } from "react-icons/lu";
 import { RiVerifiedBadgeFill } from "react-icons/ri";

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PartnershipTable from "../../components/layout/Foriegn/PartnershipTable";
-import Button from "../../components/Button";
 
 import Search from "../../assets/svg/Vector.svg";
 import Button from "../../components/utilities/Button";
@@ -41,8 +40,7 @@ const Partnership = () => {
               activeTab === "new"
                 ? "text-emdmsPrimary font-bold"
                 : "text-N80 bg-white"
-            } px-4  w-full w-max  whitespace-nowrap`}
-          >
+            } px-4  w-full w-max  whitespace-nowrap`}>
             New Request
           </Button>
           <div className="flex items-center justify-center space-x-0 ">
@@ -54,8 +52,7 @@ const Partnership = () => {
                 activeTab === "approved"
                   ? "text-emdmsPrimary"
                   : "text-N80 bg-white"
-              } px-4  w-full w-max  whitespace-nowrap`}
-            >
+              } px-4  w-full w-max  whitespace-nowrap`}>
               Approved Requests
             </Button>
             <div className="bg-[#E59A97] h-4 w-4 rounded-full text-center text-xs text-white">
@@ -72,8 +69,7 @@ const Partnership = () => {
                 activeTab === "rejected"
                   ? "text-emdmsPrimary"
                   : "text-N80 bg-white"
-              } px-4  w-full w-max  whitespace-nowrap`}
-            >
+              } px-4  w-full w-max  whitespace-nowrap`}>
               Rejected Requests
             </Button>
             <div className="bg-[#E59A97] h-4 w-4 rounded-full text-center text-xs text-white">

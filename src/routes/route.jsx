@@ -13,7 +13,6 @@ import JobOrder from "../pages/Foriegn/JobOrder";
 import AgencyJobOrder from "../pages/Agency/AgencyJobOrder";
 import AdminJobOrder from "../pages/Admin/pages/JObOrder";
 import Contracts from "../pages/Agency/Contracts";
-// import Documents from "../pages/Documents";
 
 const routes = [
   <Route path="/" element={<Informations />} />,

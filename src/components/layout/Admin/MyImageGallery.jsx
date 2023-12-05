@@ -16,7 +16,6 @@ class MyImageGallery extends React.Component {
         src: "https://example.com/image3.jpg",
         alt: "Image 3",
       },
-      // Add more image objects as needed
     ];
 
     return (

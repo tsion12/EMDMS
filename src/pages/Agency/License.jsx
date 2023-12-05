@@ -5,18 +5,16 @@ import Flag from "../../assets/Japan.png";
 import Qatar from "../../assets/qatar.png";
 import Saudi from "../../assets/saudi.png";
 import SearchIcon from "../../assets/searchcontryIcon.png";
+import { MdUpload } from "react-icons/md";
+import { MdOutlineCancel } from "react-icons/md";
+import { IoImageOutline } from "react-icons/io5";
 
 import Portfolio from "../../assets/Portfolio.png";
-
-import { BiSearch } from "react-icons/bi";
-import { ImEqualizer } from "react-icons/im";
 import Modal from "../../components/utilities/Modal";
-import { BsChevronDown, BsFillExclamationTriangleFill } from "react-icons/bs";
-import {
-  AiFillExclamationCircle,
-  AiOutlineExclamationCircle,
-} from "react-icons/ai";
+import { BsChevronDown } from "react-icons/bs";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 import PageTwo from "./pages/PageTwo";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const License = () => {
   const [requestModal, setrequestModal] = useState(false);
@@ -223,6 +221,88 @@ const License = () => {
               <button
                 onClick={() => {
                   setActiveModal("request");
+                }}
+                className="border border-[#008080] py-2 px-16 text-N40 rounded-lg">
+                Back
+              </button>
+              <button
+                onClick={() => {
+                  setActiveModal("power");
+                }}
+                className="bg-[#008080] py-2 px-16 text-white rounded-lg">
+                Select
+              </button>
+            </div>
+
+            <div className="flex items-center justify-center pt-10 space-x-1">
+              <AiOutlineExclamationCircle className="text-red-900 font-extrabold" />
+              <p className="text-[#cf5151bf]">
+                <span className="font-bold">Note:</span> You must select only
+                one country in order to choose foreign partner to create new
+                licence
+              </p>
+            </div>
+          </Modal>
+        </div>
+      )}
+      {activeModal === "power" && (
+        <div>
+          <Modal isOpen={requestModal} onClose={closeModal}>
+            <div className="flex flex-col items-center justify-center space-y-2">
+              <div>
+                <img src={SmallMap} alt="" />
+              </div>
+              <div className="text-emdmsPrimary text-2xl font-semibold font-poppins tracking-wide">
+                Upload Power of Attorney
+              </div>
+              <div className="text-[#212121] text-xs tracking-wider font-poppins">
+                Choose the country in which the license will be issued.
+              </div>
+            </div>
+            {/* Upload Area */}
+            <div className="flex w-full flex-col space-y-2   items-center justify-center">
+              <div className="bg-[#F0F7F7] w-[65%] h-48 rounded-md flex flex-col items-center justify-center">
+                <MdUpload className="text-emdmsPrimary text-3xl" />
+                <div className="text-[#008080] font-bold">Upload Files</div>
+                <div className="text-[#8F9BBA] text-xs max-w-xs">
+                  PDF, PNG, JPG and GIF files are allowed Max 4mb{" "}
+                </div>
+              </div>
+            </div>
+            <div className="flex w-full flex-col space-y-2 items-center justify-center">
+              <div className=" w-[65%] px-5 py-2 h-24  border rounded-md flex flex-col items-center justify-center">
+                {/* <MdUpload className="text-emdmsPrimary text-3xl" /> */}
+                <div className="flex items-center justify-between w-full ">
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-10 h-10 rounded-full bg-emdmsPrimary flex items-center justify-center">
+                      <IoImageOutline className=" text-white" />
+                    </div>
+                    <div className="flex flex-col text-[#212121]">
+                      <div className="text-sm  font-bold">
+                        Power of Attorney
+                      </div>
+                      <div className="text-xs">10 MB</div>
+                    </div>
+                  </div>
+                  <div>
+                    <MdOutlineCancel className="text-red-500" />
+                  </div>
+                </div>
+                <div className="w-full my-3 px-8">
+                  <ProgressBar
+                    completed="60"
+                    height="10px"
+                    labelSize="8px"
+                    baseBgColor="#E2F0F0"
+                    bgColor="#008080"></ProgressBar>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-center space-x-6">
+              {" "}
+              <button
+                onClick={() => {
+                  setActiveModal("partner");
                 }}
                 className="border border-[#008080] py-2 px-16 text-N40 rounded-lg">
                 Back

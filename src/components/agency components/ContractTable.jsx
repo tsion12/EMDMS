@@ -5,13 +5,9 @@ import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { BsFillExclamationTriangleFill, BsQrCodeScan } from "react-icons/bs";
-import Profile from "../../assets/svg/placeholder.svg";
 import { TbScanEye } from "react-icons/tb";
 import PaginationComponent from "../utilities/PaginationComponent";
 import { AiFillCloseCircle, AiOutlineInfoCircle } from "react-icons/ai";
-import { BsCalendarWeek, BsPersonCircle } from "react-icons/bs";
-import { BiMaleFemale } from "react-icons/bi";
-import Modal from "../utilities/Modal";
 import DeleteModal from "../utilities/DeleteModal";
 const ContractTable = () => {
   const [isOpen, setIsOpen] = useState(false);

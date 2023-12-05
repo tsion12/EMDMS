@@ -222,7 +222,7 @@ const PageTwo = () => {
           </div>
         </div>
       )}
-      <div className=" w-full  flex  max-h-screen overflow-auto gap-5 ">
+      <div className=" w-full    flex  max-h-screen overflow-auto gap-5 ">
         {/* left side */}
         {page === "" && (
           <>

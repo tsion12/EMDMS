@@ -10,7 +10,6 @@ import {
 } from "recharts";
 
 const AdminAreaChart = () => {
-  // Sample data (replace with your own data)
   const data = [
     { category: "Jan", stack1: 0, stack2: 200 },
     { category: "Feb", stack1: 200, stack2: 300 },

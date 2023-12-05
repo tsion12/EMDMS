@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaAngleLeft } from "react-icons/fa6";
 import { BiSolidDashboard } from "react-icons/bi";
-import { MdAssignment, MdOutlineNoteAlt } from "react-icons/md";
+import {  MdOutlineNoteAlt } from "react-icons/md";
 import MOLSLogo from "../../../assets/svg/MOLSLogo.svg";
 import MOLSLogoText from "../../../assets/svg/MOLSLogoText.svg";
 import { Link, useLocation } from "react-router-dom";
