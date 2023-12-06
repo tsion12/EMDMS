@@ -26,8 +26,8 @@ class MyImageGallery extends React.Component {
             small={image.src}
             large={image.src}
             alt={image.alt}
-            hideDownload={true} // Optional: Hide the download button
-            hideZoom={true} // Optional: Hide the zoom button
+            hideDownload={true} 
+            hideZoom={true}
           />
         ))}
       </div>

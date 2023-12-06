@@ -13,6 +13,7 @@ import JobOrder from "../pages/Foriegn/JobOrder";
 import AgencyJobOrder from "../pages/Agency/AgencyJobOrder";
 import AdminJobOrder from "../pages/Admin/pages/JObOrder";
 import Contracts from "../pages/Agency/Contracts";
+import PartnershipApproval from "../pages/Admin/PartnershipApproval";
 
 const routes = [
   <Route path="/" element={<Informations />} />,
@@ -21,6 +22,7 @@ const routes = [
   <Route path="/admin/local-applicants" element={<LocalApplicants />} />,
   <Route path="/admin/inspection" element={<LicenceInspection />} />,
   <Route path="/admin/job-order" element={<AdminJobOrder />} />,
+  <Route path="/admin/partnership" element={<PartnershipApproval />} />,
 
   <Route path="/agency" element={<AgencyDashboard />} />,
   <Route path="/agency/stuff" element={<StuffList />} />,

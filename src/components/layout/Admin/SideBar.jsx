@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FaAngleLeft } from "react-icons/fa6";
 import { BiSolidDashboard } from "react-icons/bi";
-import {  MdOutlineNoteAlt } from "react-icons/md";
+import { MdOutlineNoteAlt } from "react-icons/md";
 import MOLSLogo from "../../../assets/svg/MOLSLogo.svg";
 import MOLSLogoText from "../../../assets/svg/MOLSLogoText.svg";
 import { Link, useLocation } from "react-router-dom";
 import { BsPersonAdd } from "react-icons/bs";
 import { HiOutlineBars3, HiXMark } from "react-icons/hi2";
+import { MdGroupAdd } from "react-icons/md";
 
 const Aside = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -22,6 +23,8 @@ const Aside = () => {
       setActivePage("Job Order");
     } else if (location.pathname === "/staff-members") {
       setActivePage("Staff Members");
+    } else if (location.pathname === "/admin/partnership") {
+      setActivePage("Partnership");
     }
   }, [location]);
   return (
@@ -107,6 +110,20 @@ const Aside = () => {
           {sidebarOpen && (
             <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
               Job Order
+            </p>
+          )}
+        </Link>
+        <Link
+          to="/admin/partnership"
+          className={`${
+            activePage === "Partnership"
+              ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+              : "hover:bg-N99/50 text-N60"
+          } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+          <MdGroupAdd className="text-2xl" />
+          {sidebarOpen && (
+            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+              Partnership
             </p>
           )}
         </Link>

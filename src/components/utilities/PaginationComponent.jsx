@@ -32,7 +32,7 @@ const PaginationComponent = () => {
   };
 
   return (
-    <div className=" my-2">
+    <div className=" my-1">
       {/* <div className="my-4">
         <h2 className="text-lg font-semibold">Page {currentPage + 1}</h2>
       </div> */}
@@ -49,7 +49,7 @@ const PaginationComponent = () => {
         previousClassName="border border-[#005656]  space-x-2 items-center  flex text-[#005656] px-4 py-1 mr-2"
         renderOnZeroPageCount={null}
         containerClassName=""
-        className="flex justify-center text-emdmsPrimary  items-end md:justify-end mt-10 mr-5 mb-4  "
+        className="flex justify-center text-emdmsPrimary  items-end md:justify-end  mr-5 mb-4  "
         pageLinkClassName="px-3 py-2 "
         pageClassName="bg-white py-1 rounded-md border border-[#005656] mx-1"
         activeLinkClassName="text-white w-full rounded-md px-2 bg-emdmsPrimary"
