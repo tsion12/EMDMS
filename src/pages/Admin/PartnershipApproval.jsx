@@ -81,7 +81,7 @@ const PartnershipApproval = () => {
               class="block w-full p-3 pl-10 pr-10 text-sm placeholder:text-[#212121] focus:outline-none border border-[#81818133] rounded-md bg-gray-50"
               placeholder="Search"
               required
-            />
+            /> 
 
             <div class="absolute inset-y-0 right-0  w-24 flex space-x-1  border rounded-l-none border-[#81818133] rounded-md items-center pr-3  pointer-events-none">
               <div className="pl-2">

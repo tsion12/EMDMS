@@ -14,6 +14,9 @@ import AgencyJobOrder from "../pages/Agency/AgencyJobOrder";
 import AdminJobOrder from "../pages/Admin/pages/JObOrder";
 import Contracts from "../pages/Agency/Contracts";
 import PartnershipApproval from "../pages/Admin/PartnershipApproval";
+import EmailSuccess from "../components/ExtraComponents/EmailSuccess";
+import SurveyComponent from "../components/ExtraComponents/SurveyComponent";
+import MedicalExamination from "../pages/Admin/medicalPages/MedicalExamination";
 
 const routes = [
   <Route path="/" element={<Informations />} />,
@@ -23,12 +26,14 @@ const routes = [
   <Route path="/admin/inspection" element={<LicenceInspection />} />,
   <Route path="/admin/job-order" element={<AdminJobOrder />} />,
   <Route path="/admin/partnership" element={<PartnershipApproval />} />,
+  <Route path="/admin/medical-examination" element={<MedicalExamination />} />,
 
   <Route path="/agency" element={<AgencyDashboard />} />,
   <Route path="/agency/stuff" element={<StuffList />} />,
   <Route path="/agency/job-order" element={<AgencyJobOrder />} />,
   <Route path="/agency/license" element={<License />} />,
   <Route path="/agency/contracts" element={<Contracts />} />,
+  <Route path="/agency/survey" element={<SurveyComponent />} />,
 
   <Route path="/foreign/dashboard" element={<ForeignDashboard />} />,
   <Route path="/foreign/partnership" element={<Partnership />} />,

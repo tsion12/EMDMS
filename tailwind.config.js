@@ -8,6 +8,7 @@ module.exports = {
       },
       colors: {
         emdmsPrimary: "#005656",
+        new: "#008894",
         N0: "#000000",
         N10: "#151515",
         N20: "#2A2A2A",

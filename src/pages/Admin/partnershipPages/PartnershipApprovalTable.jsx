@@ -1,9 +1,6 @@
 import User from "../../../assets/Ellipse 2.png";
-
 import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { BsQrCodeScan } from "react-icons/bs";
 import { TbScanEye } from "react-icons/tb";
 import { AiFillCloseCircle, AiOutlineInfoCircle } from "react-icons/ai";
 
