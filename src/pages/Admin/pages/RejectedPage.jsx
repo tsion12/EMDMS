@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import Map from "../../../assets/map.png";
-import SmallMap from "../../../assets/smallMaop.png";
-import Flag from "../../../assets/Japan.png";
-import Qatar from "../../../assets/qatar.png";
-import SubmitFlag from "../../../assets/submitFlag.png";
+import SubmitFlag from "../../../assets/svg/submitFlag.png";
 import RejectionModal from "../../../components/utilities/RejectionModal";
 
 const RejectedPage = () => {

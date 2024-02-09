@@ -1,6 +1,6 @@
 import React from "react";
 import { BsExclamationTriangleFill } from "react-icons/bs";
-import Image from "../../../../assets/image.png";
+import Image from "../../../../assets/svg/image.png";
 
 const EquipmentCheck = () => {
   return (

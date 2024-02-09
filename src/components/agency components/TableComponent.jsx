@@ -1,4 +1,4 @@
-import User from "../../assets/Ellipse 2.png";
+import User from "../../assets/svg/Ellipse 2.png";
 import { MdEdit } from "react-icons/md";
 import { CiRedo } from "react-icons/ci";
 import React, { useState } from "react";

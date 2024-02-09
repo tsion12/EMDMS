@@ -1,6 +1,4 @@
-import User from "../../assets/Ellipse 2.png";
-import { MdEdit } from "react-icons/md";
-import { CiRedo } from "react-icons/ci";
+import User from "../../assets/svg/Ellipse 2.png";
 import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { RiDeleteBin5Line } from "react-icons/ri";

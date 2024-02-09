@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StarterClip from "../../assets/images/starter.png";
 import Button from "../../components/utilities/Button";
-import ApplicationClip from "../../assets/applicationClip.png";
+import ApplicationClip from "../../assets/svg/applicationClip.png";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 // import Modal from "../../components/utilities/Modal";

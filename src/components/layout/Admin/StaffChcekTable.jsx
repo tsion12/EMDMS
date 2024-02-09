@@ -1,6 +1,6 @@
 import React from "react";
-import Avatar from "../../../assets/placeholder.png";
-import Avatar2 from "../../../assets/placeholder2.png";
+import Avatar from "../../../assets/svg/placeholder.png";
+import Avatar2 from "../../../assets/svg/placeholder2.png";
 
 const data = [
   {

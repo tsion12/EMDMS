@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import StuffClip from "../../assets/StuffClip.png";
+import StuffClip from "../../assets/svg/StuffClip.png";
 import Body from "../../components/layout/Agency/Body";
 import Modal from "../../components/utilities/Modal";
 import { BsFillExclamationTriangleFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { LiaRedoAltSolid } from "react-icons/lia";
 
-import User from "../../assets/Ellipse 2.png";
+import User from "../../assets/svg/Ellipse 2.png";
 import { MdOutlineCancel } from "react-icons/md";
 import TableComponent from "../../components/agency components/TableComponent";
 

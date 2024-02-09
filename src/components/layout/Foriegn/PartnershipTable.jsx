@@ -1,6 +1,6 @@
 import { TbScanEye } from "react-icons/tb";
 import Profile from "../../../assets/svg/placeholder.svg";
-import Ellipse from "../../../assets/Ellipse 829.png";
+import Ellipse from "../../../assets/svg/Ellipse 829.png";
 import { useState } from "react";
 import { AiFillCloseCircle, AiOutlineInfoCircle } from "react-icons/ai";
 import { BsCheckLg, BsPersonCircle } from "react-icons/bs";

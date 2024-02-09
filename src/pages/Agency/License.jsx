@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Map from "../../assets/map.png";
-import SmallMap from "../../assets/smallMaop.png";
-import Flag from "../../assets/Japan.png";
-import Qatar from "../../assets/qatar.png";
-import Saudi from "../../assets/saudi.png";
-import SearchIcon from "../../assets/searchcontryIcon.png";
+import Map from "../../assets/svg/map.png";
+import SmallMap from "../../assets/svg/smallMaop.png";
+import Flag from "../../assets/svg/Japan.png";
+import Qatar from "../../assets/svg/qatar.png";
+import Saudi from "../../assets/svg/saudi.png";
+import SearchIcon from "../../assets/svg/searchcontryIcon.png";
 import { MdUpload } from "react-icons/md";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoImageOutline } from "react-icons/io5";
 
-import Portfolio from "../../assets/Portfolio.png";
+import Portfolio from "../../assets/svg/Portfolio.png";
 import Modal from "../../components/utilities/Modal";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineExclamationCircle } from "react-icons/ai";

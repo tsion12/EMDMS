@@ -13,10 +13,12 @@ import JobOrder from "../pages/Foriegn/JobOrder";
 import AgencyJobOrder from "../pages/Agency/AgencyJobOrder";
 import AdminJobOrder from "../pages/Admin/pages/JObOrder";
 import Contracts from "../pages/Agency/Contracts";
+
 import PartnershipApproval from "../pages/Admin/PartnershipApproval";
 import EmailSuccess from "../components/ExtraComponents/EmailSuccess";
 import SurveyComponent from "../components/ExtraComponents/SurveyComponent";
 import MedicalExamination from "../pages/Admin/medicalPages/MedicalExamination";
+import ContractsList from "../pages/Foriegn/ContractsList";
 
 const routes = [
   <Route path="/" element={<Informations />} />,
@@ -38,6 +40,7 @@ const routes = [
   <Route path="/foreign/dashboard" element={<ForeignDashboard />} />,
   <Route path="/foreign/partnership" element={<Partnership />} />,
   <Route path="/foreign/job-order" element={<JobOrder />} />,
+  <Route path="/foreign/contracts" element={<ContractsList />} />,
 ];
 
 export default routes;

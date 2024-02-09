@@ -1,4 +1,4 @@
-import User from "../../../assets/Ellipse 2.png";
+import User from "../../../assets/svg/Ellipse 2.png";
 import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { TbScanEye } from "react-icons/tb";

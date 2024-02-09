@@ -13,7 +13,9 @@ const MedicalExamination = () => {
   const [activeTab, setActiveTab] = useState("application");
   const [medicalTab, setMedicalTab] = useState("");
   const [step, setStep] = useState("past");
+
   const handleClick = () => {
+
     if (step === "past") {
       setStep("medicalOne");
     } else if (step === "medicalOne") {
@@ -27,6 +29,8 @@ const MedicalExamination = () => {
     } else if (step === "investigationThree") {
       setStep("physical");
     }
+
+    
   };
   return (
     <div className="m-10 flex w-full h-full space-x-4">

@@ -12,7 +12,7 @@ import {
 import { IoIosAddCircle } from "react-icons/io";
 import { HiPhone } from "react-icons/hi";
 
-import Profile from "../../../assets/placeholder.png";
+import Profile from "../../../assets/svg/placeholder.png";
 import {
   BsCheckLg,
   BsChevronDown,

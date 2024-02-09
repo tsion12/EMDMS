@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import Map from "../../../assets/map.png";
-import SmallMap from "../../../assets/smallMaop.png";
-import Flag from "../../../assets/Japan.png";
-import Qatar from "../../../assets/qatar.png";
-import SubmitFlag from "../../../assets/submitFlag.png";
+import Map from "../../../assets/svg/map.png";
+import SmallMap from "../../../assets/svg/smallMaop.png";
+import Flag from "../../../assets/svg/Japan.png";
+import Qatar from "../../../assets/svg/qatar.png";
+import SubmitFlag from "../../../assets/svg/submitFlag.png";
 
-import Saudi from "../../../assets/saudi.png";
-import SearchIcon from "../../../assets/searchcontryIcon.png";
+
+import Saudi from "../../../assets/svg/saudi.png";
+import SearchIcon from "../../../assets/svg/searchcontryIcon.png";
 
 import { FaFileCircleCheck } from "react-icons/fa6";
 import { GoChecklist } from "react-icons/go";

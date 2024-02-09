@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsExclamationTriangleFill } from "react-icons/bs";
-import Image from "../../../../assets/image.png";
+import Image from "../../../../assets/svg/image.png";
 import ModalImage from "react-modal-image";
 import MyImageGallery from "../../../../components/layout/Admin/MyImageGallery";
 import ImageCropModal from "../../../../components/layout/Admin/ImageCropModal";
