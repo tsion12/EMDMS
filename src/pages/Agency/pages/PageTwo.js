@@ -990,11 +990,11 @@ const PageTwo = () => {
               )}
               {activeTab === "payment" && (
                 <div className="h-full flex flex-col justify-between">
-                  <div className="flex space-x-8 w-full h-[65vh] overflow-auto noscrollBar">
+                  <div className="flex flex-col space-x-0  lg:flex-row lg:space-x-8 w-full h-[65vh] overflow-auto noscrollBar">
                     {paidState === true && (
                       <>
                         {" "}
-                        <div className="flex flex-col items-center justify-start w-[50%] p-5 bg-white rounded-lg">
+                        <div className="flex flex-col items-center justify-start w-full lg:w-[50%] p-5 bg-white rounded-lg">
                           <h2>Payment Guide Pages</h2>
                           <div className="w-full h-full ">
                             <Slider {...settings}>
@@ -1149,7 +1149,7 @@ const PageTwo = () => {
                             </Slider>
                           </div>
                         </div>
-                        <div className="flex flex-col items-center justify-start w-[50%] p-5 bg-white rounded-lg">
+                        <div className="flex flex-col items-center justify-start w-full lg:w-[50%] p-5 bg-white rounded-lg">
                           <h2 className="text-[#292929]">Payment Code</h2>
                           <div className="flex flex-col space-y-6 h-full items-center justify-center">
                             <div className="flex text-[#555555] items-center space-x-2">
@@ -1172,12 +1172,16 @@ const PageTwo = () => {
                       </>
                     )}
                     {paidState === false && (
-                      <div className="relative flex items-center justify-start w-full  bg-white rounded-lg">
-                        <div className="absolute bottom-0 -left-40">
-                          <img src={PaidHand} alt="" />
+                      <div className="md:relative flex items-center justify-start w-full  bg-white rounded-lg">
+                        <div className="md:absolute md:bottom-0 md:-left-40">
+                          <img
+                            src={PaidHand}
+                            alt=""
+                            className="hidden md:block"
+                          />
                         </div>
-                        <div className="absolute right-24 space-y-4 flex flex-col items-start justify-center">
-                          <img src={CheckIcon} alt="" />
+                        <div className="md:absolute md:right-24 space-y-4 flex flex-col items-start justify-center">
+                          <img src={CheckIcon} alt="" className="md:w-full w-30" />
                           <div className="text-2xl text-emdmsPrimary">
                             We’ve received your payment{" "}
                           </div>
