@@ -1,5 +1,18 @@
 import React, { useState } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
+import MobileMockupOne from "../../../assets/svg/FirstMobileMockup.svg";
+import MobileMockUpTwo from "../../../assets/svg/MobileMockUpTwo.svg";
+import MobileMockup3 from "../../../assets/svg/MobileMockup3.svg";
+import LineOverlay from "../../../assets/svg/LineOver.svg";
+import SlideTwo from "../../../assets/svg/SlideTwo.svg";
+import SlideThree from "../../../assets/svg/SlideThreee.svg";
+import SlideFour from "../../../assets/svg/SlideFour.svg";
+import MobileMockup4 from "../../../assets/svg/MockupFour.svg";
+import PaidHand from "../../../assets/svg/paid.svg";
+import CheckIcon from "../../../assets/svg/checkIcon.svg";
+import FileFirstIcon from "../../../assets/svg/FirstStepIcon.svg";
+import { BsDot } from "react-icons/bs";
+
 import {
   AiFillCloseCircle,
   AiFillHome,
@@ -9,6 +22,8 @@ import {
   AiOutlineLeft,
   AiOutlinePlus,
 } from "react-icons/ai";
+import { LuCopy } from "react-icons/lu";
+
 import { IoIosAddCircle } from "react-icons/io";
 import { HiPhone } from "react-icons/hi";
 
@@ -24,11 +39,14 @@ import {
 import {
   MdDocumentScanner,
   MdMoney,
-  MdOutlineCancel,
   MdOutlineStickyNote2,
-  MdStickyNote2,
   MdUpload,
 } from "react-icons/md";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { BiCalendar, BiSolidFolderMinus } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
 import Modal from "../../../components/utilities/Modal";
@@ -64,6 +82,14 @@ const PageTwo = () => {
   };
 
   const [activeTab, setActiveTab] = useState("");
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  const [paidState, setPaidState] = useState(false);
   return (
     <div className="mt-10 ml-20">
       {/* Upload Side Modal */}
@@ -284,6 +310,17 @@ const PageTwo = () => {
                         : "text-[#292929]"
                     }`}>
                     Rental Contract
+                  </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab("payment");
+                    }}
+                    className={`px-8 py-2 ${
+                      activeTab === "payment"
+                        ? "text-emdmsPrimary border-b-8 border-emdmsPrimary"
+                        : "text-[#292929]"
+                    }`}>
+                    Payment
                   </button>
                 </div>
               </>
@@ -951,6 +988,262 @@ const PageTwo = () => {
                   </div>
                 </div>
               )}
+              {activeTab === "payment" && (
+                <div className="h-full flex flex-col justify-between">
+                  <div className="flex space-x-8 w-full h-[65vh] overflow-auto noscrollBar">
+                    {paidState === true && (
+                      <>
+                        {" "}
+                        <div className="flex flex-col items-center justify-start w-[50%] p-5 bg-white rounded-lg">
+                          <h2>Payment Guide Pages</h2>
+                          <div className="w-full h-full ">
+                            <Slider {...settings}>
+                              <div className="w-full h-[55vh]flex mt-10  items-center justify-center space-x-4">
+                                <div className="w-full flex p-5 ">
+                                  <img
+                                    src={MobileMockupOne}
+                                    alt=""
+                                    className=" w-[270px]"
+                                  />
+                                  <div className=" flex flex-col space-y-2">
+                                    <div className="text-xs text-[#005656] font-bold">
+                                      First go to tele birr to make payment for
+                                      the licence
+                                    </div>{" "}
+                                    <div className="text-xs flex items-start text-[#005656]">
+                                      <div>
+                                        <BsDot className="text-sm" />
+                                      </div>
+                                      Login to the app using your phone number
+                                    </div>
+                                    <div className="text-xs flex items-start text-[#005656]">
+                                      <div>
+                                        <BsDot className="text-sm" />
+                                      </div>
+                                      After logging into the app go to the
+                                      payment section
+                                    </div>{" "}
+                                    <div className=" flex items-start  justify-center -ml-24 pt-10">
+                                      <img
+                                        src={FileFirstIcon}
+                                        alt=""
+                                        className="w-20"
+                                      />
+                                    </div>
+                                    <div className="text-[#005656]">
+                                      Payment
+                                    </div>
+                                    <div className="text-xs text-[#909090]">
+                                      Payment is the process by which a buyer
+                                      transfers funds to a seller or service
+                                      provider in services.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="w-full h-[55vh]flex mt-10  items-center justify-center space-x-4">
+                                <div className="w-full flex p-5 ">
+                                  <img
+                                    src={MobileMockUpTwo}
+                                    alt=""
+                                    className=" w-[270px]"
+                                  />
+                                  <div className=" flex flex-col space-y-2">
+                                    <div className="text-xs text-[#005656] font-bold">
+                                      Select task and government service section{" "}
+                                    </div>{" "}
+                                    <div className="text-xs flex items-start text-[#005656]">
+                                      <div>
+                                        <BsDot className="text-sm" />
+                                      </div>
+                                      After selecting the section it will
+                                      collapse and we will find the government
+                                    </div>{" "}
+                                    <div className=" flex items-start  justify-center pt-10">
+                                      <img
+                                        src={SlideTwo}
+                                        alt=""
+                                        className="w-40"
+                                      />
+                                    </div>
+                                    <div className="text-[#005656]">
+                                      Government
+                                    </div>
+                                    <div className="text-xs text-[#909090]">
+                                      Select the government icon in order to get
+                                      our payment service icon (Ethiopian Labor
+                                      Market Information System).
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="w-full h-[55vh]flex mt-10  items-center justify-center space-x-4">
+                                <div className="w-full flex p-5 ">
+                                  <img
+                                    src={MobileMockup3}
+                                    alt=""
+                                    className=" w-[270px]"
+                                  />
+                                  <div className=" flex flex-col space-y-2">
+                                    <div className=" relative text-xs text-[#005656] font-bold">
+                                      <div>
+                                        <img src={LineOverlay} alt="" />
+                                      </div>
+                                      <div className="absolute bottom-3">
+                                        After opening the the tax and government
+                                        payment section{" "}
+                                      </div>
+                                    </div>{" "}
+                                    <div className="text-xs flex items-start text-[#005656]">
+                                      <div>
+                                        <BsDot className="text-sm" />
+                                      </div>
+                                      Click on the Ethiopian Labor Market
+                                      Information System (E-LMIS).
+                                    </div>{" "}
+                                    <div className=" flex items-start  justify-center  pt-10">
+                                      <img
+                                        src={SlideThree}
+                                        alt=""
+                                        className="w-40"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="w-full h-[55vh]flex mt-10  items-center justify-center space-x-4">
+                                <div className="w-full flex p-5  ">
+                                  <img
+                                    src={MobileMockup4}
+                                    alt=""
+                                    className=" w-[290px]"
+                                  />
+                                  <div className=" flex flex-col space-y-2">
+                                    <div className="text-xs text-[#005656] font-bold">
+                                      Select task and government service section{" "}
+                                    </div>{" "}
+                                    <div className="text-xs flex items-start text-[#005656]">
+                                      <div>
+                                        <BsDot className="text-sm" />
+                                      </div>
+                                      After selecting the section it will
+                                      collapse and we will find the government
+                                    </div>{" "}
+                                    <div className=" flex items-start  justify-center pt-20 -ml-20">
+                                      <img
+                                        src={SlideFour}
+                                        alt=""
+                                        className="w-40"
+                                      />
+                                    </div>
+                                    <div className="text-[#005656] -ml-10">
+                                      Payment Order Number
+                                    </div>
+                                    <div className="text-xs text-[#909090] -ml-10">
+                                      Enter the payment number in order to make
+                                      payment
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </Slider>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-center justify-start w-[50%] p-5 bg-white rounded-lg">
+                          <h2 className="text-[#292929]">Payment Code</h2>
+                          <div className="flex flex-col space-y-6 h-full items-center justify-center">
+                            <div className="flex text-[#555555] items-center space-x-2">
+                              <LuCopy />
+                              <div>copy</div>
+                            </div>
+                            <div className="flex flex-col items-center space-y-6 justify-center">
+                              <div className="text-[#005656] text-5xl tracking-[0.3em] font-bold">
+                                546799
+                              </div>
+                              <div className="text-[#909090] text-xs text-center max-w-xs">
+                                Here is the unique payment code required to make
+                                a transaction using the Tele Birr application.
+                                Please ensure that you keep this code
+                                confidential and do not share it with anyone.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {paidState === false && (
+                      <div className="relative flex items-center justify-start w-full  bg-white rounded-lg">
+                        <div className="absolute bottom-0 -left-40">
+                          <img src={PaidHand} alt="" />
+                        </div>
+                        <div className="absolute right-24 space-y-4 flex flex-col items-start justify-center">
+                          <img src={CheckIcon} alt="" />
+                          <div className="text-2xl text-emdmsPrimary">
+                            We’ve received your payment{" "}
+                          </div>
+                          <div className="text-xs max-w-md">
+                            Upon receiving your payment, we would like to assure
+                            you that your transaction has been processed and
+                            completed successfully. Our system has recorded the
+                            details of your payment, including the amount, date,
+                            and any associated information.
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex justify-end space-x-3">
+                    <button
+                      onClick={() => {
+                        setActiveTab("financial");
+                      }}
+                      className="bg-transparent hover:bg-[#008080] hover:text-white text-[#008080] text-sm font-bold py-2 px-16 border border-[#008080] rounded">
+                      Back
+                    </button>
+                    <button
+                      onClick={openModal}
+                      className="bg-[#008080d4] hover:bg-[#008080] text-white text-sm font-bold py-2 px-16 rounded">
+                      Submit
+                    </button>
+                    <Modal isOpen={isOpen} onClose={closeModal}>
+                      <div className="text-2xl text-center font-poppins text-N40 font-bold">
+                        Confirmation
+                      </div>
+                      <div className="text-N40 text-center text-sm tracking-wider">
+                        Are you sure you want to submit
+                        <span className="font-bold"> this license</span>?
+                      </div>
+                      <div className="flex flex-col space-y-3 bg-[#FCF9E1] p-5 border-l-8 border-l-[#77680B] rounded-md">
+                        <div className="flex space-x-2 items-center text-[#B29C10] font-bold text-lg">
+                          <BsFillExclamationTriangleFill />
+                          <div>Attention</div>
+                        </div>
+                        <div className="text-[#B29C10] tracking-wider text-xs max-w-lg">
+                          The admins will not receive this license submission.
+                          The final document will undergo review once the
+                          foreign entity grants approval for the partner
+                          request. Please ensure that you keep track of the
+                          status.
+                        </div>
+                      </div>
+                      <div className="flex space-x-6 items-center justify-end">
+                        <button
+                          onClick={closeModal}
+                          className="bg-[#F0F7F7] py-2 px-8 text-N40 rounded-sm text-sm">
+                          Cancel
+                        </button>
+                        <button
+                          onClick={() => {
+                            setPage("submit");
+                          }}
+                          className="bg-emdmsPrimary py-2 px-8 text-white rounded-sm text-sm">
+                          Submit
+                        </button>
+                      </div>
+                    </Modal>
+                  </div>
+                </div>
+              )}
             </div>
             {/* right side */}
             {activeTab === "" && (
@@ -1365,6 +1658,7 @@ const PageTwo = () => {
                 </div>
               </div>
             )}
+            {activeTab === "payment"}
           </>
         )}
         {page === "submit" && (
