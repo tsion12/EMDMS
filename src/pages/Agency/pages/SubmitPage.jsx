@@ -4,10 +4,13 @@ import SmallMap from "../../../assets/svg/smallMaop.png";
 import Flag from "../../../assets/svg/Japan.png";
 import Qatar from "../../../assets/svg/qatar.png";
 import SubmitFlag from "../../../assets/svg/submitFlag.png";
-
-
+import { PiWarningCircleDuotone } from "react-icons/pi";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 import Saudi from "../../../assets/svg/saudi.png";
 import SearchIcon from "../../../assets/svg/searchcontryIcon.png";
+import Warningbadge from "../../../assets/svg/warning_badge.svg";
+import Expiredbadge from "../../../assets/svg/expired_badge.svg";
+import Verifiedbadge from "../../../assets/svg/verified_badge.svg";
 
 import { FaFileCircleCheck } from "react-icons/fa6";
 import { GoChecklist } from "react-icons/go";
@@ -281,8 +284,8 @@ const SubmitPage = () => {
             </div>
 
             {/* Content */}
-            <div className="mt-10 mr-10 w-full h-[65vh]  2xl:[70vh] overflow-auto noscrollBar  ">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-16 ">
+            <div className="mt-10 mr-10 w-full h-[70vh] shadow-lg   2xl:[70vh] overflow-auto noscrollBar  ">
+              <div className="grid grid-cols-1   sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-10 ">
                 {/* card One */}
                 <div className="bg-white flex flex-col rounded-lg shadow-md p-8 gap-8">
                   <div className="flex sm:flex-row flex-col items-start gap-4">
@@ -950,6 +953,149 @@ const SubmitPage = () => {
                         </div>
                       </div>
                       <div className="text-xs">hello</div>
+                    </div>
+                  </div>
+                </div>
+                {/* card Five */}
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
+                  <div className=" flex  items-center justify-center  ">
+                    <div className="w-[180px] h-[80px]">
+                      {" "}
+                      <img
+                        src={SubmitFlag}
+                        alt="Profile 1"
+                        className="w-20 h-20 rounded-full  mb-4"
+                      />
+                    </div>
+                    <div className=" flex flex-col justify-start items-start w-full ">
+                      <div className="flex justify-between w-full  items-center">
+                        {" "}
+                        <div className="flex flex-col items-start  justify-center space-x-2 ">
+                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                            Licence No: 12345678
+                          </div>
+                          <div className="text-[#2A282F] text-xs tracking-wider">
+                            {" "}
+                            <span className="font-bold">
+                              Partner Name:
+                            </span>{" "}
+                            Abdulraman Agency
+                          </div>
+                          <div className="text-xs text-[#555555]">
+                            Submitted at: Sep 12, 2022
+                          </div>
+                        </div>
+                        <div className=" bg-[#E1BE071A]  text-[#E1BE07] font-bold text-center rounded-md flex items-center justify-between px-4 py-3 text-xs ">
+                          Warning <img src={Warningbadge} alt="" />
+                        </div>
+                      </div>
+
+                      <div className="text-sm flex items-center pt-4 pb-5 text-[#3B3F5C]">
+                        <PiWarningCircleDuotone className="text-lg mx-2  text-[#E1BE07]" />
+                        3 months left for deadline  from the new license issued
+                        date
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center  justify-end  ">
+                    <div className=" border border-[#DCDEE4] cursor-pointer  text-[#696F8C] font-bold text-center rounded-md flex items-center justify-between px-4 py-3 text-xs ">
+                      Renew License
+                      <BsBoxArrowUpRight className="text-lg font-bold mx-2" />
+                    </div>
+                  </div>
+                </div>
+                {/* card six */}
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
+                  <div className=" flex  items-center justify-center  ">
+                    <div className="w-[180px] h-[80px]">
+                      {" "}
+                      <img
+                        src={SubmitFlag}
+                        alt="Profile 1"
+                        className="w-20 h-20 rounded-full  mb-4"
+                      />
+                    </div>
+                    <div className=" flex flex-col justify-start items-start w-full ">
+                      <div className="flex justify-between w-full  items-center">
+                        {" "}
+                        <div className="flex flex-col items-start  justify-center space-x-2 ">
+                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                            Licence No: 12345678
+                          </div>
+                          <div className="text-[#2A282F] text-xs tracking-wider">
+                            {" "}
+                            <span className="font-bold">
+                              Partner Name:
+                            </span>{" "}
+                            Abdulraman Agency
+                          </div>
+                          <div className="text-xs text-[#555555]">
+                            Submitted at: Sep 12, 2022
+                          </div>
+                        </div>
+                        <div className=" bg-[#CF51511A]  text-[#CF5151] font-bold text-center rounded-md flex  space-x-2 px-8 py-3 text-xs ">
+                          <p> Expired</p> <img src={Expiredbadge} alt="" />
+                        </div>
+                      </div>
+
+                      <div className="text-sm flex items-center pt-4 pb-5 text-[#3B3F5C]">
+                        This license number is accepted by License numbers are
+                        typically unique identifiers issued by specific
+                        authorities or organizations for specific purposes
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center  justify-end  ">
+                    <div className=" border border-[#DCDEE4] cursor-pointer  text-[#696F8C] font-bold text-center rounded-md flex items-center justify-between px-4 py-3 text-xs ">
+                      Renew License
+                      <BsBoxArrowUpRight className="text-lg font-bold mx-2" />
+                    </div>
+                  </div>
+                </div>
+                {/* card seven */}
+                <div className="bg-white flex flex-col rounded-lg shadow-md p-8 space-y-4">
+                  <div className=" flex  items-center justify-center  ">
+                    <div className="w-[180px] h-[80px]">
+                      {" "}
+                      <img
+                        src={SubmitFlag}
+                        alt="Profile 1"
+                        className="w-20 h-20 rounded-full  mb-4"
+                      />
+                    </div>
+                    <div className=" flex flex-col justify-start items-start w-full ">
+                      <div className="flex justify-between w-full  items-center">
+                        {" "}
+                        <div className="flex flex-col items-start  justify-center space-x-2 ">
+                          <div className="pl-2 text-sm text-[#3B3F5C] font-bold ">
+                            Licence No: 12345678
+                          </div>
+                          <div className="text-[#2A282F] text-xs tracking-wider">
+                            {" "}
+                            <span className="font-bold">
+                              Partner Name:
+                            </span>{" "}
+                            Abdulraman Agency
+                          </div>
+                          <div className="text-xs text-[#555555]">
+                            Submitted at: Sep 12, 2022
+                          </div>
+                        </div>
+                        <div className=" bg-[#71E17C1A]  text-[#71E17C] font-bold text-center rounded-md flex  space-x-2 px-8 py-3 text-xs ">
+                          <p> verified</p> <img src={Verifiedbadge} alt="" />
+                        </div>
+                      </div>
+
+                      <div className="text-sm flex items-center pt-4 pb-5 text-[#3B3F5C]">
+                        This license number is accepted by License numbers are
+                        typically unique identifiers issued by specific
+                        authorities or organizations for specific purposes
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center  justify-end  ">
+                    <div className=" border border-[#008080] cursor-pointer  text-[#008080] font-bold w-40  text-center rounded-md flex items-center justify-center px-4 py-3 text-xs ">
+                      Open
                     </div>
                   </div>
                 </div>

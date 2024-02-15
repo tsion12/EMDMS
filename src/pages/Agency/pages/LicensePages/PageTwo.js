@@ -13,6 +13,10 @@ import CheckIcon from "../../../../assets/svg/checkIcon.svg";
 import FileFirstIcon from "../../../../assets/svg/FirstStepIcon.svg";
 import { BsDot } from "react-icons/bs";
 import { IoMdAddCircle } from "react-icons/io";
+import { FaCheck } from "react-icons/fa6";
+import { TbScanEye } from "react-icons/tb";
+import { IoClose } from "react-icons/io5";
+import { CgNotes } from "react-icons/cg";
 
 import {
   AiFillCloseCircle,
@@ -1272,14 +1276,75 @@ const PageTwo = () => {
               {activeTab === "renewal" && (
                 <div className="flex flex-col w-full items-start justify-start space-y-5  h-[65vh] overflow-auto noscrollBar ">
                   {requestRenewal === false && (
-                    <div className="flex justify-end items-center w-full">
-                      <button
-                        onClick={() => {
-                          setRequestRenewal(true);
-                        }}
-                        className="border flex items-center justify-center space-x-3 border-emdmsPrimary  bg-white px-4 py-2 rounded-md text-emdmsPrimary ">
-                        <IoMdAddCircle /> <span>Request Renewal</span>
-                      </button>
+                    <div className=" flex flex-col space-y-2 w-full h-full">
+                      <div className="flex justify-end items-center w-full">
+                        <button
+                          onClick={() => {
+                            setRequestRenewal(true);
+                          }}
+                          className="border flex items-center justify-center space-x-3 border-emdmsPrimary  bg-white px-4 py-2 rounded-md text-emdmsPrimary ">
+                          <IoMdAddCircle /> <span>Request Renewal</span>
+                        </button>
+                      </div>
+                      <div className="flex bg-white rounded-md  items-center justify-around p-2">
+                        <div className="text-[#555555] font-semibold">
+                          2023 Renewal
+                        </div>
+                        <div className="text-xs">Dec 13, 2022</div>
+                        <div className=" bg-[#CF51511A] w-36  text-[#CF5151] font-bold text-center rounded-md flex  space-x-2 px-8 py-3 text-xs ">
+                          <IoClose />
+                          <p> Rejected</p>
+                        </div>
+                        <div className="flex w-14 space-x-2 items-center">
+                          {" "}
+                          <div className="bg-emdmsPrimary p-1">
+                            <TbScanEye className="text-white cursor-pointer" />
+                          </div>{" "}
+                          <div className="bg-[#CF51511A] p-1">
+                            <CgNotes className="text-[#CF5151] cursor-pointer" />
+                          </div>
+                        </div>
+
+                        <div className=" border border-[#EED116] cursor-pointer bg-[#FCF9E1]  text-[#B29C10] font-bold w-24 px-6  text-center rounded-md flex items-center justify-center py-2 text-xs ">
+                          Open
+                        </div>
+                      </div>
+                      <div className="flex bg-white rounded-md  items-center justify-around p-2">
+                        <div className="text-[#555555] font-semibold">
+                          2023 Renewal
+                        </div>
+                        <div className="text-xs">Dec 13, 2022</div>
+                        <div className=" bg-[#71E17C1A] w-36  text-[#71E17C] font-bold text-center rounded-md flex  space-x-2 px-8 py-3 text-xs ">
+                          <FaCheck /> <p> verified</p>
+                        </div>
+                        <div className="w-14 flex">
+                          <div className="bg-emdmsPrimary p-1 ">
+                            <TbScanEye className="text-white cursor-pointer" />
+                          </div>
+                        </div>
+
+                        <div className=" border border-[#EED116] cursor-pointer bg-[#FCF9E1]  text-[#B29C10] font-bold w-24 px-6  text-center rounded-md flex items-center justify-center py-2 text-xs ">
+                          Open
+                        </div>
+                      </div>
+                      <div className="flex bg-white rounded-md  items-center justify-around p-2">
+                        <div className="text-[#555555] font-semibold">
+                          2023 Renewal
+                        </div>
+                        <div className="text-xs">Dec 13, 2022</div>
+                        <div className="border border-[#EED116] bg-[#FCF9E1] w-36  text-[#B29C10] font-bold text-center rounded-md flex  space-x-2 px-8 py-3 text-xs ">
+                          <FaCheck /> <p> Pending</p>
+                        </div>
+                        <div className="w-14 flex cursor-pointer">
+                          <div className="bg-emdmsPrimary p-1 ">
+                            <TbScanEye className="text-white cursor-pointer" />
+                          </div>
+                        </div>
+
+                        <div className=" border border-[#EED116] cursor-pointer bg-[#FCF9E1]  text-[#B29C10] font-bold w-24 px-6  text-center rounded-md flex items-center justify-center py-2 text-xs ">
+                          Open
+                        </div>
+                      </div>
                     </div>
                   )}
                   {requestRenewal === true && (
