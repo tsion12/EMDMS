@@ -13,7 +13,7 @@ import Portfolio from "../../assets/svg/Portfolio.png";
 import Modal from "../../components/utilities/Modal";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import PageTwo from "./pages/PageTwo";
+import PageTwo from "./pages/LicensePages/PageTwo";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 const License = () => {

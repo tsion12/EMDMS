@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
-import MobileMockupOne from "../../../assets/svg/FirstMobileMockup.svg";
-import MobileMockUpTwo from "../../../assets/svg/MobileMockUpTwo.svg";
-import MobileMockup3 from "../../../assets/svg/MobileMockup3.svg";
-import LineOverlay from "../../../assets/svg/LineOver.svg";
-import SlideTwo from "../../../assets/svg/SlideTwo.svg";
-import SlideThree from "../../../assets/svg/SlideThreee.svg";
-import SlideFour from "../../../assets/svg/SlideFour.svg";
-import MobileMockup4 from "../../../assets/svg/MockupFour.svg";
-import PaidHand from "../../../assets/svg/paid.svg";
-import CheckIcon from "../../../assets/svg/checkIcon.svg";
-import FileFirstIcon from "../../../assets/svg/FirstStepIcon.svg";
+import MobileMockupOne from "../../../../assets/svg/FirstMobileMockup.svg";
+import MobileMockUpTwo from "../../../../assets/svg/MobileMockUpTwo.svg";
+import MobileMockup3 from "../../../../assets/svg/MobileMockup3.svg";
+import LineOverlay from "../../../../assets/svg/LineOver.svg";
+import SlideTwo from "../../../../assets/svg/SlideTwo.svg";
+import SlideThree from "../../../../assets/svg/SlideThreee.svg";
+import SlideFour from "../../../../assets/svg/SlideFour.svg";
+import MobileMockup4 from "../../../../assets/svg/MockupFour.svg";
+import PaidHand from "../../../../assets/svg/paid.svg";
+import CheckIcon from "../../../../assets/svg/checkIcon.svg";
+import FileFirstIcon from "../../../../assets/svg/FirstStepIcon.svg";
 import { BsDot } from "react-icons/bs";
+import { IoMdAddCircle } from "react-icons/io";
 
 import {
   AiFillCloseCircle,
   AiFillHome,
-  AiFillPhone,
   AiOutlineClockCircle,
   AiOutlineClose,
   AiOutlineLeft,
@@ -27,7 +27,7 @@ import { LuCopy } from "react-icons/lu";
 import { IoIosAddCircle } from "react-icons/io";
 import { HiPhone } from "react-icons/hi";
 
-import Profile from "../../../assets/svg/placeholder.png";
+import Profile from "../../../../assets/svg/placeholder.png";
 import {
   BsCheckLg,
   BsChevronDown,
@@ -49,15 +49,15 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { BiCalendar, BiSolidFolderMinus } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
-import Modal from "../../../components/utilities/Modal";
-import SubmitPage from "./SubmitPage";
+import Modal from "../../../../components/utilities/Modal";
+import SubmitPage from "../SubmitPage";
 const PageTwo = () => {
   const [sideModalOpen, setSideModalOpen] = useState(false);
   const [isExpand, setExpand] = useState(false);
   const [isUpload, setUpload] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState("");
-
+  const [requestRenewal, setRequestRenewal] = useState(false);
   const openModal = () => {
     setIsOpen(true);
   };
@@ -82,12 +82,18 @@ const PageTwo = () => {
   };
 
   const [activeTab, setActiveTab] = useState("");
+  const [renewalActiveTab, setRenewalActiveTab] = useState("renewalUpload");
+
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+
+    autoplaySpeed: 2500,
+    cssEase: "linear",
   };
   const [paidState, setPaidState] = useState(false);
   return (
@@ -322,6 +328,17 @@ const PageTwo = () => {
                     }`}>
                     Payment
                   </button>
+                  <button
+                    onClick={() => {
+                      setActiveTab("renewal");
+                    }}
+                    className={`px-8 py-2 ${
+                      activeTab === "renewal"
+                        ? "text-emdmsPrimary border-b-8 border-emdmsPrimary"
+                        : "text-[#292929]"
+                    }`}>
+                    License Renewal
+                  </button>
                 </div>
               </>
 
@@ -335,7 +352,7 @@ const PageTwo = () => {
                       <button className="text-sm font-bold">Add</button>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 gap-x-4  gap-y-4 w-full h-[55vh] 2xl:h-[65vh] overflow-auto noscrollBar sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-x-4  gap-y-4 w-full h-[58vh]  overflow-auto noscrollBar sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
                     <div className="bg-white rounded-lg shadow-lg p-2">
                       <div className="p-2 md:p-4 mb-5 flex flex-col md:flex-row items-center justify-center">
                         <img
@@ -991,7 +1008,7 @@ const PageTwo = () => {
               {activeTab === "payment" && (
                 <div className="h-full flex flex-col justify-between">
                   <div className="flex flex-col space-x-0  lg:flex-row lg:space-x-8 w-full h-[65vh] overflow-auto noscrollBar">
-                    {paidState === true && (
+                    {paidState === false && (
                       <>
                         {" "}
                         <div className="flex flex-col items-center justify-start w-full lg:w-[50%] p-5 bg-white rounded-lg">
@@ -1171,7 +1188,7 @@ const PageTwo = () => {
                         </div>
                       </>
                     )}
-                    {paidState === false && (
+                    {paidState === true && (
                       <div className="md:relative flex items-center justify-start w-full  bg-white rounded-lg">
                         <div className="md:absolute md:bottom-0 md:-left-40">
                           <img
@@ -1181,7 +1198,11 @@ const PageTwo = () => {
                           />
                         </div>
                         <div className="md:absolute md:right-24 space-y-4 flex flex-col items-start justify-center">
-                          <img src={CheckIcon} alt="" className="md:w-full w-30" />
+                          <img
+                            src={CheckIcon}
+                            alt=""
+                            className="md:w-full w-30"
+                          />
                           <div className="text-2xl text-emdmsPrimary">
                             We’ve received your payment{" "}
                           </div>
@@ -1246,6 +1267,336 @@ const PageTwo = () => {
                       </div>
                     </Modal>
                   </div>
+                </div>
+              )}
+              {activeTab === "renewal" && (
+                <div className="flex flex-col w-full items-start justify-start space-y-5  h-[65vh] overflow-auto noscrollBar ">
+                  {requestRenewal === false && (
+                    <div className="flex justify-end items-center w-full">
+                      <button
+                        onClick={() => {
+                          setRequestRenewal(true);
+                        }}
+                        className="border flex items-center justify-center space-x-3 border-emdmsPrimary  bg-white px-4 py-2 rounded-md text-emdmsPrimary ">
+                        <IoMdAddCircle /> <span>Request Renewal</span>
+                      </button>
+                    </div>
+                  )}
+                  {requestRenewal === true && (
+                    <>
+                      <div className="bg-white h-[60vh] flex flex-col space-y-2 w-full rounded-md">
+                        <div className="flex space-x-10  bg-white/50 rounded-lg text-xs overflow-x-auto">
+                          <button
+                            onClick={() => {
+                              setRenewalActiveTab("renewalUpload");
+                            }}
+                            className={`px-8 py-2 font-medium ${
+                              renewalActiveTab === "renewalUpload"
+                                ? "text-emdmsPrimary border-b-8 bg-emdmsPrimary/10 border-emdmsPrimary font-bold"
+                                : "text-[#292929]"
+                            }`}>
+                            Upload Documents
+                          </button>
+                          <button
+                            onClick={() => {
+                              setRenewalActiveTab("renewalPayment");
+                            }}
+                            className={`px-8 py-2 ${
+                              renewalActiveTab === "renewalPayment"
+                                ? "text-emdmsPrimary border-b-8 bg-emdmsPrimary/10 border-emdmsPrimary"
+                                : "text-[#292929]"
+                            }`}>
+                            Payment
+                          </button>
+                        </div>
+                        {renewalActiveTab === "renewalUpload" && (
+                          <div>Upload</div>
+                        )}
+                        {renewalActiveTab === "renewalPayment" && (
+                          <div className="p-5 h-[55vh]  flex flex-col ">
+                            <div className="flex flex-col space-x-0  lg:flex-row lg:space-x-8 w-full  overflow-auto noscrollBar">
+                              {paidState === false && (
+                                <>
+                                  {" "}
+                                  <div className="flex flex-col  h-[55vh] overflow-hidden w-full lg:w-[50%] p-5 bg-emdmsPrimary/10 rounded-lg">
+                                    <h2 className="text-center">
+                                      Payment Guide Pages
+                                    </h2>
+                                    <div className=" ">
+                                      <Slider {...settings}>
+                                        <div className="w-full flex mt-5  items-center justify-center space-x-4">
+                                          <div className="w-full flex p-5 ">
+                                            <img
+                                              src={MobileMockupOne}
+                                              alt=""
+                                              className=" w-[220px]"
+                                            />
+                                            <div className=" flex flex-col space-y-2">
+                                              <div className="text-xs text-[#005656] font-bold">
+                                                First go to tele birr to make
+                                                payment for the licence
+                                              </div>{" "}
+                                              <div className="text-xs flex items-start text-[#005656]">
+                                                <div>
+                                                  <BsDot className="text-sm" />
+                                                </div>
+                                                Login to the app using your
+                                                phone number
+                                              </div>
+                                              <div className="text-xs flex items-start text-[#005656]">
+                                                <div>
+                                                  <BsDot className="text-sm" />
+                                                </div>
+                                                After logging into the app go to
+                                                the payment section
+                                              </div>{" "}
+                                              <div className=" flex items-start  justify-center -ml-24 pt-5">
+                                                <img
+                                                  src={FileFirstIcon}
+                                                  alt=""
+                                                  className="w-20"
+                                                />
+                                              </div>
+                                              <div className="text-[#005656]">
+                                                Payment
+                                              </div>
+                                              <div className="text-xs text-[#909090]">
+                                                Payment is the process by which
+                                                a buyer transfers funds to a
+                                                seller or service provider in
+                                                services.
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="w-full flex mt-5  items-center justify-center space-x-4">
+                                          <div className="w-full flex p-5 ">
+                                            <img
+                                              src={MobileMockUpTwo}
+                                              alt=""
+                                              className=" w-[220px]"
+                                            />
+                                            <div className=" flex flex-col space-y-2">
+                                              <div className="text-xs text-[#005656] font-bold">
+                                                Select task and government
+                                                service section{" "}
+                                              </div>{" "}
+                                              <div className="text-xs flex items-start text-[#005656]">
+                                                <div>
+                                                  <BsDot className="text-sm" />
+                                                </div>
+                                                After selecting the section it
+                                                will collapse and we will find
+                                                the government
+                                              </div>{" "}
+                                              <div className=" flex items-start  justify-center -ml-10">
+                                                <img
+                                                  src={SlideTwo}
+                                                  alt=""
+                                                  className="w-40"
+                                                />
+                                              </div>
+                                              <div className="text-[#005656]">
+                                                Government
+                                              </div>
+                                              <div className="text-xs text-[#909090]">
+                                                Select the government icon in
+                                                order to get our payment service
+                                                icon (Ethiopian Labor Market
+                                                Information System).
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="w-full h-[55vh]flex mt-10  items-center justify-center space-x-4">
+                                          <div className="w-full flex p-5 ">
+                                            <img
+                                              src={MobileMockup3}
+                                              alt=""
+                                              className=" w-[220px]"
+                                            />
+                                            <div className=" flex flex-col space-y-2">
+                                              <div className=" relative text-xs text-[#005656] font-bold">
+                                                <div>
+                                                  <img
+                                                    src={LineOverlay}
+                                                    alt=""
+                                                  />
+                                                </div>
+                                                <div className="absolute bottom-3">
+                                                  After opening the the tax and
+                                                  government payment section{" "}
+                                                </div>
+                                              </div>{" "}
+                                              <div className="text-xs flex items-start text-[#005656]">
+                                                <div>
+                                                  <BsDot className="text-sm" />
+                                                </div>
+                                                Click on the Ethiopian Labor
+                                                Market Information System
+                                                (E-LMIS).
+                                              </div>{" "}
+                                              <div className=" flex items-start  justify-center  pt-10">
+                                                <img
+                                                  src={SlideThree}
+                                                  alt=""
+                                                  className="w-40"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="w-full h-[55vh]flex mt-10  items-center justify-center space-x-4">
+                                          <div className="w-full flex p-5  ">
+                                            <img
+                                              src={MobileMockup4}
+                                              alt=""
+                                              className=" w-[220px]"
+                                            />
+                                            <div className=" flex flex-col space-y-2">
+                                              <div className="text-xs text-[#005656] font-bold">
+                                                Select task and government
+                                                service section{" "}
+                                              </div>{" "}
+                                              <div className="text-xs flex items-start text-[#005656]">
+                                                <div>
+                                                  <BsDot className="text-sm" />
+                                                </div>
+                                                After selecting the section it
+                                                will collapse and we will find
+                                                the government
+                                              </div>{" "}
+                                              <div className=" flex items-start  justify-center pt-10 -ml-10">
+                                                <img
+                                                  src={SlideFour}
+                                                  alt=""
+                                                  className="w-40"
+                                                />
+                                              </div>
+                                              <div className="text-[#005656] ">
+                                                Payment Order Number
+                                              </div>
+                                              <div className="text-xs text-[#909090] ">
+                                                Enter the payment number in
+                                                order to make payment
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </Slider>
+                                    </div>
+                                  </div>
+                                  <div className="flex flex-col h-[55vh] items-center justify-start w-full lg:w-[50%] p-5 bg-emdmsPrimary/10 rounded-lg">
+                                    <h2 className="text-[#292929]">
+                                      Payment Code
+                                    </h2>
+                                    <div className="flex flex-col space-y-6 h-full items-center justify-center">
+                                      <div className="flex text-[#555555] items-center space-x-2">
+                                        <LuCopy />
+                                        <div>copy</div>
+                                      </div>
+                                      <div className="flex flex-col items-center space-y-6 justify-center">
+                                        <div className="text-[#005656] text-5xl tracking-[0.3em] font-bold">
+                                          546799
+                                        </div>
+                                        <div className="text-[#909090] text-xs text-center max-w-xs">
+                                          Here is the unique payment code
+                                          required to make a transaction using
+                                          the Tele Birr application. Please
+                                          ensure that you keep this code
+                                          confidential and do not share it with
+                                          anyone.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </>
+                              )}
+                              {paidState === true && (
+                                <div className="md:relative flex items-center justify-start w-full  bg-white rounded-lg">
+                                  <div className="md:absolute md:bottom-0 md:-left-40">
+                                    <img
+                                      src={PaidHand}
+                                      alt=""
+                                      className="hidden md:block"
+                                    />
+                                  </div>
+                                  <div className="md:absolute md:right-24 space-y-4 flex flex-col items-start justify-center">
+                                    <img
+                                      src={CheckIcon}
+                                      alt=""
+                                      className="md:w-full w-30"
+                                    />
+                                    <div className="text-2xl text-emdmsPrimary">
+                                      We’ve received your payment{" "}
+                                    </div>
+                                    <div className="text-xs max-w-md">
+                                      Upon receiving your payment, we would like
+                                      to assure you that your transaction has
+                                      been processed and completed successfully.
+                                      Our system has recorded the details of
+                                      your payment, including the amount, date,
+                                      and any associated information.
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex justify-end  w-full space-x-3">
+                        <button
+                          onClick={() => {
+                            setActiveTab("financial");
+                          }}
+                          className="bg-transparent hover:bg-[#008080] hover:text-white text-[#008080] text-sm font-bold py-2 px-16 border border-[#008080] rounded">
+                          Back
+                        </button>
+                        <button
+                          onClick={openModal}
+                          className="bg-[#008080d4] hover:bg-[#008080] text-white text-sm font-bold py-2 px-16 rounded">
+                          Submit
+                        </button>
+                        <Modal isOpen={isOpen} onClose={closeModal}>
+                          <div className="text-2xl text-center font-poppins text-N40 font-bold">
+                            Confirmation
+                          </div>
+                          <div className="text-N40 text-center text-sm tracking-wider">
+                            Are you sure you want to submit
+                            <span className="font-bold"> this license</span>?
+                          </div>
+                          <div className="flex flex-col space-y-3 bg-[#FCF9E1] p-5 border-l-8 border-l-[#77680B] rounded-md">
+                            <div className="flex space-x-2 items-center text-[#B29C10] font-bold text-lg">
+                              <BsFillExclamationTriangleFill />
+                              <div>Attention</div>
+                            </div>
+                            <div className="text-[#B29C10] tracking-wider text-xs max-w-lg">
+                              The admins will not receive this license
+                              submission. The final document will undergo review
+                              once the foreign entity grants approval for the
+                              partner request. Please ensure that you keep track
+                              of the status.
+                            </div>
+                          </div>
+                          <div className="flex space-x-6 items-center justify-end">
+                            <button
+                              onClick={closeModal}
+                              className="bg-[#F0F7F7] py-2 px-8 text-N40 rounded-sm text-sm">
+                              Cancel
+                            </button>
+                            <button
+                              onClick={() => {
+                                setPage("submit");
+                              }}
+                              className="bg-emdmsPrimary py-2 px-8 text-white rounded-sm text-sm">
+                              Submit
+                            </button>
+                          </div>
+                        </Modal>
+                      </div>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -1662,7 +2013,165 @@ const PageTwo = () => {
                 </div>
               </div>
             )}
-            {activeTab === "payment"}
+            {activeTab === "payment" && (
+              <div className="lg:flex lg:flex-col lg:w-[25%] lg:space-y-6 ">
+                <div className=" bg-[#005656]   rounded-lg p-6  text-white flex flex-col space-y-2">
+                  <div className="font-bold tracking-wider leading-[40px] font-poppins text-3xl max-w-4xl">
+                    Licence Application
+                  </div>
+
+                  <div className="text-[#eceaf379] text-sm">
+                    Started Date: Tuesday, June 27th 2023 Starting Time: 9:20:13
+                    Am
+                  </div>
+                  <div className="text-[#ECEAF3] ">2/3 Documents</div>
+                  <div className="flex items-center ">
+                    <div className="p-4 w-full h-full">
+                      <ProgressBar
+                        completed={40}
+                        height="10px"
+                        customLabel
+                        bgColor="#FFC369"
+                      />
+                    </div>
+                    <div>20%</div>
+                    <div></div>
+                  </div>
+                </div>
+                {/* License status */}
+                <div className=" bg-white rounded-lg p-6 text-white flex flex-col space-y-2 h-[45vh] 2xl:h-[60vh] overflow-y-auto noscrollBar  ">
+                  <div className="text-[#464255] font-medium font-poppins text-xl">
+                    {" "}
+                    License Status
+                  </div>
+                  <div className="text-[#A3A3A3] text-sm pb-5">
+                    After submitting licence these are application statuses{" "}
+                  </div>
+                  <div className="flex space-x-4">
+                    <div>
+                      <input
+                        type="checkbox"
+                        class="form-checkbox h-5 w-5 text-red-600 opacity-50 cursor-not-allowed"
+                        disabled
+                      />
+                    </div>
+                    <div className="flex flex-col items-start space-y-2">
+                      <div className="bg-[#D9D9D9] px-4 py-1 rounded-md">
+                        {" "}
+                        Screened{" "}
+                      </div>
+                      <div className="text-[#464255bc] text-xs">
+                        December 28th, 06:19 AM
+                      </div>
+                      <div className="text-[#A3A3A3] text-xs leading-5">
+                        “Screened status” Means that your application has gone
+                        through an initial review process by the admin team.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex space-x-4">
+                    <div>
+                      <input
+                        type="checkbox"
+                        class="form-checkbox h-5 w-5 text-red-600 opacity-50 cursor-not-allowed"
+                        disabled
+                      />
+                    </div>
+                    <div className="flex flex-col items-start space-y-2">
+                      <div className="bg-[#D9D9D9] px-6 py-1 rounded-md">
+                        {" "}
+                        Verified{" "}
+                      </div>
+                      <div className="text-[#464255bc] text-xs">
+                        December 28th, 06:19 AM
+                      </div>
+                      <div className="text-[#A3A3A3] text-xs leading-5">
+                        “Screened status” Means that your application has gone
+                        through an initial review process by the admin team.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex space-x-4">
+                    <div>
+                      <input
+                        type="checkbox"
+                        class="form-checkbox h-5 w-5 text-red-600 opacity-50 cursor-not-allowed"
+                        disabled
+                      />
+                    </div>
+                    <div className="flex flex-col items-start space-y-2">
+                      <div className="bg-[#D9D9D9] px-4 py-1 rounded-md">
+                        {" "}
+                        Inspected{" "}
+                      </div>
+                      <div className="text-[#464255bc] text-xs">
+                        December 28th, 06:19 AM
+                      </div>
+                      <div className="text-[#A3A3A3] text-xs leading-5">
+                        “Screened status” Means that your application has gone
+                        through an initial review process by the admin team.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex space-x-4">
+                    <div>
+                      <input
+                        type="checkbox"
+                        class="form-checkbox h-5 w-5 text-red-600 opacity-50 cursor-not-allowed"
+                        disabled
+                      />
+                    </div>
+                    <div className="flex flex-col items-start space-y-2">
+                      <div className="bg-[#D9D9D9] px-4 py-1 rounded-md">
+                        {" "}
+                        Screened{" "}
+                      </div>
+                      <div className="text-[#464255bc] text-xs">
+                        December 28th, 06:19 AM
+                      </div>
+                      <div className="text-[#A3A3A3] text-xs leading-5">
+                        “Screened status” Means that your application has gone
+                        through an initial review process by the admin team.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {activeTab === "renewal" && (
+              <>
+                <div className="lg:w-[25%]  lg:h-[30%]  bg-[#005656] mt-14 p-10 rounded-lg text-white lg:flex md:flex-col space-y-2 hidden sm:block">
+                  <div className="font-bold text-xl">Notice</div>
+                  <ul className="list-disc text-xs text-white/50 pl-4 pb-5">
+                    <li>
+                      Make sure you have submitted all necessary information.
+                    </li>
+                    <li>
+                      Make sure you have provided legit/legal residence
+                      locations.
+                    </li>
+                    <li>
+                      If you find any difficulties while you submit the
+                      information, contact us with our email address.
+                    </li>
+                  </ul>
+                  <label className="inline-flex items-center pb-5">
+                    <input
+                      type="checkbox"
+                      className="form-checkbox h-5 w-5 text-blue-500 rounded"
+                      checked={isChecked}
+                      onChange={handleCheckboxChange}
+                    />
+                    <span className="ml-2 text-sm text-white/50">
+                      I agree to{" "}
+                      <span className="text-white underline">
+                        the terms and conditions
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </>
+            )}
           </>
         )}
         {page === "submit" && (
