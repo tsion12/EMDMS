@@ -62,6 +62,8 @@ const PageTwo = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState("");
   const [requestRenewal, setRequestRenewal] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(2);
+
   const openModal = () => {
     setIsOpen(true);
   };
@@ -95,8 +97,30 @@ const PageTwo = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    // dotsClass: "slick-dots !bg-blue-500",
+    // appendDots: (dots) => console.log(dots),
+    // (
+    //   <div>
+    //     <ul className="!bg-red-500/20">
+    //       {dots.map((item) => console.log(dots))}
+    //     </ul>
+    //   </div>
+    // ),
+    // customPaging: i => (
+    //   <div
+    //     style={{
+    //       width: "30px",
+    //       color: "blue",
+    //       border: "1px blue solid"
+    //     }}
+    //   >
+    //     {i + 1}
+    //   </div>
+    // ),
+    // className: "bg-green-500",
+    // dotsClass: "bg-green-800 slick-dots ",
 
-    autoplaySpeed: 2500,
+    autoplaySpeed: 5000,
     cssEase: "linear",
   };
   const [paidState, setPaidState] = useState(false);

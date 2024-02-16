@@ -19,6 +19,7 @@ import EmailSuccess from "../components/ExtraComponents/EmailSuccess";
 import SurveyComponent from "../components/ExtraComponents/SurveyComponent";
 import MedicalExamination from "../pages/Admin/medicalPages/MedicalExamination";
 import ContractsList from "../pages/Foriegn/ContractsList";
+import Inspection from "../pages/Agency/pages/Inspection";
 
 const routes = [
   <Route path="/" element={<Informations />} />,
@@ -36,6 +37,7 @@ const routes = [
   <Route path="/agency/license" element={<License />} />,
   <Route path="/agency/contracts" element={<Contracts />} />,
   <Route path="/agency/survey" element={<SurveyComponent />} />,
+  <Route path="/agency/inspection" element={<Inspection />} />,
 
   <Route path="/foreign/dashboard" element={<ForeignDashboard />} />,
   <Route path="/foreign/partnership" element={<Partnership />} />,

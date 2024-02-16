@@ -129,3 +129,26 @@ body::-webkit-scrollbar-thumb {
 .red-pill {
   @apply rounded-full py-1 px-2 bg-error80 text-white ml-2 text-xs;
 }
+.custom-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Adjust the position of the dots vertically */
+}
+
+.custom-dots li {
+  margin: 0 4px; /* Adjust the spacing between dots */
+}
+
+.custom-dots li button {
+  background-color: #bbb; /* Change the background color of the dots */
+  width: 10px; /* Adjust the size of the dots */
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-dots li.slick-active button {
+  background-color: #333; /* Change the background color of the active dot */
+}
