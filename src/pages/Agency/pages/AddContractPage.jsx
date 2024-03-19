@@ -691,7 +691,7 @@ const AddContractPage = ({
                   <div className=" px-6 flex flex-col gap-3">
                     <div className="flex flex-col ">
                       <div className="text-emdmsPrimary text-lg">Full Name</div>
-                      <div className="text-[14px]">Belaynesh Demeke Demse</div>
+                      <div className="text-[14px]">belaynesh Demeke Demse</div>
                     </div>
                     <div className="flex flex-col ">
                       <div className="text-emdmsPrimary text-lg">Gender</div>
@@ -734,7 +734,7 @@ const AddContractPage = ({
                       <div className="text-emdmsPrimary text-lg">
                         Martial Status
                       </div>
-                      <div className="text-[14px]">Single</div>
+                      <div className="text-[14px]">Single</div> 
                     </div>{" "}
                     <div className="flex flex-col ">
                       <div className="text-emdmsPrimary text-lg">Region</div>

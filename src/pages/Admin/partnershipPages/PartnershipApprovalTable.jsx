@@ -18,6 +18,7 @@ const PartnershipApprovalTable = () => {
     {
       id: 1,
       name: "Libamlak Birhanu Workalem",
+
       entity: "Belaynesh Getachew Temesgen",
 
       createdDate: "21 july 2022",
@@ -40,6 +41,7 @@ const PartnershipApprovalTable = () => {
       id: 4,
       name: "Libamlak Birhanu Workalem",
       entity: "Belaynesh Getachew Temesgen",
+
       status: "Rejected",
 
       createdDate: "21 july 2022",

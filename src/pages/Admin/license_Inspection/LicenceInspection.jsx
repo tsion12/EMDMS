@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InspectionApplication from "./InspectionApplication";
 
+
 const LicenceInspection = () => {
   const [page, setPage] = useState("");
   return (

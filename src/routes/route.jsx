@@ -20,6 +20,7 @@ import SurveyComponent from "../components/ExtraComponents/SurveyComponent";
 import MedicalExamination from "../pages/Admin/medicalPages/MedicalExamination";
 import ContractsList from "../pages/Foriegn/ContractsList";
 import Inspection from "../pages/Agency/pages/Inspection";
+import Ticket from "../pages/Admin/complaint/Ticket";
 
 const routes = [
   <Route path="/" element={<Informations />} />,
@@ -29,6 +30,8 @@ const routes = [
   <Route path="/admin/inspection" element={<LicenceInspection />} />,
   <Route path="/admin/job-order" element={<AdminJobOrder />} />,
   <Route path="/admin/partnership" element={<PartnershipApproval />} />,
+  <Route path="/admin/tickets" element={<Ticket />} />,
+
   <Route path="/admin/medical-examination" element={<MedicalExamination />} />,
 
   <Route path="/agency" element={<AgencyDashboard />} />,

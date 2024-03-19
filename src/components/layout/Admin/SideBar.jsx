@@ -9,6 +9,7 @@ import { BsPersonAdd } from "react-icons/bs";
 import { HiOutlineBars3, HiXMark } from "react-icons/hi2";
 import { MdGroupAdd } from "react-icons/md";
 import { FaBriefcaseMedical } from "react-icons/fa";
+import { LuTicket } from "react-icons/lu";
 
 const Aside = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,14 +21,16 @@ const Aside = () => {
       setActivePage("Dashboard");
     } else if (location.pathname === "/local-applicants") {
       setActivePage("Foreign Management");
-    } else if (location.pathname === "admin/job-order") {
+    } else if (location.pathname === "/admin/job-order") {
       setActivePage("Job Order");
-    } else if (location.pathname === "admin/medical-examination") {
+    } else if (location.pathname === "/admin/medical-examination") {
       setActivePage("Medical");
     } else if (location.pathname === "/staff-members") {
       setActivePage("Staff Members");
     } else if (location.pathname === "/admin/partnership") {
       setActivePage("Partnership");
+    } else if (location.pathname === "/admin/tickets") {
+      setActivePage("Ticket");
     }
   }, [location]);
   return (
@@ -144,7 +147,20 @@ const Aside = () => {
             </p>
           )}
         </Link>
-
+        <Link
+          to="admin/tickets"
+          className={`${
+            activePage === "Ticket"
+              ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+              : "hover:bg-N99/50 text-N60"
+          } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+          <LuTicket className="text-2xl" />
+          {sidebarOpen && (
+            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+              Create Tickets
+            </p>
+          )}
+        </Link>
         <div
           className={` ${
             sidebarOpen ? "bg-green40/10" : ""

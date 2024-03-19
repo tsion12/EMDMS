@@ -2,7 +2,6 @@ import User from "../../assets/svg/Ellipse 2.png";
 import { MdEdit } from "react-icons/md";
 import { CiRedo } from "react-icons/ci";
 import React, { useState } from "react";
-
 import { AiOutlineSearch } from "react-icons/ai";
 import { LiaRedoAltSolid } from "react-icons/lia";
 

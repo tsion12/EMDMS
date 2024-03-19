@@ -276,6 +276,7 @@ const PageTwoAddContract = ({
               <div className="text-emdmsPrimary text-lg">Phone Number</div>
               <div className="text-[14px]">+251 789 928 879</div>
             </div>
+            <div>home </div>
           </div>
         </div>
       </div>
