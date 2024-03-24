@@ -21,6 +21,7 @@ import MedicalExamination from "../pages/Admin/medicalPages/MedicalExamination";
 import ContractsList from "../pages/Foriegn/ContractsList";
 import Inspection from "../pages/Agency/pages/Inspection";
 import Ticket from "../pages/Admin/complaint/Ticket";
+import CommissionReport from "../pages/Agency/Commision/CommissionReport";
 
 const routes = [
   <Route path="/" element={<Informations />} />,
@@ -41,6 +42,7 @@ const routes = [
   <Route path="/agency/contracts" element={<Contracts />} />,
   <Route path="/agency/survey" element={<SurveyComponent />} />,
   <Route path="/agency/inspection" element={<Inspection />} />,
+  <Route path="/agency/commission" element={<CommissionReport />} />,
 
   <Route path="/foreign/dashboard" element={<ForeignDashboard />} />,
   <Route path="/foreign/partnership" element={<Partnership />} />,
