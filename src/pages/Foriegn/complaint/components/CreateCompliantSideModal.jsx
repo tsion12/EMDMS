@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { MdCancel } from "react-icons/md";
 import Select from "react-select";
+import { IoIosWarning } from "react-icons/io";
+
 const options = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
   { value: "vanilla", label: "Vanilla" },
 ];
 
-const CreateTicketModal = ({ setOpenSideModal }) => {
+const CreateCompliantSideModal = ({ setOpenSideModal }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
   const [laborId, setLaborId] = useState("");
   const [result, setResult] = useState(null);
-
- 
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -35,7 +35,7 @@ const CreateTicketModal = ({ setOpenSideModal }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-end transition-all duration-200 ease-in-out bg-black/50">
       <div className="fixed inset-y-0 right-0 w-full px-8 py-8 bg-white rounded-md shadow-lg md:w-2/5">
-        <div className="flex w-full flex-col items-start ">
+        <div className="flex w-full flex-col items-start  ">
           <div className="flex w-full items-start mt-5 mb-5  space-x-10 ">
             <MdCancel
               onClick={() => {
@@ -45,17 +45,23 @@ const CreateTicketModal = ({ setOpenSideModal }) => {
             />
             <div className=" mx-auto  flex flex-col w-full items-center justify-center  gap-2">
               <div className="font-semibold text-emdmsPrimary text-3xl">
-                Create New Compliant
+                Create Compliant
               </div>
-              <p className="text-[#84818A] text-sm">
-                Write and address new queries and issues
+              <p className="text-[#333333] text-sm text-justify my-2">
+                You may have encountered an issue with the labor provided. To
+                address your concerns, please select the appropriate reason from
+                the options below and provide the necessary details. Our
+                administrators will thoroughly investigate the matter and
+                promptly respond to you with a resolution. 
               </p>
-              <div className="w-[70%]  my-4 border border-gray-100"></div>
             </div>
           </div>
-          <div className="flex flex-col w-full h-[80vh] overflow-y-auto items-start justify-start gap-2">
-            <div className="text-emdmsPrimary underline italic ">
-              Labor Info
+          <div className="flex flex-col w-full h-[75vh] overflow-y-auto items-start justify-start gap-2 pl-14">
+            <div className="text-red-500 flex text-sm font-semibold items-center justify-center gap-2  ">
+              <IoIosWarning />
+              <span>
+                Please select one of the below options to create a compliant.
+              </span>
             </div>
             {/* <input
                 type="text"
@@ -75,25 +81,23 @@ const CreateTicketModal = ({ setOpenSideModal }) => {
               </div>
             </div>
             <div className=" flex flex-col space-y-2 py-3 items-start w-full justify-start">
-              <div>Select Relationship with Labor</div>
-              <div className="w-full">
-                <Select
-                  defaultValue={selectedOption}
-                  onChange={setSelectedOption}
-                  options={options}
-                  theme={(theme) => handleTheme(theme)}
-                  className="text-emdmsPrimary ml-1  placeholder:text-N95 placeholder:text-sm    focus:border-emdmsPrimary focus:ring-emdmsPrimary rounded-md"
-                />
-              </div>
+              <input
+                type="text"
+                className="text-emdmsPrimary py-2 mx-1  border border-emdmsPrimary/40 w-[99%]  placeholder:text-N95 placeholder:text-sm    focus:border-emdmsPrimary focus:ring-emdmsPrimary rounded-md"
+                placeholder="enter labor ID"
+              />
             </div>
             <div className="flex flex-col space-y-2 py-10 items-start w-full justify-start">
-              <div>Description</div>
+              <div>
+                Write your compliant reason{" "}
+                <span className="text-red-500">*</span>{" "}
+              </div>
               <textarea
                 name=""
                 id=""
                 cols="30"
                 rows="12"
-                placeholder="Type ticket issue here.."
+                placeholder="you comments (optional)"
                 className="border w-full p-3 rounded-md"
               />
             </div>
@@ -218,7 +222,7 @@ const CreateTicketModal = ({ setOpenSideModal }) => {
               )}
             </div>
             <div className=" my-4 border border-emdmsPrimary/40 rounded-md px-2 w-full py-2 ">
-              upload
+              upload file here
             </div>
             <div className="flex items-center justify-end w-full">
               <button className="bg-emdmsPrimary w-24 py-2 text-white rounded-md">
@@ -232,4 +236,4 @@ const CreateTicketModal = ({ setOpenSideModal }) => {
   );
 };
 
-export default CreateTicketModal;
+export default CreateCompliantSideModal;
