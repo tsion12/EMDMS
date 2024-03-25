@@ -10,8 +10,6 @@ const options = [
 const CreateTicketModal = ({ setOpenSideModal }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
-  const [laborId, setLaborId] = useState("");
-  const [result, setResult] = useState(null);
 
  
 
