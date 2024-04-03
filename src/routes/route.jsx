@@ -23,6 +23,7 @@ import Inspection from "../pages/Agency/pages/Inspection";
 import Ticket from "../pages/Admin/complaint/Ticket";
 import CommissionReport from "../pages/Agency/Commision/CommissionReport";
 import Compliant from "../pages/Foriegn/complaint/Compliant";
+import ForeignLicense from "../pages/Foriegn/License/ForeignLicense";
 
 const routes = [
   <Route path="/" element={<Informations />} />,
@@ -50,6 +51,7 @@ const routes = [
   <Route path="/foreign/job-order" element={<JobOrder />} />,
   <Route path="/foreign/contracts" element={<ContractsList />} />,
   <Route path="/foreign/compliant" element={<Compliant />} />,
+  <Route path="/foreign/license" element={<ForeignLicense />} />,
 ];
 
 export default routes;

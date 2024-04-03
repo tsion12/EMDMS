@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { HiOutlinePencilSquare } from "react-icons/hi2";
-import { BsPostcard } from "react-icons/bs";
-import { BsPostcardHeart } from "react-icons/bs";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import CreateTicketModal from "./components/CreateTicketModal";
 import { OpenTicket } from "./components/OpenTicket";
 import AllTickets from "./components/AllTickets";

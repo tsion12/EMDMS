@@ -27,6 +27,8 @@ const Aside = () => {
       setActivePage("Staff Members");
     } else if (location.pathname === "/foreign/compliant") {
       setActivePage("Compliant");
+    } else if (location.pathname === "/foreign/license") {
+      setActivePage("License");
     }
   }, [location]);
   return (
@@ -55,6 +57,20 @@ const Aside = () => {
           {sidebarOpen && (
             <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
               Dashboard
+            </p>
+          )}
+        </Link>
+        <Link
+          to="/foreign/license"
+          className={`${
+            activePage === "License"
+              ? "bg-emdmsPrimary/10 text-emdmsPrimary  hover:bg-emdmsPrimary/20"
+              : "hover:bg-N99/50 text-N60"
+          } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
+          <BsPersonBadgeFill className="text-2xl" />
+          {sidebarOpen && (
+            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+              License
             </p>
           )}
         </Link>

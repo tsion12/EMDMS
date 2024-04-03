@@ -98,9 +98,12 @@ const SideBar = () => {
           } w-full flex gap-4 items-center justify-start px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out`}>
           <MdAssignment className="text-2xl" />
           {sidebarOpen && (
-            <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
-              License
-            </p>
+            <>
+              {" "}
+              <p className="font-medium text-sm whitespace-nowrap overflow-hidden w-4/5">
+                License
+              </p>
+            </>
           )}
         </Link>
         <Link
